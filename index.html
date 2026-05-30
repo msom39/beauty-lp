@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AQUA CLEAR SERUMï½ãã­ãè·¡Ãæ¯ç©´ã±ã¢å°å¥ç¾å®¹æ¶²</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{font-family:'Noto Sans JP',sans-serif;color:#333;line-height:1.8;background:#fff;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;height:auto;display:block;}
+    ul{list-style:none;}
+
+    :root{
+      --blue-dark:#0a2a5e;
+      --blue:#1a5ca8;
+      --blue-mid:#3a7bd5;
+      --blue-light:#7db4e8;
+      --blue-pale:#e8f2fc;
+      --silver:#c0c7d0;
+      --silver-light:#e8ecf0;
+      --silver-dark:#8a95a3;
+      --gold:#c9a84c;
+      --red:#c0392b;
+      --red-dark:#a93226;
+      --orange:#e67e22;
+      --white:#ffffff;
+      --cream:#f8fafc;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero{
+      background:linear-gradient(170deg, var(--blue-dark) 0%, #0d3b7a 40%, var(--blue) 70%, var(--blue-mid) 100%);
+      padding:40px 16px 30px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:-50%;left:-50%;
+      width:200%;height:200%;
+      background:radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                 radial-gradient(ellipse at 70% 80%, rgba(122,180,230,0.1) 0%, transparent 50%);
+      pointer-events:none;
+    }
+    .hero-crown{
+      font-size:36px;
+      margin-bottom:8px;
+      filter:drop-shadow(0 2px 8px rgba(201,168,76,0.5));
+    }
+    .hero-badge{
+      display:inline-block;
+      background:linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:8px;
+      padding:8px 24px;
+      margin-bottom:16px;
+    }
+    .hero-badge span{
+      color:var(--silver-light);
+      font-size:13px;
+      letter-spacing:1px;
+    }
+    .hero-sales{
+      color:var(--white);
+      margin-bottom:8px;
+    }
+    .hero-sales .number{
+      font-family:'Montserrat',sans-serif;
+      font-size:52px;
+      font-weight:900;
+      background:linear-gradient(180deg, #ffffff 30%, #c0d8f0 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      line-height:1.1;
+      display:block;
+    }
+    .hero-sales .unit{
+      font-size:20px;
+      font-weight:700;
+      color:var(--silver-light);
+    }
+
+    .hero-subtitle{
+      color:rgba(255,255,255,0.85);
+      font-size:13px;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+    .hero-subtitle strong{
+      color:#7db4e8;
+    }
+
+    .hero-product-area{
+      position:relative;
+      margin:0 auto;
+      max-width:360px;
+    }
+    .hero-catchcopy{
+      position:relative;
+      z-index:2;
+    }
+    .hero-catchcopy .line1{
+      font-size:14px;
+      color:rgba(255,255,255,0.7);
+      letter-spacing:2px;
+    }
+    .hero-catchcopy .line2{
+      font-family:'Noto Serif JP',serif;
+      font-size:26px;
+      font-weight:900;
+      color:var(--white);
+      text-shadow:0 2px 12px rgba(0,0,0,0.3);
+      line-height:1.4;
+      margin:8px 0;
+    }
+    .hero-catchcopy .line2 em{
+      font-style:normal;
+      color:var(--blue-light);
+      font-size:30px;
+    }
+    .hero-catchcopy .line3{
+      font-size:13px;
+      color:var(--silver-light);
+    }
+
+    /* Product bottle placeholder */
+    .hero-bottle{
+      width:120px;
+      height:220px;
+      margin:20px auto 0;
+      background:linear-gradient(180deg, #e8ecf0 0%, #c0c7d0 30%, #f0f3f6 50%, #c0c7d0 70%, #a8b0ba 100%);
+      border-radius:8px 8px 4px 4px;
+      position:relative;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+    .hero-bottle::before{
+      content:'AQUA CLEAR';
+      position:absolute;
+      top:50%;left:50%;transform:translate(-50%,-50%);
+      font-family:'Montserrat',sans-serif;
+      font-size:10px;
+      font-weight:800;
+      color:var(--blue-dark);
+      letter-spacing:1px;
+      text-align:center;
+      line-height:1.4;
+    }
+    .hero-bottle::after{
+      content:'';
+      position:absolute;
+      top:-16px;left:50%;transform:translateX(-50%);
+      width:36px;height:20px;
+      background:linear-gradient(180deg, #d0d5dc, #a8b0ba);
+      border-radius:4px 4px 0 0;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section{padding:48px 16px;}
+    .section-title{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    .section-title .en{
+      font-family:'Montserrat',sans-serif;
+      font-size:11px;
+      font-weight:700;
+      color:var(--blue-mid);
+      letter-spacing:3px;
+      text-transform:uppercase;
+      display:block;
+      margin-bottom:4px;
+    }
+    .section-title h2{
+      font-family:'Noto Serif JP',serif;
+      font-size:24px;
+      font-weight:900;
+      color:var(--blue-dark);
+      line-height:1.4;
+    }
+    .section-title .line{
+      width:40px;height:2px;
+      background:linear-gradient(90deg, var(--blue-mid), var(--silver));
+      margin:12px auto 0;
+    }
+
+    /* ===== PROBLEMS SECTION ===== */
+    .problems{
+      background:var(--cream);
+    }
+    .problems-list{
+      max-width:400px;
+      margin:0 auto;
+    }
+    .problems-list li{
+      background:var(--white);
+      border-radius:12px;
+      padding:16px 20px;
+      margin-bottom:12px;
+      font-size:15px;
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      border-left:4px solid var(--blue-mid);
+    }
+    .problems-list li .icon{font-size:20px;}
+    .problems-arrow{
+      text-align:center;
+      margin:24px 0;
+      font-size:32px;
+      color:var(--blue-mid);
+    }
+    .problems-solution{
+      text-align:center;
+      background:linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color:var(--white);
+      border-radius:16px;
+      padding:24px 20px;
+      max-width:400px;
+      margin:0 auto;
+    }
+    .problems-solution .big{
+      font-family:'Noto Serif JP',serif;
+      font-size:22px;
+      font-weight:900;
+      line-height:1.5;
+    }
+    .problems-solution .big em{
+      font-style:normal;
+      color:var(--blue-light);
+      font-size:28px;
+    }
+
+    /* ===== BEFORE AFTER ===== */
+    .beforeafter{
+      background:var(--white);
+    }
+    .ba-container{
+      display:flex;
+      gap:12px;
+      max-width:420px;
+      margin:0 auto 16px;
+      align-items:stretch;
+    }
+    .ba-card{
+      flex:1;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 4px 16px rgba(0,0,0,0.1);
+    }
+    .ba-card .label{
+      text-align:center;
+      padding:10px;
+      font-family:'Montserrat',sans-serif;
+      font-weight:800;
+      font-size:14px;
+      letter-spacing:2px;
+      color:var(--white);
+    }
+    .ba-card.before .label{background:#6b7b8d;}
+    .ba-card.after .label{background:var(--blue);}
+    .ba-card .photo{
+      height:200px;
+      position:relative;
+      overflow:hidden;
+    }
+    .ba-card.before .photo{
+      background:linear-gradient(135deg, #f5d0c0 0%, #e8b8a8 30%, #d4a090 60%, #c89080 100%);
+    }
+    .ba-card.before .photo::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle 4px at 30% 25%, #c07060 0%, transparent 100%),
+        radial-gradient(circle 3px at 45% 40%, #b86858 0%, transparent 100%),
+        radial-gradient(circle 5px at 60% 30%, #c07060 0%, transparent 100%),
+        radial-gradient(circle 3px at 35% 55%, #b06050 0%, transparent 100%),
+        radial-gradient(circle 4px at 55% 60%, #c07868 0%, transparent 100%),
+        radial-gradient(circle 6px at 40% 70%, #b86050 0%, transparent 100%),
+        radial-gradient(circle 3px at 70% 50%, #c07060 0%, transparent 100%),
+        radial-gradient(circle 4px at 25% 75%, #b06050 0%, transparent 100%),
+        radial-gradient(circle 5px at 50% 45%, #c88070 0%, transparent 100%),
+        radial-gradient(circle 3px at 65% 70%, #b86858 0%, transparent 100%);
+    }
+    .ba-card.before .photo::after{
+      content:'â»ã¤ã¡ã¼ã¸';
+      position:absolute;
+      bottom:8px;right:8px;
+      font-size:10px;
+      color:rgba(255,255,255,0.7);
+      background:rgba(0,0,0,0.3);
+      padding:2px 6px;
+      border-radius:4px;
+    }
+    .ba-card.after .photo{
+      background:linear-gradient(135deg, #fce8e0 0%, #f8dcd0 30%, #fae0d4 60%, #fceee8 100%);
+    }
+    .ba-card.after .photo::after{
+      content:'â»ã¤ã¡ã¼ã¸';
+      position:absolute;
+      bottom:8px;right:8px;
+      font-size:10px;
+      color:rgba(0,0,0,0.4);
+      background:rgba(255,255,255,0.5);
+      padding:2px 6px;
+      border-radius:4px;
+    }
+    .ba-arrow{
+      position:absolute;
+      right:-20px;top:50%;
+      transform:translateY(-50%);
+      width:32px;height:32px;
+      background:var(--blue);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:16px;
+      z-index:2;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    }
+    .ba-note{
+      text-align:center;
+      font-size:12px;
+      color:#888;
+      margin-top:8px;
+    }
+    .ba-caption{
+      text-align:center;
+      margin-top:20px;
+      font-family:'Noto Serif JP',serif;
+      font-size:18px;
+      font-weight:900;
+      color:var(--blue-dark);
+      line-height:1.6;
+    }
+    .ba-caption em{
+      font-style:normal;
+      color:var(--blue);
+      font-size:22px;
+    }
+
+    /* ===== AMAZON RANKING ===== */
+    .ranking{
+      background:linear-gradient(180deg, #f0f4f8 0%, #e0e8f0 100%);
+      text-align:center;
+      padding:48px 16px;
+    }
+    .ranking-badge{
+      position:relative;
+      display:inline-block;
+      margin-bottom:24px;
+    }
+    .ranking-badge .laurel{
+      position:relative;
+      display:inline-block;
+      padding:0 48px;
+    }
+    .ranking-badge .laurel::before,
+    .ranking-badge .laurel::after{
+      content:'ð';
+      position:absolute;
+      top:50%;transform:translateY(-50%);
+      font-size:40px;
+    }
+    .ranking-badge .laurel::before{left:0;transform:translateY(-50%) scaleX(-1);}
+    .ranking-badge .laurel::after{right:0;}
+    .ranking-number{
+      font-family:'Montserrat',sans-serif;
+      font-size:80px;
+      font-weight:900;
+      background:linear-gradient(180deg, var(--gold) 0%, #a88030 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      line-height:1;
+      display:block;
+      filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    .ranking-wings{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .wing{
+      font-size:32px;
+      color:var(--gold);
+    }
+    .wing.left{transform:scaleX(-1);}
+    .ranking-shield{
+      width:100px;height:100px;
+      background:linear-gradient(180deg, var(--gold) 0%, #a07820 100%);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 8px;
+      box-shadow:0 4px 16px rgba(168,128,48,0.4), inset 0 2px 0 rgba(255,255,255,0.3);
+      position:relative;
+    }
+    .ranking-shield::before{
+      content:'';
+      position:absolute;
+      inset:4px;
+      border:2px solid rgba(255,255,255,0.3);
+      border-radius:50%;
+    }
+    .ranking-shield .num{
+      font-family:'Montserrat',sans-serif;
+      font-size:48px;
+      font-weight:900;
+      color:var(--white);
+      text-shadow:0 2px 4px rgba(0,0,0,0.2);
+    }
+    .ranking-laurel-wrap{
+      position:relative;
+      display:inline-block;
+      margin-bottom:16px;
+    }
+    .laurel-left, .laurel-right{
+      position:absolute;
+      top:50%;
+      font-size:60px;
+      color:var(--gold);
+      filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    .laurel-left{left:-40px;transform:translateY(-50%) scaleX(-1);}
+    .laurel-right{right:-40px;transform:translateY(-50%);}
+
+    .ranking-text{
+      font-family:'Noto Serif JP',serif;
+      font-size:20px;
+      font-weight:900;
+      color:var(--blue-dark);
+      line-height:1.5;
+      margin-bottom:8px;
+    }
+    .ranking-text .amazon{
+      color:#ff9900;
+      font-family:'Montserrat',sans-serif;
+      font-weight:800;
+    }
+    .ranking-sub{
+      font-size:13px;
+      color:#888;
+    }
+
+    .ranking-cards{
+      display:flex;
+      gap:12px;
+      max-width:420px;
+      margin:24px auto 0;
+      justify-content:center;
+    }
+    .ranking-card{
+      flex:1;
+      background:var(--white);
+      border-radius:12px;
+      padding:16px 12px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+      border-top:3px solid var(--gold);
+    }
+    .ranking-card .rank-label{
+      font-size:11px;
+      color:var(--silver-dark);
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .ranking-card .rank-num{
+      font-family:'Montserrat',sans-serif;
+      font-size:28px;
+      font-weight:900;
+      color:var(--gold);
+    }
+    .ranking-card .rank-cat{
+      font-size:12px;
+      color:#555;
+      font-weight:500;
+      margin-top:4px;
+    }
+
+    /* ===== INGREDIENTS ===== */
+    .ingredients{
+      background:var(--white);
+    }
+    .ing-cards{
+      max-width:420px;
+      margin:0 auto;
+    }
+    .ing-card{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      background:var(--cream);
+      border-radius:16px;
+      padding:20px;
+      margin-bottom:16px;
+    }
+    .ing-card .ing-icon{
+      width:56px;height:56px;
+      min-width:56px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;
+      background:linear-gradient(135deg, var(--blue-pale), var(--silver-light));
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ing-card h3{
+      font-size:15px;
+      font-weight:700;
+      color:var(--blue-dark);
+      margin-bottom:4px;
+    }
+    .ing-card p{
+      font-size:13px;
+      color:#666;
+      line-height:1.6;
+    }
+
+    /* ===== HOW TO USE ===== */
+    .howto{
+      background:linear-gradient(180deg, var(--blue-pale) 0%, var(--white) 100%);
+    }
+    .howto-steps{
+      max-width:400px;
+      margin:0 auto;
+    }
+    .howto-step{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      margin-bottom:28px;
+      position:relative;
+    }
+    .howto-step:not(:last-child)::after{
+      content:'';
+      position:absolute;
+      left:22px;top:52px;
+      width:2px;
+      height:calc(100% - 20px);
+      background:linear-gradient(180deg, var(--blue-mid), var(--silver-light));
+    }
+    .howto-step .step-num{
+      width:44px;height:44px;
+      min-width:44px;
+      background:linear-gradient(135deg, var(--blue), var(--blue-mid));
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Montserrat',sans-serif;
+      font-size:18px;
+      font-weight:800;
+      color:var(--white);
+      box-shadow:0 4px 12px rgba(26,92,168,0.3);
+      position:relative;
+      z-index:1;
+    }
+    .howto-step h3{
+      font-size:15px;
+      font-weight:700;
+      color:var(--blue-dark);
+      margin-bottom:4px;
+    }
+    .howto-step p{
+      font-size:13px;
+      color:#666;
+      line-height:1.6;
+    }
+
+    /* ===== TOKUTEN (3å¤§ç¹å¸) ===== */
+    .tokuten{
+      background:linear-gradient(170deg, var(--blue-dark) 0%, #0d3b7a 100%);
+      color:var(--white);
+      text-align:center;
+      padding:48px 16px;
+    }
+    .tokuten-title{
+      font-family:'Noto Serif JP',serif;
+      margin-bottom:32px;
+    }
+    .tokuten-title .sub{
+      font-size:14px;
+      color:var(--blue-light);
+      letter-spacing:2px;
+    }
+    .tokuten-title .main{
+      font-size:40px;
+      font-weight:900;
+      background:linear-gradient(180deg, #ffffff 20%, #c0d0e0 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .tokuten-cards{
+      max-width:400px;
+      margin:0 auto;
+    }
+    .tokuten-card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:16px;
+      padding:24px 20px;
+      margin-bottom:16px;
+      backdrop-filter:blur(8px);
+    }
+    .tokuten-card .tk-num{
+      display:inline-block;
+      background:linear-gradient(135deg, var(--blue-mid), var(--blue-light));
+      border-radius:20px;
+      padding:4px 16px;
+      font-family:'Montserrat',sans-serif;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:1px;
+      margin-bottom:12px;
+    }
+    .tokuten-card .tk-title{
+      font-family:'Noto Serif JP',serif;
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:4px;
+    }
+    .tokuten-card .tk-title .red{
+      color:#ff6b6b;
+      font-size:28px;
+    }
+    .tokuten-card .tk-detail{
+      font-size:13px;
+      color:rgba(255,255,255,0.7);
+      line-height:1.6;
+    }
+    .tokuten-card .price-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      margin-top:12px;
+    }
+    .tokuten-card .old-price{
+      font-size:16px;
+      color:rgba(255,255,255,0.5);
+      text-decoration:line-through;
+    }
+    .tokuten-card .arrow-r{font-size:20px;color:var(--blue-light);}
+    .tokuten-card .new-price{
+      font-family:'Montserrat',sans-serif;
+      font-size:36px;
+      font-weight:900;
+      color:var(--white);
+    }
+    .tokuten-card .new-price .yen{
+      font-size:16px;
+      font-weight:700;
+    }
+    .tokuten-card .new-price .tax{
+      font-size:11px;
+      font-weight:400;
+      color:rgba(255,255,255,0.6);
+    }
+
+    /* ===== FAQ ===== */
+    .faq{
+      background:var(--cream);
+    }
+    .faq-list{
+      max-width:420px;
+      margin:0 auto;
+    }
+    .faq-item{
+      background:var(--white);
+      border-radius:12px;
+      margin-bottom:12px;
+      overflow:hidden;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+    .faq-q{
+      padding:16px 20px;
+      font-weight:700;
+      font-size:14px;
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      cursor:pointer;
+      border-bottom:1px solid var(--silver-light);
+    }
+    .faq-q .q-icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:24px;height:24px;
+      min-width:24px;
+      background:var(--blue);
+      color:var(--white);
+      border-radius:50%;
+      font-family:'Montserrat',sans-serif;
+      font-size:12px;
+      font-weight:800;
+    }
+    .faq-a{
+      padding:16px 20px 16px 54px;
+      font-size:13px;
+      color:#666;
+      line-height:1.7;
+    }
+
+    /* ===== COMPANY ===== */
+    .company{
+      background:var(--white);
+      padding:32px 16px 120px;
+    }
+    .company-table{
+      max-width:420px;
+      margin:0 auto;
+      font-size:13px;
+    }
+    .company-table dl{
+      display:flex;
+      border-bottom:1px solid var(--silver-light);
+      padding:10px 0;
+    }
+    .company-table dt{
+      width:100px;
+      min-width:100px;
+      font-weight:700;
+      color:var(--blue-dark);
+    }
+    .company-table dd{
+      color:#666;
+    }
+
+    /* ===== FIXED CTA BAR ===== */
+    .fixed-cta{
+      position:fixed;
+      bottom:0;left:0;right:0;
+      z-index:1000;
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,1));
+      box-shadow:0 -4px 20px rgba(0,0,0,0.15);
+      padding:10px 16px;
+      padding-bottom:max(10px, env(safe-area-inset-bottom));
+    }
+    .cta-inner{
+      max-width:420px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .cta-top-text{
+      font-size:12px;
+      font-weight:700;
+      color:var(--red);
+      margin-bottom:6px;
+    }
+    .cta-top-text span{
+      font-family:'Montserrat',sans-serif;
+      font-size:18px;
+      font-weight:900;
+    }
+    .cta-button{
+      display:block;
+      width:100%;
+      background:linear-gradient(180deg, #ff8c00 0%, #e67e22 50%, #d35400 100%);
+      color:var(--white);
+      border:none;
+      border-radius:60px;
+      padding:14px 20px;
+      font-size:18px;
+      font-weight:900;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:0 4px 16px rgba(230,126,34,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+      position:relative;
+      overflow:hidden;
+      transition:transform 0.2s;
+    }
+    .cta-button:active{transform:scale(0.98);}
+    .cta-button::after{
+      content:'â¶';
+      position:absolute;
+      right:20px;top:50%;
+      transform:translateY(-50%);
+      font-size:14px;
+      opacity:0.8;
+    }
+    .cta-button .cta-small{
+      font-size:12px;
+      font-weight:500;
+      display:block;
+      opacity:0.85;
+      margin-top:2px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(min-width:768px){
+      .hero-sales .number{font-size:72px;}
+      .section-title h2{font-size:28px;}
+      .ba-card .photo{height:280px;}
+      .tokuten-title .main{font-size:48px;}
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes pulse{
+      0%,100%{box-shadow:0 4px 16px rgba(230,126,34,0.4);}
+      50%{box-shadow:0 4px 24px rgba(230,126,34,0.7);}
+    }
+    .cta-button{animation:pulse 2s infinite;}
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-crown">ð</div>
+  <div class="hero-badge"><span>ãã­ãè·¡ã±ã¢ç¾å®¹æ¶² å£²ä¸</span></div>
+  <div class="hero-sales">
+    <span class="number">150,000</span>
+    <span class="unit">æ¬çªç ´</span>
+  </div>
+  <p class="hero-subtitle">
+    ç®èç§å»ç¤ä¿® Ã <strong>ç¬èªå¦æ¹</strong>ã§<br>
+    é åºãªãã­ãè·¡ã«ã¢ãã­ã¼ã
+  </p>
+  <div class="hero-product-area">
+    <div class="hero-catchcopy">
+      <p class="line1">â è¬ç¨ãã­ãè·¡ã±ã¢ â</p>
+      <p class="line2">ãã<em>1æ¬</em>ã§<br>éæèã¸</p>
+      <p class="line3">ã·ã¯ã»ãã­ãè·¡ã»æ¯ç©´ã»ä¿æ¹¿</p>
+    </div>
+    <div class="hero-bottle"></div>
+  </div>
+</section>
+
+<!-- ===== ãæ©ã¿ã»ã¯ã·ã§ã³ ===== -->
+<section class="problems">
+  <div class="section-title">
+    <span class="en">Your Troubles</span>
+    <h2>ãããªãæ©ã¿<br>ããã¾ãããï¼</h2>
+    <div class="line"></div>
+  </div>
+  <ul class="problems-list">
+    <li><span class="icon">ð£</span>ãã­ãè·¡ãå¨ç¶æ¶ããªãâ¦</li>
+    <li><span class="icon">ð°</span>æ¯ç©´ã®é»ãã¿ãç®ç«ã¤</li>
+    <li><span class="icon">ð¢</span>èãã¶ã©ã¶ã©ã§ã¡ã¤ã¯ãã®ããªã</li>
+    <li><span class="icon">ð</span>é«ãåç²§åãè©¦ãã¦ãå¤ãããªã</li>
+    <li><span class="icon">ð«</span>ãã¹ã¯ãå¤ãã®ãæã</li>
+  </ul>
+  <div class="problems-arrow">â¼</div>
+  <div class="problems-solution">
+    <p class="big">ãã®ãæ©ã¿<br><em>AQUA CLEAR</em>ã<br>è§£æ±ºãã¾ãï¼</p>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="beforeafter">
+  <div class="section-title">
+    <span class="en">Before / After</span>
+    <h2>é©ãã®å¤åã<br>ãè¦§ãã ãã</h2>
+    <div class="line"></div>
+  </div>
+  <div class="ba-container">
+    <div class="ba-card before" style="position:relative;">
+      <div class="label">BEFORE</div>
+      <div class="photo"></div>
+      <div class="ba-arrow">â</div>
+    </div>
+    <div class="ba-card after">
+      <div class="label">AFTER</div>
+      <div class="photo"></div>
+    </div>
+  </div>
+  <p class="ba-note">â»åäººã®ææ³ã§ãããå¹æã«ã¯åäººå·®ãããã¾ã</p>
+  <p class="ba-caption">
+    ãã£ã<em>30æ¥</em>ã§<br>
+    ããã¾ã§å¤ãã
+  </p>
+</section>
+
+<!-- ===== AMAZON RANKING ===== -->
+<section class="ranking">
+  <div class="ranking-wings">
+    <span class="wing left">ðª½</span>
+    <div class="ranking-shield">
+      <span class="num">1</span>
+    </div>
+    <span class="wing">ðª½</span>
+  </div>
+  <div class="ranking-laurel-wrap">
+    <span class="laurel-left">ð¿</span>
+    <p class="ranking-text">
+      <span class="amazon">Amazon</span>ã©ã³ã­ã³ã°<br>
+      <strong style="font-size:28px;">No.1</strong> ç²å¾ï¼
+    </p>
+    <span class="laurel-right">ð¿</span>
+  </div>
+  <p class="ranking-sub">â»2025å¹´âæ ç¾å®¹æ¶²ã«ãã´ãª ãã¤ãªã¼ã©ã³ã­ã³ã°</p>
+
+  <div class="ranking-cards">
+    <div class="ranking-card">
+      <p class="rank-label">ãã¤ãªã¼</p>
+      <p class="rank-num">1<span style="font-size:14px;">ä½</span></p>
+      <p class="rank-cat">ç¾å®¹æ¶²é¨é</p>
+    </div>
+    <div class="ranking-card">
+      <p class="rank-label">ã¦ã£ã¼ã¯ãªã¼</p>
+      <p class="rank-num">1<span style="font-size:14px;">ä½</span></p>
+      <p class="rank-cat">ã¹ã­ã³ã±ã¢é¨é</p>
+    </div>
+    <div class="ranking-card">
+      <p class="rank-label">ãã¹ãã»ã©ã¼</p>
+      <p class="rank-num">1<span style="font-size:14px;">ä½</span></p>
+      <p class="rank-cat">ãã­ãã±ã¢é¨é</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== æå ===== -->
+<section class="ingredients">
+  <div class="section-title">
+    <span class="en">Key Ingredients</span>
+    <h2>ãã ããã®<br>å³é¸æå</h2>
+    <div class="line"></div>
+  </div>
+  <div class="ing-cards">
+    <div class="ing-card">
+      <div class="ing-icon">ð</div>
+      <div>
+        <h3>é«æ¿åº¦ãã¿ãã³Cèªå°ä½</h3>
+        <p>éå¸¸ã®100åã®æµ¸éåãã¡ã©ãã³ã®çæãæãããã­ãè·¡ã®è²ç´ æ²çã«ã¢ãã­ã¼ããã¾ãã</p>
+      </div>
+    </div>
+    <div class="ing-card">
+      <div class="ing-icon">ð§¬</div>
+      <div>
+        <h3>ããå¹¹ç´°èå¹é¤æ¶²</h3>
+        <p>èæ¬æ¥ã®ã¿ã¼ã³ãªã¼ãã¼ããµãã¼ããå¹´é½¢ã«è² ããªãéææã®ããç´ èã¸å°ãã¾ãã</p>
+      </div>
+    </div>
+    <div class="ing-card">
+      <div class="ing-icon">ð§</div>
+      <div>
+        <h3>5ç¨®ã®ãã¢ã«ã­ã³é¸</h3>
+        <p>ç°ãªããµã¤ãºã®åå­ãè§è³ªå±¤ã®ãã¿ãã¿ã¾ã§æµ¸éãé·æéãããããã­ã¼ããã¾ãã</p>
+      </div>
+    </div>
+    <div class="ing-card">
+      <div class="ing-icon">ð¿</div>
+      <div>
+        <h3>ããã¯ãµã¨ã­ã¹ï¼CICAï¼</h3>
+        <p>éå½ã§å¤§ãã¼ã ã®æ³¨ç®æåãèèããé²ããå¥ãããªèç°å¢ãæ´ãã¾ãã</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ä½¿ãæ¹ ===== -->
+<section class="howto">
+  <div class="section-title">
+    <span class="en">How to Use</span>
+    <h2>ãããã3ã¹ããã</h2>
+    <div class="line"></div>
+  </div>
+  <div class="howto-steps">
+    <div class="howto-step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>æ´é¡å¾ãé©éãæã«åã</h3>
+        <p>2ã3ããã·ã¥ãç®å®ã§ããææ©ã®æ´é¡å¾ãåç²§æ°´ã®åã«ãä½¿ããã ããã</p>
+      </div>
+    </div>
+    <div class="howto-step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>æ°ã«ãªãé¨åãä¸­å¿ã«å¡å¸</h3>
+        <p>ãã­ãè·¡ãæ¯ç©´ãæ°ã«ãªãé¨åã«ããããããªãã¾ãã¦ãã ããã</p>
+      </div>
+    </div>
+    <div class="howto-step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>ãã³ããã¬ã¹ã§æµ¸éããã</h3>
+        <p>æã®ã²ãã§é¡å¨ä½ãåã¿è¾¼ãããã«ã10ç§ã»ã©ãã³ããã¬ã¹ãã¦å®äºã§ãã</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3å¤§ç¹å¸ ===== -->
+<section class="tokuten">
+  <div class="tokuten-title">
+    <p class="sub">â å®æã³ã¼ã¹éå® â</p>
+    <p class="main">3å¤§ç¹å¸</p>
+  </div>
+  <div class="tokuten-cards">
+    <div class="tokuten-card">
+      <span class="tk-num">ç¹å¸ 01</span>
+      <p class="tk-title">åå <span class="red">74%OFF</span></p>
+      <div class="price-row">
+        <span class="old-price">éå¸¸ 3,740å</span>
+        <span class="arrow-r">â¶</span>
+        <span class="new-price">980<span class="yen">å</span><span class="tax">ï¼ç¨è¾¼ï¼</span></span>
+      </div>
+      <p class="tk-detail">éæç¡æã§ãå±ããã¾ã</p>
+    </div>
+    <div class="tokuten-card">
+      <span class="tk-num">ç¹å¸ 02</span>
+      <p class="tk-title">2åç®ä»¥éã <span class="red">20%OFF</span></p>
+      <p class="tk-detail">2åç®ä»¥éã¯2ã¶ææ¯ã«2åã20%OFFã®2,992å(ç¨è¾¼)Ã2åã§ãå±ããéæç¡æã</p>
+    </div>
+    <div class="tokuten-card">
+      <span class="tk-num">ç¹å¸ 03</span>
+      <p class="tk-title">ãã¤ã§ã<span class="red">è§£ç´OK</span></p>
+      <p class="tk-detail">åæ°ç¸ããªãããå±ãäºå®æ¥ã®10æ¥åã¾ã§ã«ãé»è©±ããã ããã°ããã¤ã§ãè§£ç´ã§ãã¾ãã</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="section-title">
+    <span class="en">FAQ</span>
+    <h2>ãããããè³ªå</h2>
+    <div class="line"></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="q-icon">Q</span>
+        <span>ææèã§ãä½¿ãã¾ããï¼</span>
+      </div>
+      <div class="faq-a">ã¯ãããã©ãã³ã»åæçè²æã»é±ç©æ²¹ã»ã¢ã«ã³ã¼ã«ã»ç´«å¤ç·å¸åå¤ãä½¿ç¨ãã¦ããã¾ãããææèã®æ¹ã«ãå®å¿ãã¦ãä½¿ãããã ãã¾ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="q-icon">Q</span>
+        <span>ã©ã®ãããã§å¹æãå®æã§ãã¾ããï¼</span>
+      </div>
+      <div class="faq-a">åäººå·®ã¯ããã¾ãããå¤ãã®ãå®¢æ§ã1ã¶æç¨åº¦ã§èã®ããªãéææãå®æããã¦ãã¾ãããã­ãè·¡ã®ã±ã¢ã«ã¯2ã3ã¶æã®ç¶ç¶ãããããã§ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="q-icon">Q</span>
+        <span>1æ¬ã§ã©ã®ãããæã¡ã¾ããï¼</span>
+      </div>
+      <div class="faq-a">ææ©ã®ä½¿ç¨ã§ç´30æ¥åã§ãã30gå¥ãã®ãã³ãå¼ããã«ã§ãè¡ççã«ãä½¿ãããã ãã¾ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="q-icon">Q</span>
+        <span>å®æã³ã¼ã¹ã®è§£ç´æ¹æ³ã¯ï¼</span>
+      </div>
+      <div class="faq-a">æ¬¡åãå±ãäºå®æ¥ã®10æ¥åã¾ã§ã«ããé»è©±ï¼0120-XXX-XXXï¼å¹³æ¥10æã18æï¼ã«ã¦ãé£çµ¡ãã ãããåæ°ç¸ãã¯ãããã¾ããã</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== è²©å£²åæå ± ===== -->
+<section class="company">
+  <div class="section-title">
+    <span class="en">Company</span>
+    <h2>è²©å£²åæå ±</h2>
+    <div class="line"></div>
+  </div>
+  <div class="company-table">
+    <dl><dt>è²©å£²æ¥­è</dt><dd>æ ªå¼ä¼ç¤¾ã¢ã¯ã¢ãã¥ã¼ãã£ã¼</dd></dl>
+    <dl><dt>æå¨å°</dt><dd>æ±äº¬é½æ¸è°·åºââ1-2-3</dd></dl>
+    <dl><dt>é»è©±çªå·</dt><dd>0120-XXX-XXX</dd></dl>
+    <dl><dt>å¶æ¥­æé</dt><dd>å¹³æ¥ 10:00ã18:00</dd></dl>
+    <dl><dt>ååå</dt><dd>AQUA CLEAR SERUM</dd></dl>
+    <dl><dt>åå®¹é</dt><dd>30gï¼ç´30æ¥åï¼</dd></dl>
+  </div>
+</section>
+
+<!-- ===== FIXED CTA BAR ===== -->
+<div class="fixed-cta">
+  <div class="cta-inner">
+    <p class="cta-top-text">ï¼¼ ååéå® <span>74%OFF</span> ã§ ï¼</p>
+    <a href="#" class="cta-button">
+      ä»ãããå¾ã«å§ãã
+      <span class="cta-small">éæç¡æã»åæ°ç¸ããªã</span>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
