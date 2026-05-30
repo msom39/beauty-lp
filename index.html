@@ -48,11 +48,7 @@
                  radial-gradient(ellipse at 70% 80%, rgba(122,180,230,0.1) 0%, transparent 50%);
       pointer-events:none;
     }
-    .hero-crown{
-      font-size:36px;
-      margin-bottom:8px;
-      filter:drop-shadow(0 2px 8px rgba(201,168,76,0.5));
-    }
+    /* hero-crown removed */
     .hero-badge{
       display:inline-block;
       background:linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
@@ -130,35 +126,17 @@
       color:var(--silver-light);
     }
 
-    /* Product bottle placeholder */
+    /* Product bottle image */
     .hero-bottle{
-      width:120px;
-      height:220px;
+      width:160px;
       margin:20px auto 0;
-      background:linear-gradient(180deg, #e8ecf0 0%, #c0c7d0 30%, #f0f3f6 50%, #c0c7d0 70%, #a8b0ba 100%);
-      border-radius:8px 8px 4px 4px;
       position:relative;
-      box-shadow:0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.4);
+      filter:drop-shadow(0 8px 32px rgba(0,0,0,0.3));
     }
-    .hero-bottle::before{
-      content:'AQUA CLEAR';
-      position:absolute;
-      top:50%;left:50%;transform:translate(-50%,-50%);
-      font-family:'Montserrat',sans-serif;
-      font-size:10px;
-      font-weight:800;
-      color:var(--blue-dark);
-      letter-spacing:1px;
-      text-align:center;
-      line-height:1.4;
-    }
-    .hero-bottle::after{
-      content:'';
-      position:absolute;
-      top:-16px;left:50%;transform:translateX(-50%);
-      width:36px;height:20px;
-      background:linear-gradient(180deg, #d0d5dc, #a8b0ba);
-      border-radius:4px 4px 0 0;
+    .hero-bottle img{
+      width:100%;
+      height:auto;
+      display:block;
     }
 
     /* ===== SECTION COMMON ===== */
@@ -211,7 +189,7 @@
       box-shadow:0 2px 8px rgba(0,0,0,0.06);
       border-left:4px solid var(--blue-mid);
     }
-    .problems-list li .icon{font-size:20px;}
+    /* emoji icons removed */
     .problems-arrow{
       text-align:center;
       margin:24px 0;
@@ -272,26 +250,12 @@
       position:relative;
       overflow:hidden;
     }
-    .ba-card.before .photo{
-      background:linear-gradient(135deg, #f5d0c0 0%, #e8b8a8 30%, #d4a090 60%, #c89080 100%);
+    .ba-card .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
-    .ba-card.before .photo::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle 4px at 30% 25%, #c07060 0%, transparent 100%),
-        radial-gradient(circle 3px at 45% 40%, #b86858 0%, transparent 100%),
-        radial-gradient(circle 5px at 60% 30%, #c07060 0%, transparent 100%),
-        radial-gradient(circle 3px at 35% 55%, #b06050 0%, transparent 100%),
-        radial-gradient(circle 4px at 55% 60%, #c07868 0%, transparent 100%),
-        radial-gradient(circle 6px at 40% 70%, #b86050 0%, transparent 100%),
-        radial-gradient(circle 3px at 70% 50%, #c07060 0%, transparent 100%),
-        radial-gradient(circle 4px at 25% 75%, #b06050 0%, transparent 100%),
-        radial-gradient(circle 5px at 50% 45%, #c88070 0%, transparent 100%),
-        radial-gradient(circle 3px at 65% 70%, #b86858 0%, transparent 100%);
-    }
-    .ba-card.before .photo::after{
+    .ba-card .photo::after{
       content:'※イメージ';
       position:absolute;
       bottom:8px;right:8px;
@@ -300,19 +264,7 @@
       background:rgba(0,0,0,0.3);
       padding:2px 6px;
       border-radius:4px;
-    }
-    .ba-card.after .photo{
-      background:linear-gradient(135deg, #fce8e0 0%, #f8dcd0 30%, #fae0d4 60%, #fceee8 100%);
-    }
-    .ba-card.after .photo::after{
-      content:'※イメージ';
-      position:absolute;
-      bottom:8px;right:8px;
-      font-size:10px;
-      color:rgba(0,0,0,0.4);
-      background:rgba(255,255,255,0.5);
-      padding:2px 6px;
-      border-radius:4px;
+      z-index:1;
     }
     .ba-arrow{
       position:absolute;
@@ -356,89 +308,14 @@
       text-align:center;
       padding:48px 16px;
     }
-    .ranking-badge{
-      position:relative;
-      display:inline-block;
-      margin-bottom:24px;
+    .ranking-emblem{
+      display:flex;
+      justify-content:center;
+      margin-bottom:16px;
     }
-    .ranking-badge .laurel{
-      position:relative;
-      display:inline-block;
-      padding:0 48px;
-    }
-    .ranking-badge .laurel::before,
-    .ranking-badge .laurel::after{
-      content:'🏆';
-      position:absolute;
-      top:50%;transform:translateY(-50%);
-      font-size:40px;
-    }
-    .ranking-badge .laurel::before{left:0;transform:translateY(-50%) scaleX(-1);}
-    .ranking-badge .laurel::after{right:0;}
-    .ranking-number{
-      font-family:'Montserrat',sans-serif;
-      font-size:80px;
-      font-weight:900;
-      background:linear-gradient(180deg, var(--gold) 0%, #a88030 100%);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-      line-height:1;
+    .ranking-laurel-svg{
       display:block;
-      filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));
     }
-    .ranking-wings{
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      margin-bottom:16px;
-    }
-    .wing{
-      font-size:32px;
-      color:var(--gold);
-    }
-    .wing.left{transform:scaleX(-1);}
-    .ranking-shield{
-      width:100px;height:100px;
-      background:linear-gradient(180deg, var(--gold) 0%, #a07820 100%);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin:0 8px;
-      box-shadow:0 4px 16px rgba(168,128,48,0.4), inset 0 2px 0 rgba(255,255,255,0.3);
-      position:relative;
-    }
-    .ranking-shield::before{
-      content:'';
-      position:absolute;
-      inset:4px;
-      border:2px solid rgba(255,255,255,0.3);
-      border-radius:50%;
-    }
-    .ranking-shield .num{
-      font-family:'Montserrat',sans-serif;
-      font-size:48px;
-      font-weight:900;
-      color:var(--white);
-      text-shadow:0 2px 4px rgba(0,0,0,0.2);
-    }
-    .ranking-laurel-wrap{
-      position:relative;
-      display:inline-block;
-      margin-bottom:16px;
-    }
-    .laurel-left, .laurel-right{
-      position:absolute;
-      top:50%;
-      font-size:60px;
-      color:var(--gold);
-      filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    }
-    .laurel-left{left:-40px;transform:translateY(-50%) scaleX(-1);}
-    .laurel-right{right:-40px;transform:translateY(-50%);}
 
     .ranking-text{
       font-family:'Noto Serif JP',serif;
@@ -820,7 +697,7 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-crown">👑</div>
+  <!-- crown removed -->
   <div class="hero-badge"><span>ニキビ跡ケア美容液 売上</span></div>
   <div class="hero-sales">
     <span class="number">150,000</span>
@@ -836,7 +713,9 @@
       <p class="line2">これ<em>1本</em>で<br>透明肌へ</p>
       <p class="line3">シワ・ニキビ跡・毛穴・保湿</p>
     </div>
-    <div class="hero-bottle"></div>
+    <div class="hero-bottle">
+      <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=320&q=80&auto=format" alt="AQUA CLEAR SERUM 商品イメージ">
+    </div>
   </div>
 </section>
 
@@ -848,11 +727,11 @@
     <div class="line"></div>
   </div>
   <ul class="problems-list">
-    <li><span class="icon">😣</span>ニキビ跡が全然消えない…</li>
-    <li><span class="icon">😰</span>毛穴の黒ずみが目立つ</li>
-    <li><span class="icon">😢</span>肌がザラザラでメイクがのらない</li>
-    <li><span class="icon">😞</span>高い化粧品を試しても変わらない</li>
-    <li><span class="icon">😫</span>マスクを外すのが怖い</li>
+    <li>ニキビ跡が全然消えない…</li>
+    <li>毛穴の黒ずみが目立つ</li>
+    <li>肌がザラザラでメイクがのらない</li>
+    <li>高い化粧品を試しても変わらない</li>
+    <li>マスクを外すのが怖い</li>
   </ul>
   <div class="problems-arrow">▼</div>
   <div class="problems-solution">
@@ -870,12 +749,16 @@
   <div class="ba-container">
     <div class="ba-card before" style="position:relative;">
       <div class="label">BEFORE</div>
-      <div class="photo"></div>
+      <div class="photo">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80&auto=format" alt="Before - 肌荒れの状態">
+      </div>
       <div class="ba-arrow">→</div>
     </div>
     <div class="ba-card after">
       <div class="label">AFTER</div>
-      <div class="photo"></div>
+      <div class="photo">
+        <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=400&q=80&auto=format" alt="After - クリアな素肌">
+      </div>
     </div>
   </div>
   <p class="ba-note">※個人の感想であり、効果には個人差があります</p>
@@ -887,21 +770,34 @@
 
 <!-- ===== AMAZON RANKING ===== -->
 <section class="ranking">
-  <div class="ranking-wings">
-    <span class="wing left">🪽</span>
-    <div class="ranking-shield">
-      <span class="num">1</span>
-    </div>
-    <span class="wing">🪽</span>
+  <div class="ranking-emblem">
+    <svg class="ranking-laurel-svg" viewBox="0 0 200 120" width="200" height="120">
+      <!-- Left laurel branch -->
+      <path d="M45,100 C40,85 30,75 25,60 C20,50 22,40 30,35 C35,38 38,45 36,55 C34,65 38,75 45,100Z" fill="#b8962e"/>
+      <path d="M50,90 C48,78 40,68 35,55 C30,45 33,37 40,33 C44,36 46,43 44,52 C42,62 45,72 50,90Z" fill="#c9a84c"/>
+      <path d="M55,82 C54,72 48,63 44,52 C40,43 43,36 49,33 C53,36 54,42 52,50 C50,58 52,68 55,82Z" fill="#b8962e"/>
+      <path d="M60,75 C60,66 55,58 52,48 C49,40 52,34 57,32 C61,35 62,40 60,47 C58,55 59,64 60,75Z" fill="#c9a84c"/>
+      <!-- Right laurel branch (mirrored) -->
+      <path d="M155,100 C160,85 170,75 175,60 C180,50 178,40 170,35 C165,38 162,45 164,55 C166,65 162,75 155,100Z" fill="#b8962e"/>
+      <path d="M150,90 C152,78 160,68 165,55 C170,45 167,37 160,33 C156,36 154,43 156,52 C158,62 155,72 150,90Z" fill="#c9a84c"/>
+      <path d="M145,82 C146,72 152,63 156,52 C160,43 157,36 151,33 C147,36 146,42 148,50 C150,58 148,68 145,82Z" fill="#b8962e"/>
+      <path d="M140,75 C140,66 145,58 148,48 C151,40 148,34 143,32 C139,35 138,40 140,47 C142,55 141,64 140,75Z" fill="#c9a84c"/>
+      <!-- Center No.1 -->
+      <circle cx="100" cy="52" r="30" fill="url(#goldGrad)" stroke="#a07820" stroke-width="2"/>
+      <circle cx="100" cy="52" r="25" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+      <text x="100" y="60" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="24" font-weight="900" fill="#fff">1</text>
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#8b6914"/>
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
-  <div class="ranking-laurel-wrap">
-    <span class="laurel-left">🌿</span>
-    <p class="ranking-text">
-      <span class="amazon">Amazon</span>ランキング<br>
-      <strong style="font-size:28px;">No.1</strong> 獲得！
-    </p>
-    <span class="laurel-right">🌿</span>
-  </div>
+  <p class="ranking-text">
+    <span class="amazon">Amazon</span>ランキング<br>
+    <strong style="font-size:28px;">No.1</strong> 獲得！
+  </p>
   <p class="ranking-sub">※2025年○月 美容液カテゴリ デイリーランキング</p>
 
   <div class="ranking-cards">
@@ -932,31 +828,39 @@
   </div>
   <div class="ing-cards">
     <div class="ing-card">
-      <div class="ing-icon">💎</div>
+      <div class="ing-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28"><polygon points="14,2 17,10 26,10 19,16 21,25 14,20 7,25 9,16 2,10 11,10" fill="#3a7bd5"/></svg>
+      </div>
       <div>
         <h3>高濃度ビタミンC誘導体</h3>
-        <p>通常の100倍の浸透力。メラニンの生成を抑え、ニキビ跡の色素沈着にアプローチします。</p>
+        <p>通常の100倍の浸透力。<br>メラニンの生成を抑え、<br>ニキビ跡の色素沈着にアプローチします。</p>
       </div>
     </div>
     <div class="ing-card">
-      <div class="ing-icon">🧬</div>
+      <div class="ing-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 C14,4 8,10 8,16 C8,20 10.7,24 14,24 C17.3,24 20,20 20,16 C20,10 14,4 14,4Z" fill="#3a7bd5"/></svg>
+      </div>
       <div>
         <h3>ヒト幹細胞培養液</h3>
-        <p>肌本来のターンオーバーをサポート。年齢に負けない透明感のある素肌へ導きます。</p>
+        <p>肌本来のターンオーバーをサポート。<br>年齢に負けない<br>透明感のある素肌へ導きます。</p>
       </div>
     </div>
     <div class="ing-card">
-      <div class="ing-icon">💧</div>
+      <div class="ing-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="#3a7bd5" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="#3a7bd5"/></svg>
+      </div>
       <div>
         <h3>5種のヒアルロン酸</h3>
-        <p>異なるサイズの分子が角質層のすみずみまで浸透。長時間うるおいをキープします。</p>
+        <p>異なるサイズの分子が<br>角質層のすみずみまで浸透。<br>長時間うるおいをキープします。</p>
       </div>
     </div>
     <div class="ing-card">
-      <div class="ing-icon">🌿</div>
+      <div class="ing-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 L14,24 M8,8 L14,14 M20,8 L14,14 M8,18 L14,14 M20,18 L14,14" stroke="#3a7bd5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </div>
       <div>
         <h3>ツボクサエキス（CICA）</h3>
-        <p>韓国で大ブームの注目成分。肌荒れを防ぎ、健やかな肌環境を整えます。</p>
+        <p>韓国で大ブームの注目成分。<br>肌荒れを防ぎ、<br>健やかな肌環境を整えます。</p>
       </div>
     </div>
   </div>
@@ -974,21 +878,21 @@
       <div class="step-num">1</div>
       <div>
         <h3>洗顔後、適量を手に取る</h3>
-        <p>2〜3プッシュが目安です。朝晩の洗顔後、化粧水の前にお使いください。</p>
+        <p>2〜3プッシュが目安です。<br>朝晩の洗顔後、<br>化粧水の前にお使いください。</p>
       </div>
     </div>
     <div class="howto-step">
       <div class="step-num">2</div>
       <div>
         <h3>気になる部分を中心に塗布</h3>
-        <p>ニキビ跡や毛穴が気になる部分に、やさしくなじませてください。</p>
+        <p>ニキビ跡や毛穴が気になる部分に、<br>やさしくなじませてください。</p>
       </div>
     </div>
     <div class="howto-step">
       <div class="step-num">3</div>
       <div>
         <h3>ハンドプレスで浸透させる</h3>
-        <p>手のひらで顔全体を包み込むように、10秒ほどハンドプレスして完了です。</p>
+        <p>手のひらで顔全体を<br>包み込むように、<br>10秒ほどハンドプレスして完了です。</p>
       </div>
     </div>
   </div>
@@ -1014,12 +918,12 @@
     <div class="tokuten-card">
       <span class="tk-num">特典 02</span>
       <p class="tk-title">2回目以降も <span class="red">20%OFF</span></p>
-      <p class="tk-detail">2回目以降は2ヶ月毎に2個を20%OFFの2,992円(税込)×2個でお届け。送料無料。</p>
+      <p class="tk-detail">2回目以降は2ヶ月毎に2個を<br>20%OFFの2,992円(税込)×2個でお届け。<br>送料無料。</p>
     </div>
     <div class="tokuten-card">
       <span class="tk-num">特典 03</span>
       <p class="tk-title">いつでも<span class="red">解約OK</span></p>
-      <p class="tk-detail">回数縛りなし。お届け予定日の10日前までにお電話いただければ、いつでも解約できます。</p>
+      <p class="tk-detail">回数縛りなし。<br>お届け予定日の10日前までに<br>お電話いただければ、<br>いつでも解約できます。</p>
     </div>
   </div>
 </section>
@@ -1037,28 +941,28 @@
         <span class="q-icon">Q</span>
         <span>敏感肌でも使えますか？</span>
       </div>
-      <div class="faq-a">はい。パラベン・合成着色料・鉱物油・アルコール・紫外線吸収剤を使用しておりません。敏感肌の方にも安心してお使いいただけます。</div>
+      <div class="faq-a">はい。<br>パラベン・合成着色料・鉱物油・<br>アルコール・紫外線吸収剤を<br>使用しておりません。<br>敏感肌の方にも安心して<br>お使いいただけます。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">
         <span class="q-icon">Q</span>
         <span>どのくらいで効果を実感できますか？</span>
       </div>
-      <div class="faq-a">個人差はありますが、多くのお客様が1ヶ月程度で肌のハリや透明感を実感されています。ニキビ跡のケアには2〜3ヶ月の継続がおすすめです。</div>
+      <div class="faq-a">個人差はありますが、<br>多くのお客様が1ヶ月程度で<br>肌のハリや透明感を実感されています。<br>ニキビ跡のケアには<br>2〜3ヶ月の継続がおすすめです。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">
         <span class="q-icon">Q</span>
         <span>1本でどのくらい持ちますか？</span>
       </div>
-      <div class="faq-a">朝晩の使用で約30日分です。30g入りのポンプ式ボトルで、衛生的にお使いいただけます。</div>
+      <div class="faq-a">朝晩の使用で約30日分です。<br>30g入りのポンプ式ボトルで、<br>衛生的にお使いいただけます。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">
         <span class="q-icon">Q</span>
         <span>定期コースの解約方法は？</span>
       </div>
-      <div class="faq-a">次回お届け予定日の10日前までに、お電話（0120-XXX-XXX／平日10時〜18時）にてご連絡ください。回数縛りはございません。</div>
+      <div class="faq-a">次回お届け予定日の10日前までに、<br>お電話（0120-XXX-XXX／<br>平日10時〜18時）にて<br>ご連絡ください。<br>回数縛りはございません。</div>
     </div>
   </div>
 </section>
