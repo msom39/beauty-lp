@@ -27,503 +27,350 @@
       --gold:#c9a84c;
       --gold-dark:#a07820;
       --gold-light:#e8d48b;
-      --red:#c0392b;
-      --orange:#e67e22;
       --white:#ffffff;
       --cream:#f8fbfd;
     }
 
-    /* ===== HERO SECTION - SHIRORU STYLE ===== */
+    /* ===== HERO - 参考画像をそのまま表示 ===== */
     .hero{
-      background:#fff;
       position:relative;
       overflow:hidden;
+      background:#fff;
     }
-    /* Gold top banner */
-    .hero-gold-banner{
-      background:linear-gradient(90deg, #e8d48b 0%, #c9a84c 30%, #e8d48b 50%, #c9a84c 70%, #e8d48b 100%);
-      text-align:center;
-      padding:8px 16px;
-      position:relative;
-      z-index:5;
-    }
-    .hero-gold-banner p{
-      font-size:12px;
-      font-weight:700;
-      color:#5a4a20;
-      letter-spacing:0.5px;
-    }
-    .hero-gold-banner .no1{
-      font-family:'Montserrat',sans-serif;
-      font-size:16px;
-      font-weight:900;
-      color:#5a4a20;
-    }
-
-    .hero-main{
+    .hero-image-wrap{
       position:relative;
       max-width:500px;
       margin:0 auto;
-      background:linear-gradient(180deg, #e8f4fa 0%, #f0f8fc 40%, #fff 100%);
     }
-    /* Main catchcopy over image */
-    .hero-catch{
+    .hero-image-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    /* テキストオーバーレイ（商品名・キャッチコピー変更用） */
+    .hero-text-overlay{
       position:absolute;
-      top:12px;
+      top:0;
       left:0;
       right:0;
-      text-align:center;
-      z-index:4;
+      bottom:0;
+      pointer-events:none;
     }
-    .hero-catch .sub{
+    /* 「シミ予防しながら」→「ニキビ跡ケアしながら」上書き */
+    .hero-text-overlay .catch-replace{
+      position:absolute;
+      top:16.5%;
+      left:5%;
+      right:5%;
+      text-align:center;
+      background:rgba(255,255,255,0.92);
+      padding:4px 0;
+      border-radius:2px;
+    }
+    .hero-text-overlay .catch-replace .sub{
       font-size:13px;
-      color:var(--text-mid);
+      color:#888;
       letter-spacing:2px;
-      margin-bottom:2px;
     }
-    .hero-catch .main-text{
+    .hero-text-overlay .catch-replace .main-text{
       font-family:'Noto Serif JP',serif;
-      font-size:32px;
+      font-size:28px;
       font-weight:900;
-      color:var(--text-dark);
-      line-height:1.3;
+      color:#666;
       letter-spacing:6px;
-    }
-    .hero-catch .main-text em{
-      font-style:normal;
-      position:relative;
-    }
-
-    /* Woman image */
-    .hero-model-wrap{
-      position:relative;
-      width:100%;
-    }
-    .hero-model{
-      width:100%;
-      display:block;
-    }
-
-    /* Bubble badges floating around woman */
-    .hero-bubble{
-      position:absolute;
-      z-index:3;
-      border-radius:50%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.7) 0%, rgba(91,181,213,0.35) 40%, rgba(91,181,213,0.5) 100%);
-      border:1.5px solid rgba(255,255,255,0.7);
-      box-shadow:0 4px 20px rgba(91,181,213,0.25), inset 0 -2px 8px rgba(91,181,213,0.15);
-      backdrop-filter:blur(4px);
-    }
-    .hero-bubble .bub-small{
-      font-size:9px;
-      font-weight:700;
-      color:#2b7a9e;
       line-height:1.3;
     }
-    .hero-bubble .bub-big{
-      font-size:12px;
-      font-weight:900;
-      color:#1a5a7a;
-      line-height:1.2;
+    /* 商品名上書き（左下エリア） */
+    .hero-text-overlay .product-replace{
+      position:absolute;
+      bottom:12%;
+      left:3%;
+      background:rgba(255,255,255,0.95);
+      padding:4px 8px;
+      border-radius:2px;
     }
-    .hero-bubble .bub-bottom{
+    .hero-text-overlay .product-replace span{
+      font-family:'Montserrat',sans-serif;
       font-size:9px;
       font-weight:700;
-      color:#2b7a9e;
+      color:#5bb5d5;
+      letter-spacing:1px;
     }
-    /* Bubble 1 - top right */
-    .hero-bubble-1{
-      width:110px;height:110px;
-      top:30%;right:5%;
-    }
-    /* Bubble 2 - middle right */
-    .hero-bubble-2{
-      width:100px;height:100px;
-      top:55%;right:8%;
-    }
-    /* Side text */
-    .hero-side-text{
+    /* ブランド名上書き（最上部） */
+    .hero-text-overlay .brand-replace{
       position:absolute;
-      left:4%;
-      top:50%;
-      z-index:3;
-      writing-mode:vertical-rl;
-      font-size:14px;
-      font-weight:700;
-      color:var(--aqua-dark);
-      letter-spacing:3px;
-      text-shadow:0 0 8px rgba(255,255,255,0.9);
+      top:1%;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(255,255,255,0.95);
+      padding:2px 12px;
+      border-radius:2px;
     }
-
-    /* Product small at bottom */
-    .hero-product-small{
-      position:absolute;
-      bottom:10px;
-      left:8%;
-      width:70px;
-      z-index:3;
-    }
-    .hero-product-small img{
-      width:100%;
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
-      border-radius:6px;
-    }
-
-    /* ===== PRODUCT WATER SECTION ===== */
-    .product-water{
-      position:relative;
-      background:linear-gradient(180deg, #daf2fc 0%, #c8e8f6 40%, #b5dcee 100%);
-      padding:40px 16px;
-      text-align:center;
-      overflow:hidden;
-    }
-    .product-water::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;right:0;bottom:0;
-      background:
-        radial-gradient(ellipse 200px 40px at 50% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(ellipse 160px 30px at 30% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
-        radial-gradient(ellipse 140px 25px at 70% 80%, rgba(255,255,255,0.25) 0%, transparent 100%);
-      animation:waterShimmer 4s ease-in-out infinite;
-    }
-    @keyframes waterShimmer{
-      0%,100%{opacity:0.6;}
-      50%{opacity:1;}
-    }
-    /* Water ripple lines */
-    .water-ripple{
-      position:absolute;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,0.4);
-      animation:rippleExpand 3s ease-out infinite;
-    }
-    .water-ripple:nth-child(1){width:200px;height:60px;bottom:20%;left:10%;animation-delay:0s;}
-    .water-ripple:nth-child(2){width:260px;height:50px;bottom:15%;right:5%;animation-delay:1s;}
-    .water-ripple:nth-child(3){width:180px;height:40px;bottom:30%;left:30%;animation-delay:2s;}
-    @keyframes rippleExpand{
-      0%{transform:scale(0.8);opacity:0.8;}
-      100%{transform:scale(1.3);opacity:0;}
-    }
-    .product-water-img{
-      position:relative;
-      z-index:2;
-      max-width:280px;
-      margin:0 auto;
-    }
-    .product-water-img img{
-      width:100%;
-      filter:drop-shadow(0 8px 24px rgba(43,122,158,0.3));
-      border-radius:8px;
-    }
-    .product-water-title{
-      position:relative;
-      z-index:2;
-      margin-top:16px;
-    }
-    .product-water-title .pwt-sub{
+    .hero-text-overlay .brand-replace span{
+      font-family:'Montserrat',sans-serif;
       font-size:11px;
-      color:var(--text-mid);
+      font-weight:800;
+      color:var(--aqua-dark);
       letter-spacing:2px;
     }
-    .product-water-title h2{
-      font-family:'Noto Serif JP',serif;
-      font-size:22px;
-      font-weight:900;
-      color:var(--text-dark);
-      line-height:1.5;
-    }
-    .product-water-title h2 em{
-      font-style:normal;
-      color:var(--aqua-dark);
-      font-size:26px;
-    }
-    .product-water-title .pwt-items{
-      font-size:12px;
-      color:var(--text-light);
-      margin-top:4px;
-    }
-
-    /* ===== SECTION COMMON ===== */
-    section{padding:48px 16px;}
-    .section-title{
-      text-align:center;
-      margin-bottom:32px;
-    }
-    .section-title .en{
-      font-family:'Montserrat',sans-serif;
-      font-size:11px;
-      font-weight:700;
-      color:var(--aqua);
-      letter-spacing:3px;
-      text-transform:uppercase;
-      display:block;
-      margin-bottom:4px;
-    }
-    .section-title h2{
-      font-family:'Noto Serif JP',serif;
-      font-size:22px;
-      font-weight:900;
-      color:var(--text-dark);
-      line-height:1.4;
-    }
-    .section-title .line{
-      width:40px;height:2px;
-      background:linear-gradient(90deg, var(--aqua), var(--aqua-light));
-      margin:12px auto 0;
-    }
-
-    /* ===== PROBLEMS SECTION ===== */
-    .problems{
-      background:var(--cream);
-    }
-    .problems-list{
-      max-width:400px;
-      margin:0 auto;
-    }
-    .problems-list li{
-      background:var(--white);
-      border-radius:12px;
-      padding:14px 20px;
-      margin-bottom:10px;
-      font-size:14px;
-      font-weight:500;
-      color:var(--text-dark);
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-      border-left:4px solid var(--aqua-light);
-    }
-    .problems-arrow{
-      text-align:center;
-      margin:20px 0;
-      font-size:28px;
-      color:var(--aqua);
-    }
-    .problems-solution{
-      text-align:center;
-      background:linear-gradient(135deg, var(--aqua-mid), var(--aqua-light));
-      color:var(--white);
-      border-radius:16px;
-      padding:24px 20px;
-      max-width:400px;
-      margin:0 auto;
-    }
-    .problems-solution .big{
-      font-family:'Noto Serif JP',serif;
-      font-size:20px;
-      font-weight:900;
-      line-height:1.5;
-    }
-    .problems-solution .big em{
-      font-style:normal;
-      font-size:26px;
-    }
-
-    /* ===== 4つのアプローチ - BUBBLE STYLE ===== */
-    .features{
-      background:linear-gradient(180deg, var(--aqua-pale) 0%, #d0edf8 100%);
-      text-align:center;
-    }
-    .features-header{
-      margin-bottom:28px;
-    }
-    .features-header .label{
-      display:inline-block;
-      background:rgba(0,0,0,0.65);
-      color:#fff;
-      font-size:12px;
-      font-weight:700;
-      padding:6px 18px;
-      border-radius:4px;
-      margin-bottom:14px;
-    }
-    .features-header h2{
-      font-family:'Noto Serif JP',serif;
-      font-size:18px;
-      font-weight:900;
-      color:var(--aqua-dark);
-      line-height:1.5;
-    }
-    .features-header h2 em{
-      font-style:normal;
-      color:var(--aqua-dark);
-      font-size:28px;
-      display:block;
-    }
-    .bubble-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-      max-width:340px;
-      margin:0 auto;
-    }
-    .bubble-item{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-    .bubble-circle{
-      width:130px;height:130px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-      background:radial-gradient(circle at 35% 25%, rgba(255,255,255,0.8) 0%, rgba(135,210,240,0.5) 30%, rgba(91,181,213,0.55) 60%, rgba(70,160,200,0.65) 100%);
-      border:2px solid rgba(255,255,255,0.6);
-      box-shadow:
-        0 6px 24px rgba(91,181,213,0.3),
-        inset 0 -4px 12px rgba(91,181,213,0.2),
-        inset 0 2px 8px rgba(255,255,255,0.5);
-    }
-    .bubble-circle::before{
-      content:'';
+    /* 底部テキスト上書き */
+    .hero-text-overlay .bottom-replace{
       position:absolute;
-      top:12%;left:20%;
-      width:30%;height:20%;
-      background:radial-gradient(ellipse, rgba(255,255,255,0.7) 0%, transparent 100%);
-      border-radius:50%;
-      transform:rotate(-15deg);
-    }
-    .bubble-circle .bub-text{
-      font-size:15px;
-      font-weight:900;
-      color:#1a5a7a;
-      line-height:1.3;
-      position:relative;
-      z-index:1;
-    }
-
-    /* ===== AMAZON RANKING - LAUREL WREATH STYLE ===== */
-    .ranking{
-      background:var(--white);
+      bottom:0;
+      left:0;
+      right:0;
+      background:rgba(255,255,255,0.95);
+      padding:6px 12px;
       text-align:center;
-      padding:48px 16px;
     }
-    .ranking-badges-row{
-      display:flex;
-      gap:10px;
-      max-width:380px;
-      margin:0 auto 24px;
-      justify-content:center;
-    }
-    .rank-badge{
-      flex:1;
-      text-align:center;
-      background:linear-gradient(180deg, #fefcf5 0%, #f5eedc 100%);
-      border-radius:12px;
-      padding:20px 8px 16px;
-      border:1.5px solid #e0d0a0;
-      box-shadow:0 2px 10px rgba(201,168,76,0.12);
-      position:relative;
-    }
-    .rank-badge .rb-laurel{
-      position:relative;
-      width:90px;
-      height:80px;
-      margin:0 auto 4px;
-    }
-    .rank-badge .rb-cat{
-      font-size:9px;
-      font-weight:700;
-      color:#7a6420;
+    .hero-text-overlay .bottom-replace span{
+      font-size:10px;
+      color:#888;
       letter-spacing:0.5px;
-      position:absolute;
-      top:18px;
-      left:50%;
-      transform:translateX(-50%);
-      white-space:nowrap;
-      z-index:1;
     }
-    .rank-badge .rb-label{
-      font-size:7px;
-      color:#a08840;
-      font-weight:600;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      position:absolute;
-      top:32px;
-      left:50%;
-      transform:translateX(-50%);
-      z-index:1;
-    }
-    .rank-badge .rb-no{
-      font-family:'Montserrat',sans-serif;
-      font-size:28px;
-      font-weight:900;
-      color:#8a6c14;
-      line-height:1;
-      position:absolute;
-      bottom:8px;
-      left:50%;
-      transform:translateX(-50%);
-      z-index:1;
-      font-style:italic;
+    .hero-text-overlay .bottom-replace strong{
+      color:var(--aqua-dark);
     }
 
-    .ranking-text{
-      font-family:'Noto Serif JP',serif;
-      font-size:20px;
-      font-weight:900;
-      color:#5a4a20;
-      line-height:1.5;
-      margin-bottom:8px;
-    }
-    .ranking-text .amazon{
-      color:#ff9900;
-      font-family:'Montserrat',sans-serif;
-      font-weight:800;
-    }
-    .ranking-sub{
-      font-size:12px;
-      color:#bbb;
-    }
-
-    /* ===== INGREDIENTS ===== */
-    .ingredients{
+    /* ===== RANKING - 実画像をそのまま使用 ===== */
+    .ranking-section{
+      padding:30px 16px;
+      text-align:center;
       background:var(--cream);
     }
-    .ing-cards{
-      max-width:420px;
-      margin:0 auto;
+    .ranking-section .ranking-badge{
+      max-width:180px;
+      margin:0 auto 12px;
     }
-    .ing-card{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      background:var(--white);
-      border-radius:14px;
-      padding:18px;
-      margin-bottom:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.04);
-    }
-    .ing-card .ing-icon{
-      width:48px;height:48px;
-      min-width:48px;
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg, var(--aqua-pale), #d4eef8);
-    }
-    .ing-card h3{
-      font-size:14px;
-      font-weight:700;
-      color:var(--text-dark);
-      margin-bottom:2px;
-    }
-    .ing-card p{
-      font-size:12px;
+    .ranking-section .ranking-text{
+      font-size:13px;
       color:var(--text-mid);
       line-height:1.6;
     }
+    .ranking-section .ranking-text strong{
+      color:var(--gold);
+      font-size:15px;
+    }
 
-    /* ===== HOW TO USE ===== */
+    /* ===== 悩みセクション ===== */
+    .troubles{
+      padding:40px 16px;
+      background:#fff;
+      text-align:center;
+    }
+    .troubles h2{
+      font-size:18px;
+      color:var(--text-dark);
+      margin-bottom:20px;
+      font-weight:700;
+      line-height:1.6;
+    }
+    .troubles h2 span{
+      color:var(--aqua-dark);
+    }
+    .trouble-list{
+      max-width:360px;
+      margin:0 auto;
+      text-align:left;
+    }
+    .trouble-list li{
+      font-size:14px;
+      color:var(--text-mid);
+      padding:8px 0;
+      border-bottom:1px dashed var(--aqua-light);
+      padding-left:20px;
+      position:relative;
+    }
+    .trouble-list li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--aqua);
+      font-weight:700;
+    }
+
+    /* ===== 解決宣言 ===== */
+    .solution{
+      padding:30px 16px;
+      background:linear-gradient(135deg, var(--aqua-pale), #fff);
+      text-align:center;
+    }
+    .solution p{
+      font-size:14px;
+      color:var(--text-mid);
+      margin-bottom:8px;
+    }
+    .solution .brand-name{
+      font-family:'Montserrat',sans-serif;
+      font-size:20px;
+      font-weight:800;
+      color:var(--aqua-dark);
+      letter-spacing:2px;
+    }
+    .solution .resolve{
+      font-size:16px;
+      font-weight:700;
+      color:var(--text-dark);
+    }
+
+    /* ===== 4つのアプローチ ===== */
+    .approach{
+      padding:40px 16px;
+      background:#fff;
+    }
+    .approach h2{
+      text-align:center;
+      font-size:18px;
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:8px;
+    }
+    .approach h2 span{
+      font-family:'Montserrat',sans-serif;
+      color:var(--aqua-dark);
+    }
+    .approach .approach-sub{
+      text-align:center;
+      font-size:12px;
+      color:var(--text-light);
+      margin-bottom:24px;
+      letter-spacing:1px;
+    }
+    .approach-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      max-width:400px;
+      margin:0 auto;
+    }
+    .approach-item{
+      text-align:center;
+      padding:20px 8px;
+      background:radial-gradient(circle at 30% 30%, rgba(184,228,243,0.3), rgba(91,181,213,0.08));
+      border-radius:50%;
+      aspect-ratio:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      border:2px solid rgba(91,181,213,0.2);
+      box-shadow:
+        inset 0 -4px 8px rgba(91,181,213,0.1),
+        0 2px 8px rgba(91,181,213,0.1);
+    }
+    .approach-item .approach-label{
+      font-size:10px;
+      color:var(--aqua);
+      font-weight:700;
+      letter-spacing:1px;
+      margin-bottom:4px;
+      font-family:'Montserrat',sans-serif;
+    }
+    .approach-item .approach-title{
+      font-size:13px;
+      font-weight:700;
+      color:var(--text-dark);
+      line-height:1.4;
+    }
+    .approach-item .approach-desc{
+      font-size:10px;
+      color:var(--text-light);
+      margin-top:4px;
+      line-height:1.4;
+    }
+
+    /* ===== 成分セクション ===== */
+    .ingredients{
+      padding:40px 16px;
+      background:var(--aqua-ultra);
+    }
+    .ingredients h2{
+      text-align:center;
+      font-size:18px;
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:24px;
+    }
+    .ingredient-card{
+      background:#fff;
+      border-radius:12px;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:0 2px 12px rgba(91,181,213,0.08);
+      max-width:400px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .ingredient-card h3{
+      font-size:15px;
+      font-weight:700;
+      color:var(--aqua-dark);
+      margin-bottom:8px;
+    }
+    .ingredient-card p{
+      font-size:13px;
+      color:var(--text-mid);
+      line-height:1.7;
+    }
+
+    /* ===== 口コミ ===== */
+    .reviews{
+      padding:40px 16px;
+      background:#fff;
+    }
+    .reviews h2{
+      text-align:center;
+      font-size:18px;
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:24px;
+    }
+    .review-card{
+      background:var(--aqua-ultra);
+      border-radius:12px;
+      padding:20px;
+      margin-bottom:16px;
+      max-width:400px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .review-card .review-header{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+    }
+    .review-card .review-name{
+      font-size:13px;
+      font-weight:700;
+      color:var(--text-dark);
+    }
+    .review-card .review-age{
+      font-size:11px;
+      color:var(--text-light);
+    }
+    .review-card .review-stars{
+      color:var(--gold);
+      font-size:12px;
+      letter-spacing:2px;
+    }
+    .review-card .review-text{
+      font-size:13px;
+      color:var(--text-mid);
+      line-height:1.7;
+    }
+
+    /* ===== 使い方 ===== */
     .howto{
-      background:linear-gradient(180deg, var(--aqua-pale) 0%, var(--white) 100%);
+      padding:40px 16px;
+      background:var(--cream);
+    }
+    .howto h2{
+      text-align:center;
+      font-size:18px;
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:24px;
     }
     .howto-steps{
       max-width:400px;
@@ -531,641 +378,339 @@
     }
     .howto-step{
       display:flex;
-      gap:14px;
+      gap:12px;
+      margin-bottom:20px;
       align-items:flex-start;
-      margin-bottom:24px;
-      position:relative;
-    }
-    .howto-step:not(:last-child)::after{
-      content:'';
-      position:absolute;
-      left:20px;top:48px;
-      width:2px;
-      height:calc(100% - 16px);
-      background:linear-gradient(180deg, var(--aqua-light), var(--aqua-pale));
     }
     .howto-step .step-num{
-      width:40px;height:40px;
-      min-width:40px;
-      background:linear-gradient(135deg, var(--aqua), var(--aqua-mid));
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      font-family:'Montserrat',sans-serif;
-      font-size:16px;
-      font-weight:800;
-      color:var(--white);
-      position:relative;
-      z-index:1;
-    }
-    .howto-step h3{
-      font-size:14px;
-      font-weight:700;
-      color:var(--text-dark);
-      margin-bottom:2px;
-    }
-    .howto-step p{
-      font-size:12px;
-      color:var(--text-mid);
-      line-height:1.6;
-    }
-
-    /* ===== TOKUTEN (3大特典) ===== */
-    .tokuten{
-      background:linear-gradient(170deg, #d6ecf5 0%, #c4e3f0 50%, #b0d8ea 100%);
-      text-align:center;
-      padding:48px 16px;
-    }
-    .tokuten-title{
-      font-family:'Noto Serif JP',serif;
-      margin-bottom:28px;
-    }
-    .tokuten-title .sub{
-      font-size:13px;
-      color:var(--text-mid);
-      letter-spacing:2px;
-    }
-    .tokuten-title .main{
-      font-size:36px;
-      font-weight:900;
-      color:var(--text-dark);
-    }
-    .tokuten-cards{
-      max-width:400px;
-      margin:0 auto;
-    }
-    .tokuten-card{
-      background:rgba(255,255,255,0.8);
-      border:1px solid rgba(255,255,255,0.9);
-      border-radius:16px;
-      padding:22px 20px;
-      margin-bottom:14px;
-      backdrop-filter:blur(8px);
-      box-shadow:0 2px 12px rgba(0,0,0,0.06);
-    }
-    .tokuten-card .tk-num{
-      display:inline-block;
+      width:32px;
+      height:32px;
       background:var(--aqua);
       color:#fff;
-      border-radius:20px;
-      padding:3px 14px;
-      font-family:'Montserrat',sans-serif;
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:1px;
-      margin-bottom:10px;
-    }
-    .tokuten-card .tk-title{
-      font-family:'Noto Serif JP',serif;
-      font-size:18px;
-      font-weight:900;
-      color:var(--text-dark);
-      margin-bottom:4px;
-    }
-    .tokuten-card .tk-title .red{
-      color:var(--red);
-      font-size:24px;
-    }
-    .tokuten-card .tk-detail{
-      font-size:12px;
-      color:var(--text-mid);
-      line-height:1.6;
-    }
-    .tokuten-card .price-row{
+      border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px;
-      margin-top:10px;
-    }
-    .tokuten-card .old-price{
-      font-size:14px;
-      color:var(--text-light);
-      text-decoration:line-through;
-    }
-    .tokuten-card .arrow-r{font-size:18px;color:var(--aqua);}
-    .tokuten-card .new-price{
       font-family:'Montserrat',sans-serif;
-      font-size:32px;
-      font-weight:900;
-      color:var(--text-dark);
+      font-weight:800;
+      font-size:14px;
+      flex-shrink:0;
     }
-    .tokuten-card .new-price .yen{font-size:14px;font-weight:700;}
-    .tokuten-card .new-price .tax{font-size:10px;font-weight:400;color:var(--text-light);}
+    .howto-step .step-content h3{
+      font-size:14px;
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:4px;
+    }
+    .howto-step .step-content p{
+      font-size:12px;
+      color:var(--text-mid);
+    }
+
+    /* ===== CTA ===== */
+    .cta{
+      padding:40px 16px;
+      background:linear-gradient(135deg, var(--aqua-dark), var(--aqua));
+      text-align:center;
+    }
+    .cta .cta-label{
+      font-size:12px;
+      color:rgba(255,255,255,0.8);
+      margin-bottom:4px;
+      letter-spacing:1px;
+    }
+    .cta .cta-price{
+      font-size:14px;
+      color:#fff;
+      margin-bottom:4px;
+    }
+    .cta .cta-price .price-num{
+      font-family:'Montserrat',sans-serif;
+      font-size:36px;
+      font-weight:900;
+      color:#fff;
+    }
+    .cta .cta-price .yen{
+      font-size:18px;
+    }
+    .cta .cta-price .tax{
+      font-size:11px;
+      color:rgba(255,255,255,0.7);
+    }
+    .cta .cta-note{
+      font-size:11px;
+      color:rgba(255,255,255,0.7);
+      margin-bottom:16px;
+    }
+    .cta-btn{
+      display:inline-block;
+      background:linear-gradient(135deg, var(--gold-light), var(--gold));
+      color:#fff;
+      font-size:16px;
+      font-weight:700;
+      padding:16px 40px;
+      border-radius:50px;
+      letter-spacing:2px;
+      box-shadow:0 4px 16px rgba(201,168,76,0.4);
+      transition:transform 0.2s;
+    }
+    .cta-btn:hover{
+      transform:translateY(-2px);
+    }
 
     /* ===== FAQ ===== */
     .faq{
-      background:var(--cream);
+      padding:40px 16px;
+      background:#fff;
     }
-    .faq-list{
-      max-width:420px;
-      margin:0 auto;
+    .faq h2{
+      text-align:center;
+      font-size:18px;
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:24px;
     }
     .faq-item{
-      background:var(--white);
-      border-radius:12px;
-      margin-bottom:10px;
-      overflow:hidden;
-      box-shadow:0 2px 8px rgba(0,0,0,0.04);
+      max-width:400px;
+      margin:0 auto 16px;
+      border-bottom:1px solid var(--aqua-pale);
+      padding-bottom:16px;
     }
-    .faq-q{
-      padding:14px 18px;
+    .faq-item .faq-q{
+      font-size:14px;
       font-weight:700;
-      font-size:13px;
       color:var(--text-dark);
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      border-bottom:1px solid #f0f0f0;
+      margin-bottom:8px;
+      padding-left:24px;
+      position:relative;
     }
-    .faq-q .q-icon{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:22px;height:22px;
-      min-width:22px;
-      background:var(--aqua);
-      color:var(--white);
-      border-radius:50%;
+    .faq-item .faq-q::before{
+      content:"Q";
+      position:absolute;
+      left:0;
+      color:var(--aqua);
       font-family:'Montserrat',sans-serif;
-      font-size:11px;
       font-weight:800;
     }
-    .faq-a{
-      padding:14px 18px 14px 50px;
-      font-size:12px;
-      color:var(--text-mid);
-      line-height:1.7;
-    }
-
-    /* ===== COMPANY ===== */
-    .company{
-      background:var(--white);
-      padding:32px 16px 120px;
-    }
-    .company-table{
-      max-width:420px;
-      margin:0 auto;
-      font-size:12px;
-    }
-    .company-table dl{
-      display:flex;
-      border-bottom:1px solid #f0f0f0;
-      padding:8px 0;
-    }
-    .company-table dt{
-      width:90px;
-      min-width:90px;
-      font-weight:700;
-      color:var(--text-dark);
-    }
-    .company-table dd{
-      color:var(--text-mid);
-    }
-
-    /* ===== FIXED CTA BAR ===== */
-    .fixed-cta{
-      position:fixed;
-      bottom:0;left:0;right:0;
-      z-index:1000;
-      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,1));
-      box-shadow:0 -4px 20px rgba(0,0,0,0.12);
-      padding:8px 16px;
-      padding-bottom:max(8px, env(safe-area-inset-bottom));
-    }
-    .cta-inner{
-      max-width:420px;
-      margin:0 auto;
-      text-align:center;
-    }
-    .cta-top-text{
-      font-size:11px;
-      font-weight:700;
-      color:var(--red);
-      margin-bottom:4px;
-    }
-    .cta-top-text span{
-      font-family:'Montserrat',sans-serif;
-      font-size:16px;
-      font-weight:900;
-    }
-    .cta-button{
-      display:block;
-      width:100%;
-      background:linear-gradient(180deg, #ff8c00 0%, #e67e22 50%, #d35400 100%);
-      color:var(--white);
-      border:none;
-      border-radius:60px;
-      padding:12px 20px;
-      font-size:17px;
-      font-weight:900;
-      text-align:center;
-      cursor:pointer;
-      box-shadow:0 4px 16px rgba(230,126,34,0.4);
-      position:relative;
-      overflow:hidden;
-      transition:transform 0.2s;
-    }
-    .cta-button:active{transform:scale(0.98);}
-    .cta-button::after{
-      content:'\25B6';
-      position:absolute;
-      right:20px;top:50%;
-      transform:translateY(-50%);
+    .faq-item .faq-a{
       font-size:13px;
-      opacity:0.8;
+      color:var(--text-mid);
+      padding-left:24px;
+      position:relative;
     }
-    .cta-button .cta-small{
-      font-size:11px;
-      font-weight:500;
-      display:block;
-      opacity:0.85;
-      margin-top:1px;
+    .faq-item .faq-a::before{
+      content:"A";
+      position:absolute;
+      left:0;
+      color:var(--gold);
+      font-family:'Montserrat',sans-serif;
+      font-weight:800;
     }
-    @keyframes pulse{
-      0%,100%{box-shadow:0 4px 16px rgba(230,126,34,0.4);}
-      50%{box-shadow:0 4px 24px rgba(230,126,34,0.7);}
+
+    /* ===== FOOTER ===== */
+    footer{
+      padding:24px 16px;
+      background:#f5f5f5;
+      text-align:center;
     }
-    .cta-button{animation:pulse 2s infinite;}
+    footer p{
+      font-size:10px;
+      color:var(--text-light);
+      line-height:1.6;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(min-width:600px){
+      .hero-image-wrap{max-width:500px;}
+      .hero-text-overlay .catch-replace .main-text{font-size:34px;}
+    }
   </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO: 参考画像をそのまま使用 ===== -->
 <section class="hero">
-  <!-- Gold banner at top -->
-  <div class="hero-gold-banner">
-    <p>ニキビ跡ケア美容液 売上 <span class="no1">No.1</span> を獲得したブランドが開発</p>
-  </div>
-
-  <div class="hero-main">
-    <!-- Main catchcopy -->
-    <div class="hero-catch">
-      <p class="sub">ニキビ跡ケアしながら</p>
-      <p class="main-text"><em>透 明 美 肌</em></p>
-    </div>
-
-    <!-- Woman image -->
-    <div class="hero-model-wrap">
-      <img class="hero-model" src="pime.jpg" alt="透明美肌イメージ" style="margin-top:60px;">
-
-      <!-- Floating bubble badges -->
-      <div class="hero-bubble hero-bubble-1">
-        <span class="bub-small">大注目成分</span>
-        <span class="bub-big">高濃度<br>ビタミンC<br>配合</span>
+  <div class="hero-image-wrap">
+    <img src="hero-ref.jpg" alt="AQUA CLEAR SERUM ニキビ跡ケアしながら透明美肌">
+    <!-- テキストだけ上書き -->
+    <div class="hero-text-overlay">
+      <div class="brand-replace"><span>AQUA CLEAR SERUM</span></div>
+      <div class="catch-replace">
+        <p class="sub">ニキビ跡ケアしながら</p>
+        <p class="main-text">透明美肌</p>
       </div>
-      <div class="hero-bubble hero-bubble-2">
-        <span class="bub-small">皮膚科医</span>
-        <span class="bub-big">監修<br>処方</span>
-      </div>
-
-      <!-- Side text -->
-      <div class="hero-side-text">一日中ぷるツヤ肌</div>
-
-      <!-- Product small at bottom left -->
-      <div class="hero-product-small">
-        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&q=80&auto=format" alt="AQUA CLEAR SERUM">
-      </div>
+      <div class="product-replace"><span>AQUA CLEAR SERUM</span></div>
+      <div class="bottom-replace"><span><strong>AQUA CLEAR SERUM</strong>は「ナイアシンアミド」「ビタミンC誘導体」を高濃度配合した薬用ニキビ跡ケア美容液です。</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===== PRODUCT IN WATER ===== -->
-<section class="product-water">
-  <div class="water-ripple"></div>
-  <div class="water-ripple"></div>
-  <div class="water-ripple"></div>
-  <div class="product-water-img">
-    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80&auto=format" alt="AQUA CLEAR SERUM">
-  </div>
-  <div class="product-water-title">
-    <p class="pwt-sub">— 薬用ニキビ跡ケア —</p>
-    <h2>これ<em>1本</em>で<br>透明肌へ</h2>
-    <p class="pwt-items">シワ・ニキビ跡・毛穴・保湿</p>
-  </div>
+<!-- ===== RANKING: 実画像をそのまま使用 ===== -->
+<section class="ranking-section">
+  <img src="ranking-no1.jpg" alt="売上No.1" class="ranking-badge">
+  <p class="ranking-text">ニキビ跡ケア美容液 売上<strong> 150,000 本突破</strong><br>皮膚科医監修 × 独自処方で<br>頑固なニキビ跡にアプローチ</p>
 </section>
 
-<!-- ===== お悩みセクション ===== -->
-<section class="problems">
-  <div class="section-title">
-    <span class="en">Your Troubles</span>
-    <h2>こんなお悩み<br>ありませんか？</h2>
-    <div class="line"></div>
-  </div>
-  <ul class="problems-list">
+<!-- ===== 悩み ===== -->
+<section class="troubles">
+  <h2><span>Your Troubles</span><br>こんなお悩み ありませんか？</h2>
+  <ul class="trouble-list">
     <li>ニキビ跡が全然消えない…</li>
     <li>毛穴の黒ずみが目立つ</li>
     <li>肌がザラザラでメイクがのらない</li>
     <li>高い化粧品を試しても変わらない</li>
     <li>マスクを外すのが怖い</li>
   </ul>
-  <div class="problems-arrow">&#9660;</div>
-  <div class="problems-solution">
-    <p class="big">そのお悩み<br><em>AQUA CLEAR</em>が<br>解決します！</p>
-  </div>
 </section>
 
-<!-- ===== 4つのアプローチ - BUBBLE STYLE ===== -->
-<section class="features">
-  <div class="features-header">
-    <span class="label">実は…正しいケアで解決できるんです！</span>
-    <h2>AQUA CLEARに必須な<br><em>4つのアプローチ</em></h2>
-  </div>
-  <div class="bubble-grid">
-    <div class="bubble-item">
-      <div class="bubble-circle">
-        <span class="bub-text">ニキビ跡を<br>残さない</span>
-      </div>
-    </div>
-    <div class="bubble-item">
-      <div class="bubble-circle">
-        <span class="bub-text">潤いを<br>与える</span>
-      </div>
-    </div>
-    <div class="bubble-item">
-      <div class="bubble-circle">
-        <span class="bub-text">毛穴を<br>引き締める</span>
-      </div>
-    </div>
-    <div class="bubble-item">
-      <div class="bubble-circle">
-        <span class="bub-text">透明感を<br>キープ</span>
-      </div>
-    </div>
-  </div>
+<!-- ===== 解決宣言 ===== -->
+<section class="solution">
+  <p>そのお悩み</p>
+  <p class="brand-name">AQUA CLEAR</p>
+  <p class="resolve">が 解決します！</p>
+  <p>実は…正しいケアで解決できるんです！</p>
 </section>
 
-<!-- ===== AMAZON RANKING - LAUREL WREATH ===== -->
-<section class="ranking">
-  <div class="ranking-badges-row">
-    <div class="rank-badge">
-      <div class="rb-laurel">
-        <!-- Crown -->
-        <svg width="90" height="80" viewBox="0 0 90 80" style="position:absolute;top:0;left:0;">
-          <!-- Crown -->
-          <path d="M30,12 L35,4 L40,10 L45,0 L50,10 L55,4 L60,12" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="35" cy="4" r="2" fill="#e8d48b"/>
-          <circle cx="45" cy="0" r="2.5" fill="#e8d48b"/>
-          <circle cx="55" cy="4" r="2" fill="#e8d48b"/>
-          <!-- Left laurel branch -->
-          <path d="M18,65 Q15,55 18,45 Q14,48 10,50 Q15,42 20,38 Q16,38 12,40 Q18,32 24,30 Q20,28 16,28 Q24,22 30,22 Q28,18 26,16 Q34,16 38,18" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
-          <ellipse cx="15" cy="50" rx="5" ry="3" fill="#e8d48b" transform="rotate(-30 15 50)" opacity="0.6"/>
-          <ellipse cx="15" cy="42" rx="5" ry="3" fill="#e8d48b" transform="rotate(-25 15 42)" opacity="0.6"/>
-          <ellipse cx="20" cy="34" rx="5" ry="3" fill="#e8d48b" transform="rotate(-20 20 34)" opacity="0.6"/>
-          <ellipse cx="25" cy="27" rx="5" ry="3" fill="#e8d48b" transform="rotate(-15 25 27)" opacity="0.6"/>
-          <ellipse cx="30" cy="20" rx="4" ry="2.5" fill="#e8d48b" transform="rotate(-10 30 20)" opacity="0.6"/>
-          <!-- Right laurel branch (mirror) -->
-          <path d="M72,65 Q75,55 72,45 Q76,48 80,50 Q75,42 70,38 Q74,38 78,40 Q72,32 66,30 Q70,28 74,28 Q66,22 60,22 Q62,18 64,16 Q56,16 52,18" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
-          <ellipse cx="75" cy="50" rx="5" ry="3" fill="#e8d48b" transform="rotate(30 75 50)" opacity="0.6"/>
-          <ellipse cx="75" cy="42" rx="5" ry="3" fill="#e8d48b" transform="rotate(25 75 42)" opacity="0.6"/>
-          <ellipse cx="70" cy="34" rx="5" ry="3" fill="#e8d48b" transform="rotate(20 70 34)" opacity="0.6"/>
-          <ellipse cx="65" cy="27" rx="5" ry="3" fill="#e8d48b" transform="rotate(15 65 27)" opacity="0.6"/>
-          <ellipse cx="60" cy="20" rx="4" ry="2.5" fill="#e8d48b" transform="rotate(10 60 20)" opacity="0.6"/>
-          <!-- Bottom cross -->
-          <line x1="42" y1="72" x2="48" y2="72" stroke="#c9a84c" stroke-width="1.5"/>
-          <line x1="45" y1="69" x2="45" y2="75" stroke="#c9a84c" stroke-width="1.5"/>
-        </svg>
-        <p class="rb-cat">美容液部門</p>
-        <p class="rb-label">RANKING</p>
-        <span class="rb-no">No.1</span>
-      </div>
+<!-- ===== 4つのアプローチ ===== -->
+<section class="approach">
+  <h2><span>AQUA CLEAR</span>の 4つのアプローチ</h2>
+  <p class="approach-sub">4 APPROACH FOR CLEAR SKIN</p>
+  <div class="approach-grid">
+    <div class="approach-item">
+      <span class="approach-label">ACNE CARE</span>
+      <p class="approach-title">ニキビ跡を<br>ケア</p>
+      <p class="approach-desc">薬用有効成分が<br>跡にアプローチ</p>
     </div>
-    <div class="rank-badge">
-      <div class="rb-laurel">
-        <svg width="90" height="80" viewBox="0 0 90 80" style="position:absolute;top:0;left:0;">
-          <path d="M30,12 L35,4 L40,10 L45,0 L50,10 L55,4 L60,12" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="35" cy="4" r="2" fill="#e8d48b"/>
-          <circle cx="45" cy="0" r="2.5" fill="#e8d48b"/>
-          <circle cx="55" cy="4" r="2" fill="#e8d48b"/>
-          <path d="M18,65 Q15,55 18,45 Q14,48 10,50 Q15,42 20,38 Q16,38 12,40 Q18,32 24,30 Q20,28 16,28 Q24,22 30,22 Q28,18 26,16 Q34,16 38,18" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
-          <ellipse cx="15" cy="50" rx="5" ry="3" fill="#e8d48b" transform="rotate(-30 15 50)" opacity="0.6"/>
-          <ellipse cx="15" cy="42" rx="5" ry="3" fill="#e8d48b" transform="rotate(-25 15 42)" opacity="0.6"/>
-          <ellipse cx="20" cy="34" rx="5" ry="3" fill="#e8d48b" transform="rotate(-20 20 34)" opacity="0.6"/>
-          <ellipse cx="25" cy="27" rx="5" ry="3" fill="#e8d48b" transform="rotate(-15 25 27)" opacity="0.6"/>
-          <ellipse cx="30" cy="20" rx="4" ry="2.5" fill="#e8d48b" transform="rotate(-10 30 20)" opacity="0.6"/>
-          <path d="M72,65 Q75,55 72,45 Q76,48 80,50 Q75,42 70,38 Q74,38 78,40 Q72,32 66,30 Q70,28 74,28 Q66,22 60,22 Q62,18 64,16 Q56,16 52,18" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
-          <ellipse cx="75" cy="50" rx="5" ry="3" fill="#e8d48b" transform="rotate(30 75 50)" opacity="0.6"/>
-          <ellipse cx="75" cy="42" rx="5" ry="3" fill="#e8d48b" transform="rotate(25 75 42)" opacity="0.6"/>
-          <ellipse cx="70" cy="34" rx="5" ry="3" fill="#e8d48b" transform="rotate(20 70 34)" opacity="0.6"/>
-          <ellipse cx="65" cy="27" rx="5" ry="3" fill="#e8d48b" transform="rotate(15 65 27)" opacity="0.6"/>
-          <ellipse cx="60" cy="20" rx="4" ry="2.5" fill="#e8d48b" transform="rotate(10 60 20)" opacity="0.6"/>
-          <line x1="42" y1="72" x2="48" y2="72" stroke="#c9a84c" stroke-width="1.5"/>
-          <line x1="45" y1="69" x2="45" y2="75" stroke="#c9a84c" stroke-width="1.5"/>
-        </svg>
-        <p class="rb-cat">スキンケア部門</p>
-        <p class="rb-label">RANKING</p>
-        <span class="rb-no">No.1</span>
-      </div>
+    <div class="approach-item">
+      <span class="approach-label">PIGMENT</span>
+      <p class="approach-title">色素沈着に<br>集中アプローチ</p>
+      <p class="approach-desc">メラニンの生成を<br>抑制</p>
     </div>
-    <div class="rank-badge">
-      <div class="rb-laurel">
-        <svg width="90" height="80" viewBox="0 0 90 80" style="position:absolute;top:0;left:0;">
-          <path d="M30,12 L35,4 L40,10 L45,0 L50,10 L55,4 L60,12" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="35" cy="4" r="2" fill="#e8d48b"/>
-          <circle cx="45" cy="0" r="2.5" fill="#e8d48b"/>
-          <circle cx="55" cy="4" r="2" fill="#e8d48b"/>
-          <path d="M18,65 Q15,55 18,45 Q14,48 10,50 Q15,42 20,38 Q16,38 12,40 Q18,32 24,30 Q20,28 16,28 Q24,22 30,22 Q28,18 26,16 Q34,16 38,18" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
-          <ellipse cx="15" cy="50" rx="5" ry="3" fill="#e8d48b" transform="rotate(-30 15 50)" opacity="0.6"/>
-          <ellipse cx="15" cy="42" rx="5" ry="3" fill="#e8d48b" transform="rotate(-25 15 42)" opacity="0.6"/>
-          <ellipse cx="20" cy="34" rx="5" ry="3" fill="#e8d48b" transform="rotate(-20 20 34)" opacity="0.6"/>
-          <ellipse cx="25" cy="27" rx="5" ry="3" fill="#e8d48b" transform="rotate(-15 25 27)" opacity="0.6"/>
-          <ellipse cx="30" cy="20" rx="4" ry="2.5" fill="#e8d48b" transform="rotate(-10 30 20)" opacity="0.6"/>
-          <path d="M72,65 Q75,55 72,45 Q76,48 80,50 Q75,42 70,38 Q74,38 78,40 Q72,32 66,30 Q70,28 74,28 Q66,22 60,22 Q62,18 64,16 Q56,16 52,18" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
-          <ellipse cx="75" cy="50" rx="5" ry="3" fill="#e8d48b" transform="rotate(30 75 50)" opacity="0.6"/>
-          <ellipse cx="75" cy="42" rx="5" ry="3" fill="#e8d48b" transform="rotate(25 75 42)" opacity="0.6"/>
-          <ellipse cx="70" cy="34" rx="5" ry="3" fill="#e8d48b" transform="rotate(20 70 34)" opacity="0.6"/>
-          <ellipse cx="65" cy="27" rx="5" ry="3" fill="#e8d48b" transform="rotate(15 65 27)" opacity="0.6"/>
-          <ellipse cx="60" cy="20" rx="4" ry="2.5" fill="#e8d48b" transform="rotate(10 60 20)" opacity="0.6"/>
-          <line x1="42" y1="72" x2="48" y2="72" stroke="#c9a84c" stroke-width="1.5"/>
-          <line x1="45" y1="69" x2="45" y2="75" stroke="#c9a84c" stroke-width="1.5"/>
-        </svg>
-        <p class="rb-cat">ニキビケア部門</p>
-        <p class="rb-label">RANKING</p>
-        <span class="rb-no">No.1</span>
-      </div>
+    <div class="approach-item">
+      <span class="approach-label">PORE CARE</span>
+      <p class="approach-title">毛穴を<br>引き締める</p>
+      <p class="approach-desc">開いた毛穴を<br>キュッと収縮</p>
+    </div>
+    <div class="approach-item">
+      <span class="approach-label">MOISTURE</span>
+      <p class="approach-title">うるおいで<br>満たす</p>
+      <p class="approach-desc">乾燥からくる<br>肌荒れを防止</p>
     </div>
   </div>
-  <p class="ranking-text">
-    <span class="amazon">Amazon</span>ランキング<br>
-    <strong style="font-size:28px;">3冠</strong> 達成！
-  </p>
-  <p class="ranking-sub">※2025年○月 美容液カテゴリ デイリーランキング</p>
 </section>
 
 <!-- ===== 成分 ===== -->
 <section class="ingredients">
-  <div class="section-title">
-    <span class="en">Key Ingredients</span>
-    <h2>こだわりの<br>厳選成分</h2>
-    <div class="line"></div>
+  <h2>厳選された美容成分</h2>
+  <div class="ingredient-card">
+    <h3>ナイアシンアミド（有効成分）</h3>
+    <p>メラニンの生成を抑え、シミ・そばかすを防ぐ。さらにシワ改善効果も認められた注目の薬用有効成分です。</p>
   </div>
-  <div class="ing-cards">
-    <div class="ing-card">
-      <div class="ing-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,22 12,17 6,22 8,14 2,9 9,9" fill="#5bb5d5"/></svg>
-      </div>
-      <div>
-        <h3>高濃度ビタミンC誘導体</h3>
-        <p>通常の100倍の浸透力。<br>メラニンの生成を抑え、<br>ニキビ跡の色素沈着にアプローチします。</p>
-      </div>
+  <div class="ingredient-card">
+    <h3>ビタミンC誘導体</h3>
+    <p>安定性の高いビタミンC誘導体が肌の奥まで届き、くすみのない透明感のある肌へ導きます。</p>
+  </div>
+  <div class="ingredient-card">
+    <h3>ヒアルロン酸 × セラミド</h3>
+    <p>3種のヒアルロン酸とセラミドが角質層を潤いで満たし、バリア機能をサポートします。</p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <p class="cta-label">初回限定特別価格</p>
+  <p class="cta-price"><span class="price-num">1,980</span><span class="yen">円</span><span class="tax">（税込）</span></p>
+  <p class="cta-note">※ 通常価格 7,980円 → 75%OFF</p>
+  <a href="#" class="cta-btn">今すぐ試してみる</a>
+</section>
+
+<!-- ===== 口コミ ===== -->
+<section class="reviews">
+  <h2>お客様の声</h2>
+  <div class="review-card">
+    <div class="review-header">
+      <span class="review-name">M.T さん</span>
+      <span class="review-age">28歳・混合肌</span>
+      <span class="review-stars">★★★★★</span>
     </div>
-    <div class="ing-card">
-      <div class="ing-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12,3 C12,3 7,9 7,14 C7,18 9.2,21 12,21 C14.8,21 17,18 17,14 C17,9 12,3 12,3Z" fill="#5bb5d5"/></svg>
-      </div>
-      <div>
-        <h3>ヒト幹細胞培養液</h3>
-        <p>肌本来のターンオーバーをサポート。<br>年齢に負けない<br>透明感のある素肌へ導きます。</p>
-      </div>
+    <p class="review-text">3年間悩んでいたニキビ跡が、使い始めて2ヶ月で目立たなくなりました。肌のトーンが明るくなって、ファンデーションの厚塗りをしなくてよくなったのが嬉しいです。</p>
+  </div>
+  <div class="review-card">
+    <div class="review-header">
+      <span class="review-name">A.K さん</span>
+      <span class="review-age">24歳・脂性肌</span>
+      <span class="review-stars">★★★★★</span>
     </div>
-    <div class="ing-card">
-      <div class="ing-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#5bb5d5" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#5bb5d5"/></svg>
-      </div>
-      <div>
-        <h3>5種のヒアルロン酸</h3>
-        <p>異なるサイズの分子が<br>角質層のすみずみまで浸透。<br>長時間うるおいをキープします。</p>
-      </div>
+    <p class="review-text">毛穴の開きと黒ずみが気になっていましたが、1ヶ月で毛穴が引き締まった感じがします。ベタつかないテクスチャーも気に入っています。</p>
+  </div>
+  <div class="review-card">
+    <div class="review-header">
+      <span class="review-name">S.Y さん</span>
+      <span class="review-age">32歳・敏感肌</span>
+      <span class="review-stars">★★★★☆</span>
     </div>
-    <div class="ing-card">
-      <div class="ing-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12,3 L12,21 M7,7 L12,12 M17,7 L12,12 M7,16 L12,12 M17,16 L12,12" stroke="#5bb5d5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-      </div>
-      <div>
-        <h3>ツボクサエキス（CICA）</h3>
-        <p>韓国で大ブームの注目成分。<br>肌荒れを防ぎ、<br>健やかな肌環境を整えます。</p>
-      </div>
-    </div>
+    <p class="review-text">敏感肌ですが刺激なく使えています。色素沈着していた部分が少しずつ薄くなってきて、素肌に自信が持てるようになりました。</p>
   </div>
 </section>
 
 <!-- ===== 使い方 ===== -->
 <section class="howto">
-  <div class="section-title">
-    <span class="en">How to Use</span>
-    <h2>かんたん3ステップ</h2>
-    <div class="line"></div>
-  </div>
+  <h2>簡単3ステップ</h2>
   <div class="howto-steps">
     <div class="howto-step">
-      <div class="step-num">1</div>
-      <div>
-        <h3>洗顔後、適量を手に取る</h3>
-        <p>2〜3プッシュが目安です。<br>朝晩の洗顔後、<br>化粧水の前にお使いください。</p>
+      <span class="step-num">1</span>
+      <div class="step-content">
+        <h3>洗顔後、化粧水で肌を整える</h3>
+        <p>清潔な肌に化粧水を馴染ませます。</p>
       </div>
     </div>
     <div class="howto-step">
-      <div class="step-num">2</div>
-      <div>
-        <h3>気になる部分を中心に塗布</h3>
-        <p>ニキビ跡や毛穴が気になる部分に、<br>やさしくなじませてください。</p>
+      <span class="step-num">2</span>
+      <div class="step-content">
+        <h3>適量を手に取り、気になる部分に塗布</h3>
+        <p>2〜3プッシュを手のひらに出し、ニキビ跡や毛穴が気になる箇所を中心に優しく塗り広げます。</p>
       </div>
     </div>
     <div class="howto-step">
-      <div class="step-num">3</div>
-      <div>
-        <h3>ハンドプレスで浸透させる</h3>
-        <p>手のひらで顔全体を<br>包み込むように、<br>10秒ほどハンドプレスして完了です。</p>
+      <span class="step-num">3</span>
+      <div class="step-content">
+        <h3>乳液・クリームで蓋をする</h3>
+        <p>美容液の成分を閉じ込めるように、いつもの乳液やクリームで仕上げます。</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 3大特典 ===== -->
-<section class="tokuten">
-  <div class="tokuten-title">
-    <p class="sub">— 定期コース限定 —</p>
-    <p class="main">3大特典</p>
-  </div>
-  <div class="tokuten-cards">
-    <div class="tokuten-card">
-      <span class="tk-num">特典 01</span>
-      <p class="tk-title">初回 <span class="red">74%OFF</span></p>
-      <div class="price-row">
-        <span class="old-price">通常 3,740円</span>
-        <span class="arrow-r">&#9654;</span>
-        <span class="new-price">980<span class="yen">円</span><span class="tax">（税込）</span></span>
-      </div>
-      <p class="tk-detail">送料無料でお届けします</p>
-    </div>
-    <div class="tokuten-card">
-      <span class="tk-num">特典 02</span>
-      <p class="tk-title">2回目以降も <span class="red">20%OFF</span></p>
-      <p class="tk-detail">2回目以降は2ヶ月毎に2個を<br>20%OFFの2,992円(税込)×2個でお届け。<br>送料無料。</p>
-    </div>
-    <div class="tokuten-card">
-      <span class="tk-num">特典 03</span>
-      <p class="tk-title">いつでも<span class="red">解約OK</span></p>
-      <p class="tk-detail">回数縛りなし。<br>お届け予定日の10日前までに<br>お電話いただければ、<br>いつでも解約できます。</p>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
 <section class="faq">
-  <div class="section-title">
-    <span class="en">FAQ</span>
-    <h2>よくあるご質問</h2>
-    <div class="line"></div>
+  <h2>よくあるご質問</h2>
+  <div class="faq-item">
+    <p class="faq-q">敏感肌でも使えますか？</p>
+    <p class="faq-a">はい。アルコール・パラベン・鉱物油フリーの低刺激処方です。パッチテスト済みですが、心配な方は少量からお試しください。</p>
   </div>
-  <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="q-icon">Q</span>
-        <span>敏感肌でも使えますか？</span>
-      </div>
-      <div class="faq-a">はい。<br>パラベン・合成着色料・鉱物油・<br>アルコール・紫外線吸収剤を<br>使用しておりません。<br>敏感肌の方にも安心して<br>お使いいただけます。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="q-icon">Q</span>
-        <span>どのくらいで効果を実感できますか？</span>
-      </div>
-      <div class="faq-a">個人差はありますが、<br>多くのお客様が1ヶ月程度で<br>肌のハリや透明感を実感されています。<br>ニキビ跡のケアには<br>2〜3ヶ月の継続がおすすめです。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="q-icon">Q</span>
-        <span>1本でどのくらい持ちますか？</span>
-      </div>
-      <div class="faq-a">朝晩の使用で約30日分です。<br>30g入りのポンプ式ボトルで、<br>衛生的にお使いいただけます。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="q-icon">Q</span>
-        <span>定期コースの解約方法は？</span>
-      </div>
-      <div class="faq-a">次回お届け予定日の10日前までに、<br>お電話（0120-XXX-XXX／平日10時〜18時）にて<br>ご連絡ください。<br>回数縛りはございません。</div>
-    </div>
+  <div class="faq-item">
+    <p class="faq-q">効果が出るまでどのくらいかかりますか？</p>
+    <p class="faq-a">個人差はありますが、多くの方が1〜2ヶ月で変化を実感されています。肌のターンオーバーに合わせて、まずは3ヶ月の継続をおすすめします。</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">朝も使えますか？</p>
+    <p class="faq-a">はい。朝晩のスキンケアにお使いいただけます。朝は日焼け止めとの併用をおすすめします。</p>
   </div>
 </section>
 
-<!-- ===== 販売元情報 ===== -->
-<section class="company">
-  <div class="section-title">
-    <span class="en">Company</span>
-    <h2>販売元情報</h2>
-    <div class="line"></div>
-  </div>
-  <div class="company-table">
-    <dl><dt>販売業者</dt><dd>株式会社アクアビューティー</dd></dl>
-    <dl><dt>所在地</dt><dd>東京都渋谷区○○1-2-3</dd></dl>
-    <dl><dt>電話番号</dt><dd>0120-XXX-XXX</dd></dl>
-    <dl><dt>営業時間</dt><dd>平日 10:00〜18:00</dd></dl>
-    <dl><dt>商品名</dt><dd>AQUA CLEAR SERUM</dd></dl>
-    <dl><dt>内容量</dt><dd>30g（約30日分）</dd></dl>
-  </div>
+<!-- ===== CTA 2 ===== -->
+<section class="cta">
+  <p class="cta-label">初回限定 75%OFF</p>
+  <p class="cta-price"><span class="price-num">1,980</span><span class="yen">円</span><span class="tax">（税込・送料無料）</span></p>
+  <p class="cta-note">定期縛りなし・いつでも解約OK</p>
+  <a href="#" class="cta-btn">お得に始める</a>
 </section>
 
-<!-- ===== FIXED CTA BAR ===== -->
-<div class="fixed-cta">
-  <div class="cta-inner">
-    <p class="cta-top-text">＼ 初回限定 <span>74%OFF</span> で ／</p>
-    <a href="#" class="cta-button">
-      今すぐお得に始める
-      <span class="cta-small">送料無料・回数縛りなし</span>
-    </a>
-  </div>
-</div>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>※ 効果には個人差があります。<br>※ 「売上No.1」は自社調べ（2024年1月〜12月 ニキビ跡ケア美容液カテゴリ）</p>
+  <p style="margin-top:8px;">&copy; 2024 AQUA CLEAR SERUM All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
