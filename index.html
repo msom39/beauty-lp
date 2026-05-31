@@ -9,7 +9,7 @@
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;font-size:16px;}
-    body{font-family:'Noto Sans JP',sans-serif;color:#888;line-height:1.8;background:#fff;overflow-x:hidden;}
+    body{font-family:'Noto Sans JP',sans-serif;color:#888;line-height:1.8;background:#fff;overflow-x:hidden;padding-bottom:60px;}
     a{text-decoration:none;color:inherit;}
     img{max-width:100%;height:auto;display:block;}
     ul{list-style:none;}
@@ -95,13 +95,19 @@
     /* 商品チューブのSHIRORUを隠す（左下） */
     .hero-text-overlay .product-replace{
       position:absolute;
-      bottom:5%;
-      left:2%;
-      width:18%;
-      background:rgba(210,230,240,0.95);
-      padding:6px 4px;
+      bottom:2%;
+      left:1%;
+      width:24%;
+      height:16%;
+      background:rgba(220,235,245,0.98);
+      padding:4px;
       text-align:center;
-      border-radius:4px;
+      border-radius:6px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 0 8px 4px rgba(220,235,245,0.98);
     }
     .hero-text-overlay .product-replace span{
       font-family:'Montserrat',sans-serif;
@@ -111,6 +117,36 @@
       letter-spacing:0.5px;
       line-height:1.2;
       display:block;
+    }
+    /* SPF50+バブルをニキビケア文言に上書き */
+    .hero-text-overlay .spf-replace{
+      position:absolute;
+      bottom:11%;
+      right:4%;
+      width:21%;
+      aspect-ratio:1;
+      background:radial-gradient(circle at 35% 35%, rgba(200,238,250,0.97), rgba(150,218,242,0.95));
+      border-radius:50%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      z-index:2;
+      border:1.5px solid rgba(255,255,255,0.5);
+      box-shadow:inset -2px -4px 8px rgba(91,181,213,0.15), 0 2px 6px rgba(91,181,213,0.1);
+    }
+    .hero-text-overlay .spf-replace .spf-label{
+      font-size:8px;
+      color:#555;
+      font-weight:500;
+      margin-bottom:2px;
+    }
+    .hero-text-overlay .spf-replace .spf-main{
+      font-size:12px;
+      font-weight:900;
+      color:var(--aqua-dark);
+      line-height:1.3;
     }
     /* 底部テキスト上書き */
     .hero-text-overlay .bottom-replace{
@@ -518,6 +554,45 @@
       line-height:1.6;
     }
 
+    /* ===== 固定CTAバー ===== */
+    .fixed-cta{
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      background:linear-gradient(135deg, var(--aqua-dark), var(--aqua));
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      z-index:999;
+      box-shadow:0 -2px 12px rgba(0,0,0,0.15);
+    }
+    .fixed-cta .fixed-price{
+      color:#fff;
+      font-size:12px;
+      text-align:center;
+      line-height:1.3;
+    }
+    .fixed-cta .fixed-price .price-highlight{
+      font-family:'Montserrat',sans-serif;
+      font-size:22px;
+      font-weight:900;
+    }
+    .fixed-cta .fixed-btn{
+      display:inline-block;
+      background:linear-gradient(135deg, var(--gold-light), var(--gold));
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+      padding:10px 24px;
+      border-radius:50px;
+      letter-spacing:1px;
+      box-shadow:0 2px 8px rgba(201,168,76,0.4);
+      white-space:nowrap;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media(min-width:600px){
       .hero-image-wrap{max-width:500px;}
@@ -537,7 +612,11 @@
       <div class="catch-replace">
         <p class="sub">ニキビ跡ケアしながら</p>
       </div>
-      <div class="product-replace"><span>AQUA CLEAR<br>SERUM</span></div>
+      <div class="product-replace"><span>AQUA CLEAR<br>SERUM</span><span style="font-size:5px;margin-top:2px;color:#666;font-family:'Noto Sans JP',sans-serif;">薬用ニキビ跡ケア美容液</span></div>
+      <div class="spf-replace">
+        <span class="spf-label">薬用有効成分</span>
+        <span class="spf-main">ニキビ跡<br>集中ケア</span>
+      </div>
       <div class="bottom-replace"><span><strong>AQUA CLEAR SERUM</strong>は「ナイアシンアミド」「ビタミンC誘導体」を高濃度配合した薬用ニキビ跡ケア美容液です。</span></div>
     </div>
   </div>
@@ -709,6 +788,12 @@
   <p>※ 効果には個人差があります。<br>※ 「売上No.1」は自社調べ（2024年1月〜12月 ニキビ跡ケア美容液カテゴリ）</p>
   <p style="margin-top:8px;">&copy; 2024 AQUA CLEAR SERUM All Rights Reserved.</p>
 </footer>
+
+<!-- ===== 固定CTAバー（常時表示） ===== -->
+<div class="fixed-cta">
+  <div class="fixed-price">初回限定75%OFF<br><span class="price-highlight">1,980</span>円<small style="font-size:10px;opacity:0.7;">（税込）</small></div>
+  <a href="#" class="fixed-btn">お得に始める</a>
+</div>
 
 </body>
 </html>
