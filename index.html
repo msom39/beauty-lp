@@ -97,22 +97,21 @@
       position:absolute;
       bottom:2%;
       left:1%;
-      width:26%;
-      height:32%;
-      background:rgba(240,247,252,0.99);
+      width:24%;
+      height:16%;
+      background:rgba(220,235,245,0.98);
       padding:4px;
       text-align:center;
-      border-radius:8px;
+      border-radius:6px;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      box-shadow:0 0 12px 8px rgba(240,247,252,0.99);
-      z-index:3;
+      box-shadow:0 0 8px 4px rgba(220,235,245,0.98);
     }
     .hero-text-overlay .product-replace span{
       font-family:'Montserrat',sans-serif;
-      font-size:9px;
+      font-size:7px;
       font-weight:700;
       color:var(--aqua-dark);
       letter-spacing:0.5px;
@@ -122,20 +121,20 @@
     /* SPF50+バブルをニキビケア文言に上書き */
     .hero-text-overlay .spf-replace{
       position:absolute;
-      bottom:27%;
-      right:2%;
-      width:32%;
+      bottom:11%;
+      right:4%;
+      width:21%;
       aspect-ratio:1;
-      background:radial-gradient(circle at 35% 35%, rgba(200,238,250,1), rgba(150,218,242,0.99));
+      background:radial-gradient(circle at 35% 35%, rgba(200,238,250,0.97), rgba(150,218,242,0.95));
       border-radius:50%;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
       text-align:center;
-      z-index:3;
+      z-index:2;
       border:1.5px solid rgba(255,255,255,0.5);
-      box-shadow:inset -2px -4px 8px rgba(91,181,213,0.15), 0 2px 6px rgba(91,181,213,0.1), 0 0 12px 6px rgba(200,238,250,0.6);
+      box-shadow:inset -2px -4px 8px rgba(91,181,213,0.15), 0 2px 6px rgba(91,181,213,0.1);
     }
     .hero-text-overlay .spf-replace .spf-label{
       font-size:8px;
@@ -144,7 +143,7 @@
       margin-bottom:2px;
     }
     .hero-text-overlay .spf-replace .spf-main{
-      font-size:14px;
+      font-size:12px;
       font-weight:900;
       color:var(--aqua-dark);
       line-height:1.3;
@@ -170,9 +169,9 @@
 
     /* ===== RANKING - 楽天ランキング風 ===== */
     .ranking-section{
-      padding:36px 12px 40px;
+      padding:28px 8px 32px;
       text-align:center;
-      background:linear-gradient(180deg, var(--aqua-ultra) 0%, #fff 100%);
+      background:linear-gradient(180deg, #eaf4fa 0%, #f5fafd 50%, #fff 100%);
       position:relative;
       overflow:hidden;
     }
@@ -180,61 +179,64 @@
       content:'';
       position:absolute;
       top:0;left:0;right:0;bottom:0;
-      background:repeating-linear-gradient(90deg, rgba(180,215,235,0.08) 0px, rgba(180,215,235,0.03) 4px, transparent 4px, transparent 18px);
+      background:repeating-linear-gradient(90deg, rgba(180,215,235,0.06) 0px, transparent 3px, transparent 12px);
       pointer-events:none;
     }
     .ranking-title{
-      font-size:18px;
+      font-size:15px;
       font-weight:900;
       color:#b8860b;
-      margin-bottom:20px;
+      margin-bottom:16px;
       line-height:1.4;
       position:relative;
     }
     .ranking-title .crown-icon{
       display:block;
-      font-size:28px;
-      margin-bottom:4px;
-      filter:drop-shadow(0 1px 2px rgba(184,134,11,0.3));
+      font-size:22px;
+      margin-bottom:2px;
     }
     .ranking-title span{
       font-family:'Montserrat',sans-serif;
-      font-size:26px;
+      font-size:22px;
       font-weight:900;
       color:#d4a017;
     }
     .ranking-badges{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      max-width:380px;
-      margin:0 auto 20px;
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      max-width:460px;
+      margin:0 auto;
     }
     .rank-badge{
-      background:rgba(255,255,255,0.5);
-      border-radius:12px;
-      padding:14px 6px 10px;
+      flex:1;
+      min-width:0;
+      background:transparent;
+      padding:8px 2px 6px;
       text-align:center;
       position:relative;
-      backdrop-filter:blur(4px);
     }
     .rank-badge .badge-crown{
-      font-size:18px;
+      font-size:14px;
       display:block;
-      margin-bottom:2px;
+      margin-bottom:1px;
     }
     .rank-badge .badge-category{
-      font-size:10px;
+      font-size:8px;
       color:#8b7355;
       font-weight:700;
-      line-height:1.3;
-      margin-bottom:4px;
+      line-height:1.2;
+      margin-bottom:2px;
+      min-height:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
     .rank-badge .badge-wreath{
       position:relative;
-      width:80px;
-      height:80px;
-      margin:0 auto 4px;
+      width:60px;
+      height:60px;
+      margin:0 auto 2px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -243,11 +245,11 @@
     .rank-badge .badge-wreath::after{
       content:'';
       position:absolute;
-      width:36px;
-      height:64px;
-      border:2.5px solid #c9a84c;
+      width:26px;
+      height:48px;
+      border:2px solid #c9a84c;
       border-radius:50%;
-      top:8px;
+      top:6px;
     }
     .rank-badge .badge-wreath::before{
       left:2px;
@@ -261,7 +263,7 @@
     }
     .rank-badge .badge-rank{
       font-family:'Montserrat','Noto Serif JP',serif;
-      font-size:11px;
+      font-size:9px;
       font-weight:700;
       color:#8b7355;
       line-height:1.1;
@@ -269,28 +271,192 @@
       z-index:1;
     }
     .rank-badge .badge-rank .rank-num{
-      font-size:32px;
+      font-size:24px;
       font-weight:900;
       color:#c9a84c;
       display:block;
       line-height:1;
     }
     .rank-badge .badge-date{
-      font-size:8px;
+      font-size:6px;
       color:#aaa;
-      margin-top:2px;
+      margin-top:1px;
     }
     .rank-badge .badge-ribbon{
       display:inline-block;
       background:linear-gradient(135deg, #2b5ea7, #3a7bd5);
       color:#fff;
       font-family:'Montserrat',sans-serif;
-      font-size:9px;
+      font-size:7px;
       font-weight:700;
-      padding:2px 14px;
+      padding:2px 8px;
       border-radius:2px;
-      letter-spacing:2px;
+      letter-spacing:1.5px;
+      margin-top:2px;
+    }
+
+    /* ===== 商品購入セクション（WHITOP EX風） ===== */
+    .purchase-section{
+      padding:32px 16px;
+      background:#fff;
+      text-align:center;
+    }
+    .purchase-card{
+      max-width:420px;
+      margin:0 auto;
+      border:1px solid #e0e0e0;
+      border-radius:8px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .purchase-header{
+      background:linear-gradient(135deg, #f8fbfd, #eaf4fa);
+      padding:16px;
+      text-align:center;
+    }
+    .purchase-header p{
+      font-size:13px;
+      color:var(--text-mid);
+      margin-bottom:4px;
+    }
+    .purchase-header .purchase-name{
+      font-family:'Montserrat',sans-serif;
+      font-size:22px;
+      font-weight:800;
+      color:var(--aqua-dark);
+      letter-spacing:1px;
+    }
+    .purchase-header .purchase-type{
+      font-size:11px;
+      color:#999;
+    }
+    .purchase-header .purchase-desc{
+      font-size:11px;
+      color:#777;
       margin-top:4px;
+    }
+    .purchase-body{padding:20px 16px;}
+    .purchase-body .regular-price{
+      font-size:12px;
+      color:#999;
+      margin-bottom:4px;
+    }
+    .purchase-body .regular-price span{
+      display:inline-block;
+      border:1px solid #ccc;
+      padding:1px 6px;
+      font-size:10px;
+      margin-right:4px;
+    }
+    .purchase-body .sale-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      margin-bottom:4px;
+    }
+    .purchase-body .sale-label{
+      background:linear-gradient(135deg, #e74c3c, #c0392b);
+      color:#fff;
+      font-size:10px;
+      font-weight:700;
+      padding:3px 10px;
+      border-radius:3px;
+    }
+    .purchase-body .sale-price{
+      font-family:'Montserrat',sans-serif;
+      font-size:32px;
+      font-weight:900;
+      color:#e74c3c;
+    }
+    .purchase-body .sale-price .yen{font-size:14px;font-weight:700;}
+    .purchase-body .sale-price .tax{font-size:10px;color:#999;font-weight:400;}
+    .purchase-body .off-badge{
+      background:#e74c3c;
+      color:#fff;
+      font-size:11px;
+      font-weight:900;
+      padding:4px 8px;
+      border-radius:50%;
+      line-height:1.2;
+    }
+    .purchase-body .shipping{
+      color:#e74c3c;
+      font-size:13px;
+      font-weight:700;
+      margin:4px 0 12px;
+    }
+    .purchase-body .second-price{
+      background:#fef5f5;
+      border:1px solid #f5c6c6;
+      border-radius:6px;
+      padding:8px;
+      margin-bottom:16px;
+    }
+    .purchase-body .second-price .sp-label{
+      background:#e74c3c;
+      color:#fff;
+      font-size:9px;
+      padding:2px 8px;
+      border-radius:3px;
+      display:inline-block;
+      margin-bottom:4px;
+    }
+    .purchase-body .second-price p{
+      font-size:13px;
+      font-weight:700;
+      color:#e74c3c;
+    }
+    .benefits-row{
+      display:flex;
+      gap:6px;
+      margin-bottom:16px;
+    }
+    .benefit-box{
+      flex:1;
+      border:1px solid #ddd;
+      border-radius:6px;
+      padding:10px 4px;
+      text-align:center;
+    }
+    .benefit-box .benefit-label{
+      background:var(--aqua-dark);
+      color:#fff;
+      font-size:10px;
+      font-weight:700;
+      padding:2px 8px;
+      border-radius:3px;
+      display:inline-block;
+      margin-bottom:6px;
+    }
+    .benefit-box .benefit-title{
+      font-size:9px;
+      color:#666;
+      line-height:1.3;
+    }
+    .benefit-box .benefit-main{
+      font-size:14px;
+      font-weight:900;
+      color:var(--aqua-dark);
+      line-height:1.2;
+    }
+    .purchase-cta{
+      display:block;
+      background:linear-gradient(135deg, #2b4a7a, #1a3a6a);
+      color:#fff;
+      font-size:14px;
+      font-weight:700;
+      padding:14px;
+      border-radius:50px;
+      text-align:center;
+      margin-bottom:12px;
+      letter-spacing:1px;
+    }
+    .purchase-notes{
+      font-size:9px;
+      color:#999;
+      line-height:1.6;
+      text-align:left;
     }
 
     /* ===== 悩みセクション ===== */
@@ -770,6 +936,56 @@
       </div>
       <p class="badge-date">2024.12.3他</p>
       <span class="badge-ribbon">RAKUTEN</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 商品購入セクション ===== -->
+<section class="purchase-section">
+  <div class="purchase-card">
+    <div class="purchase-header">
+      <p>他のどのサイトで買うよりお得な価格です。</p>
+      <p class="purchase-name">AQUA CLEAR SERUM</p>
+      <p class="purchase-type">（1本 ／ 定期購入）</p>
+      <p class="purchase-desc">ナイアシンアミド配合 薬用ニキビ跡ケア美容液<br>1本あたりの容量：30ml（約1〜1.5ヶ月分）</p>
+    </div>
+    <div class="purchase-body">
+      <p class="regular-price"><span>通常価格</span> 7,980円のところ</p>
+      <div class="sale-row">
+        <span class="sale-label">初回</span>
+        <span class="sale-price">1,980<span class="yen">円</span><span class="tax">（税込）</span></span>
+        <span class="off-badge">75%<br>OFF!</span>
+      </div>
+      <p class="shipping">送料無料</p>
+      <div class="second-price">
+        <span class="sp-label">さらに2回目以降ずっと</span>
+        <p>2,000円OFF＆<strong>送料無料</strong><br>（ 5,980円/税込 ）</p>
+      </div>
+      <div class="benefits-row">
+        <div class="benefit-box">
+          <span class="benefit-label">特典1</span>
+          <p class="benefit-title">他のどのサイトで<br>買うよりお得！</p>
+          <p class="benefit-main">単品最安値<br>保証</p>
+        </div>
+        <div class="benefit-box">
+          <span class="benefit-label">特典2</span>
+          <p class="benefit-title">全国どこでもずっと</p>
+          <p class="benefit-main">送料<br>無料</p>
+        </div>
+        <div class="benefit-box">
+          <span class="benefit-label">特典3</span>
+          <p class="benefit-title">いつでも<br>解約・休止OK</p>
+          <p class="benefit-main">回数縛り<br>なし</p>
+        </div>
+      </div>
+      <a href="#" class="purchase-cta">定期購入（初回1,980円）での購入はこちら</a>
+      <div class="purchase-notes">
+        <p>【定期購入についての注意事項】</p>
+        <p>・初回は1,980円(税込)、2回目以降は5,980円(税込)となります。（送料無料）</p>
+        <p>・購入回数の制限はございません。</p>
+        <p>・ご解約、サイクル変更、休止のお手続きはマイページより、お客様ご自身でお願い致します。</p>
+        <p>・ご解約は次回お届け予定日の7日前までにお手続きをお願い致します。</p>
+      </div>
     </div>
   </div>
 </section>
