@@ -110,6 +110,38 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
+    /* SPF50+バブルを隠す（背景色で覆う） */
+    .hero-text-overlay .spf-cover{
+      position:absolute;
+      bottom:8%;
+      right:2%;
+      width:26%;
+      aspect-ratio:1;
+      background:radial-gradient(circle at 50% 50%, rgba(230,243,248,0.95) 30%, rgba(220,238,245,0.85) 70%, transparent 100%);
+      border-radius:50%;
+      z-index:2;
+    }
+    /* SHIRORUテキストをAQUA CLEARに書き換え（シームレス） */
+    .hero-text-overlay .product-label{
+      position:absolute;
+      bottom:4%;
+      left:3%;
+      width:18%;
+      z-index:2;
+    }
+    .hero-text-overlay .product-label span{
+      font-family:'Montserrat',sans-serif;
+      font-size:6px;
+      font-weight:700;
+      color:rgba(43,122,158,0.9);
+      letter-spacing:0.3px;
+      line-height:1.2;
+      display:block;
+      text-align:center;
+      background:rgba(238,245,250,0.85);
+      padding:2px;
+      border-radius:2px;
+    }
 
     /* ===== RANKING - 楽天ランキング風 ===== */
     .ranking-section{
@@ -755,6 +787,8 @@
       <div class="catch-replace">
         <p class="sub">ニキビ跡ケアしながら</p>
       </div>
+      <div class="spf-cover"></div>
+      <div class="product-label"><span>AQUA CLEAR<br>SERUM</span></div>
       <div class="bottom-replace"><span><strong>AQUA CLEAR SERUM</strong>は「ナイアシンアミド」「ビタミンC誘導体」を高濃度配合した薬用ニキビ跡ケア美容液です。</span></div>
     </div>
   </div>
@@ -924,7 +958,7 @@
             <text x="40" y="96" text-anchor="middle" font-size="3.5" fill="#5a9ab5" font-family="'Noto Sans JP',sans-serif">薬用ニキビ跡ケア</text>
             <text x="40" y="102" text-anchor="middle" font-size="3.5" fill="#5a9ab5" font-family="'Noto Sans JP',sans-serif">美容液</text>
             <text x="40" y="118" text-anchor="middle" font-size="3" fill="#999" font-family="'Noto Sans JP',sans-serif">30ml</text>
-            <ellipse cx="40" y="158" rx="18" ry="4" fill="#89c7dd" opacity="0.5"/>
+            <ellipse cx="40" cy="158" rx="18" ry="4" fill="#89c7dd" opacity="0.5"/>
           </svg>
         </div>
         <div class="purchase-pricing">
