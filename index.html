@@ -15,25 +15,26 @@
     ul{list-style:none;}
 
     :root{
-      --blue-dark:#0a2a5e;
-      --blue:#1a5ca8;
-      --blue-mid:#3a7bd5;
-      --blue-light:#7db4e8;
-      --blue-pale:#e8f2fc;
+      --aqua-dark:#2b7a9e;
+      --aqua:#5bb5d5;
+      --aqua-mid:#7ecbe6;
+      --aqua-light:#b8e4f3;
+      --aqua-pale:#e6f5fb;
+      --aqua-ultra:#f0f9fd;
       --silver:#c0c7d0;
       --silver-light:#e8ecf0;
       --silver-dark:#8a95a3;
       --gold:#c9a84c;
+      --gold-light:#e8d48b;
       --red:#c0392b;
-      --red-dark:#a93226;
       --orange:#e67e22;
       --white:#ffffff;
-      --cream:#f8fafc;
+      --cream:#f8fbfd;
     }
 
     /* ===== HERO SECTION ===== */
     .hero{
-      background:linear-gradient(170deg, var(--blue-dark) 0%, #0d3b7a 40%, var(--blue) 70%, var(--blue-mid) 100%);
+      background:linear-gradient(170deg, #d4eef8 0%, #e8f5fb 30%, #c9e8f5 60%, #b0dced 100%);
       padding:40px 16px 30px;
       text-align:center;
       position:relative;
@@ -42,35 +43,37 @@
     .hero::before{
       content:'';
       position:absolute;
-      top:-50%;left:-50%;
-      width:200%;height:200%;
-      background:radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
-                 radial-gradient(ellipse at 70% 80%, rgba(122,180,230,0.1) 0%, transparent 50%);
+      top:0;left:0;right:0;bottom:0;
+      background:
+        radial-gradient(circle 80px at 20% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(circle 120px at 70% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(circle 60px at 50% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(circle 40px at 85% 20%, rgba(255,255,255,0.3) 0%, transparent 100%);
       pointer-events:none;
     }
-    /* hero-crown removed */
     .hero-badge{
       display:inline-block;
-      background:linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-      border:1px solid rgba(255,255,255,0.2);
+      background:rgba(255,255,255,0.6);
+      border:1px solid rgba(255,255,255,0.8);
       border-radius:8px;
       padding:8px 24px;
       margin-bottom:16px;
+      backdrop-filter:blur(4px);
     }
     .hero-badge span{
-      color:var(--silver-light);
+      color:var(--aqua-dark);
       font-size:13px;
+      font-weight:700;
       letter-spacing:1px;
     }
     .hero-sales{
-      color:var(--white);
       margin-bottom:8px;
     }
     .hero-sales .number{
       font-family:'Montserrat',sans-serif;
       font-size:52px;
       font-weight:900;
-      background:linear-gradient(180deg, #ffffff 30%, #c0d8f0 100%);
+      background:linear-gradient(180deg, var(--aqua-dark) 30%, #1a6b8a 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
@@ -80,19 +83,17 @@
     .hero-sales .unit{
       font-size:20px;
       font-weight:700;
-      color:var(--silver-light);
+      color:var(--aqua-dark);
     }
-
     .hero-subtitle{
-      color:rgba(255,255,255,0.85);
+      color:#3a7a96;
       font-size:13px;
       line-height:1.7;
       margin-bottom:20px;
     }
     .hero-subtitle strong{
-      color:#7db4e8;
+      color:var(--aqua-dark);
     }
-
     .hero-product-area{
       position:relative;
       margin:0 auto;
@@ -104,39 +105,40 @@
     }
     .hero-catchcopy .line1{
       font-size:14px;
-      color:rgba(255,255,255,0.7);
+      color:#4a8faa;
       letter-spacing:2px;
     }
     .hero-catchcopy .line2{
       font-family:'Noto Serif JP',serif;
       font-size:26px;
       font-weight:900;
-      color:var(--white);
-      text-shadow:0 2px 12px rgba(0,0,0,0.3);
+      color:var(--aqua-dark);
+      text-shadow:0 1px 4px rgba(255,255,255,0.6);
       line-height:1.4;
       margin:8px 0;
     }
     .hero-catchcopy .line2 em{
       font-style:normal;
-      color:var(--blue-light);
+      color:#1a6b8a;
       font-size:30px;
     }
     .hero-catchcopy .line3{
       font-size:13px;
-      color:var(--silver-light);
+      color:#5a9ab5;
     }
 
-    /* Product bottle image */
+    /* Product bottle - water-style */
     .hero-bottle{
-      width:160px;
+      width:200px;
       margin:20px auto 0;
       position:relative;
-      filter:drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+      filter:drop-shadow(0 8px 24px rgba(43,122,158,0.2));
     }
     .hero-bottle img{
       width:100%;
       height:auto;
       display:block;
+      border-radius:12px;
     }
 
     /* ===== SECTION COMMON ===== */
@@ -149,7 +151,7 @@
       font-family:'Montserrat',sans-serif;
       font-size:11px;
       font-weight:700;
-      color:var(--blue-mid);
+      color:var(--aqua);
       letter-spacing:3px;
       text-transform:uppercase;
       display:block;
@@ -159,12 +161,12 @@
       font-family:'Noto Serif JP',serif;
       font-size:24px;
       font-weight:900;
-      color:var(--blue-dark);
+      color:var(--aqua-dark);
       line-height:1.4;
     }
     .section-title .line{
       width:40px;height:2px;
-      background:linear-gradient(90deg, var(--blue-mid), var(--silver));
+      background:linear-gradient(90deg, var(--aqua), var(--aqua-light));
       margin:12px auto 0;
     }
 
@@ -183,22 +185,18 @@
       margin-bottom:12px;
       font-size:15px;
       font-weight:500;
-      display:flex;
-      align-items:center;
-      gap:12px;
       box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      border-left:4px solid var(--blue-mid);
+      border-left:4px solid var(--aqua);
     }
-    /* emoji icons removed */
     .problems-arrow{
       text-align:center;
       margin:24px 0;
       font-size:32px;
-      color:var(--blue-mid);
+      color:var(--aqua);
     }
     .problems-solution{
       text-align:center;
-      background:linear-gradient(135deg, var(--blue-dark), var(--blue));
+      background:linear-gradient(135deg, var(--aqua-dark), var(--aqua));
       color:var(--white);
       border-radius:16px;
       padding:24px 20px;
@@ -213,8 +211,71 @@
     }
     .problems-solution .big em{
       font-style:normal;
-      color:var(--blue-light);
+      color:var(--aqua-light);
       font-size:28px;
+    }
+
+    /* ===== 4つのアプローチ (bubble feature section) ===== */
+    .features{
+      background:linear-gradient(180deg, var(--aqua-pale) 0%, #d4eef8 100%);
+      text-align:center;
+    }
+    .features-header{
+      margin-bottom:8px;
+    }
+    .features-header .label{
+      display:inline-block;
+      background:var(--aqua-dark);
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+      padding:6px 20px;
+      border-radius:4px;
+      margin-bottom:12px;
+    }
+    .features-header h2{
+      font-family:'Noto Serif JP',serif;
+      font-size:20px;
+      font-weight:900;
+      color:var(--aqua-dark);
+      line-height:1.5;
+    }
+    .features-header h2 em{
+      font-style:normal;
+      color:#1a6b8a;
+      font-size:32px;
+      display:block;
+    }
+    .features-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      max-width:360px;
+      margin:24px auto 0;
+    }
+    .feature-bubble{
+      background:rgba(255,255,255,0.7);
+      border-radius:50%;
+      width:150px;height:150px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto;
+      box-shadow:0 4px 20px rgba(91,181,213,0.2), inset 0 2px 0 rgba(255,255,255,0.8);
+      border:2px solid rgba(255,255,255,0.9);
+      backdrop-filter:blur(4px);
+    }
+    .feature-bubble .f-title{
+      font-size:15px;
+      font-weight:900;
+      color:var(--aqua-dark);
+      line-height:1.3;
+    }
+    .feature-bubble .f-sub{
+      font-size:10px;
+      color:#5a9ab5;
+      margin-top:4px;
     }
 
     /* ===== BEFORE AFTER ===== */
@@ -244,7 +305,7 @@
       color:var(--white);
     }
     .ba-card.before .label{background:#6b7b8d;}
-    .ba-card.after .label{background:var(--blue);}
+    .ba-card.after .label{background:var(--aqua);}
     .ba-card .photo{
       height:200px;
       position:relative;
@@ -271,7 +332,7 @@
       right:-20px;top:50%;
       transform:translateY(-50%);
       width:32px;height:32px;
-      background:var(--blue);
+      background:var(--aqua);
       border-radius:50%;
       display:flex;
       align-items:center;
@@ -293,35 +354,141 @@
       font-family:'Noto Serif JP',serif;
       font-size:18px;
       font-weight:900;
-      color:var(--blue-dark);
+      color:var(--aqua-dark);
       line-height:1.6;
     }
     .ba-caption em{
       font-style:normal;
-      color:var(--blue);
+      color:var(--aqua);
       font-size:22px;
+    }
+
+    /* ===== MODEL IMAGE SECTION ===== */
+    .model-section{
+      background:var(--white);
+      padding:0 0 48px;
+      text-align:center;
+    }
+    .model-image-wrap{
+      position:relative;
+      max-width:420px;
+      margin:0 auto;
+    }
+    .model-image-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .model-badges{
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .model-badge{
+      background:rgba(91,181,213,0.15);
+      border:2px solid rgba(91,181,213,0.4);
+      border-radius:50%;
+      width:90px;height:90px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      backdrop-filter:blur(8px);
+    }
+    .model-badge .mb-label{
+      font-size:9px;
+      color:var(--aqua-dark);
+      font-weight:700;
+    }
+    .model-badge .mb-value{
+      font-size:13px;
+      font-weight:900;
+      color:var(--aqua-dark);
+      line-height:1.2;
+    }
+    .model-overlay-text{
+      position:absolute;
+      left:12px;
+      bottom:20px;
+      text-align:left;
+    }
+    .model-overlay-text .mot-sub{
+      font-size:11px;
+      color:#fff;
+      text-shadow:0 1px 4px rgba(0,0,0,0.5);
+    }
+    .model-overlay-text .mot-main{
+      font-family:'Noto Serif JP',serif;
+      font-size:28px;
+      font-weight:900;
+      color:#fff;
+      text-shadow:0 2px 8px rgba(0,0,0,0.4);
+      letter-spacing:4px;
     }
 
     /* ===== AMAZON RANKING ===== */
     .ranking{
-      background:linear-gradient(180deg, #f0f4f8 0%, #e0e8f0 100%);
+      background:linear-gradient(180deg, #faf6ed 0%, #f5f0e0 100%);
       text-align:center;
       padding:48px 16px;
     }
-    .ranking-emblem{
+    .ranking-badges-row{
       display:flex;
+      gap:8px;
+      max-width:400px;
+      margin:0 auto 20px;
       justify-content:center;
-      margin-bottom:16px;
     }
-    .ranking-laurel-svg{
+    .rank-badge{
+      flex:1;
+      text-align:center;
+      padding:16px 8px 12px;
+    }
+    .rank-badge .rb-crown{
       display:block;
+      margin:0 auto 4px;
+    }
+    .rank-badge .rb-laurel{
+      position:relative;
+      display:inline-block;
+      padding:0 8px;
+    }
+    .rank-badge .rb-cat{
+      font-size:10px;
+      font-weight:700;
+      color:#8a7030;
+      letter-spacing:0.5px;
+    }
+    .rank-badge .rb-label{
+      font-size:9px;
+      color:#a08840;
+      font-weight:600;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+    .rank-badge .rb-no{
+      font-family:'Montserrat',sans-serif;
+      font-size:36px;
+      font-weight:900;
+      color:#8a6c14;
+      line-height:1;
+      display:block;
+      font-style:italic;
+    }
+    .rank-badge .rb-ribbon{
+      display:block;
+      margin:6px auto 0;
     }
 
     .ranking-text{
       font-family:'Noto Serif JP',serif;
       font-size:20px;
       font-weight:900;
-      color:var(--blue-dark);
+      color:#5a4a20;
       line-height:1.5;
       margin-bottom:8px;
     }
@@ -333,40 +500,6 @@
     .ranking-sub{
       font-size:13px;
       color:#888;
-    }
-
-    .ranking-cards{
-      display:flex;
-      gap:12px;
-      max-width:420px;
-      margin:24px auto 0;
-      justify-content:center;
-    }
-    .ranking-card{
-      flex:1;
-      background:var(--white);
-      border-radius:12px;
-      padding:16px 12px;
-      box-shadow:0 4px 16px rgba(0,0,0,0.08);
-      border-top:3px solid var(--gold);
-    }
-    .ranking-card .rank-label{
-      font-size:11px;
-      color:var(--silver-dark);
-      font-weight:700;
-      margin-bottom:4px;
-    }
-    .ranking-card .rank-num{
-      font-family:'Montserrat',sans-serif;
-      font-size:28px;
-      font-weight:900;
-      color:var(--gold);
-    }
-    .ranking-card .rank-cat{
-      font-size:12px;
-      color:#555;
-      font-weight:500;
-      margin-top:4px;
     }
 
     /* ===== INGREDIENTS ===== */
@@ -381,7 +514,7 @@
       display:flex;
       gap:16px;
       align-items:flex-start;
-      background:var(--cream);
+      background:var(--aqua-ultra);
       border-radius:16px;
       padding:20px;
       margin-bottom:16px;
@@ -391,14 +524,13 @@
       min-width:56px;
       border-radius:50%;
       display:flex;align-items:center;justify-content:center;
-      font-size:28px;
-      background:linear-gradient(135deg, var(--blue-pale), var(--silver-light));
-      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      background:linear-gradient(135deg, var(--aqua-pale), #d4eef8);
+      box-shadow:0 2px 8px rgba(91,181,213,0.15);
     }
     .ing-card h3{
       font-size:15px;
       font-weight:700;
-      color:var(--blue-dark);
+      color:var(--aqua-dark);
       margin-bottom:4px;
     }
     .ing-card p{
@@ -409,7 +541,7 @@
 
     /* ===== HOW TO USE ===== */
     .howto{
-      background:linear-gradient(180deg, var(--blue-pale) 0%, var(--white) 100%);
+      background:linear-gradient(180deg, var(--aqua-pale) 0%, var(--white) 100%);
     }
     .howto-steps{
       max-width:400px;
@@ -428,26 +560,26 @@
       left:22px;top:52px;
       width:2px;
       height:calc(100% - 20px);
-      background:linear-gradient(180deg, var(--blue-mid), var(--silver-light));
+      background:linear-gradient(180deg, var(--aqua), var(--aqua-light));
     }
     .howto-step .step-num{
       width:44px;height:44px;
       min-width:44px;
-      background:linear-gradient(135deg, var(--blue), var(--blue-mid));
+      background:linear-gradient(135deg, var(--aqua-dark), var(--aqua));
       border-radius:50%;
       display:flex;align-items:center;justify-content:center;
       font-family:'Montserrat',sans-serif;
       font-size:18px;
       font-weight:800;
       color:var(--white);
-      box-shadow:0 4px 12px rgba(26,92,168,0.3);
+      box-shadow:0 4px 12px rgba(43,122,158,0.3);
       position:relative;
       z-index:1;
     }
     .howto-step h3{
       font-size:15px;
       font-weight:700;
-      color:var(--blue-dark);
+      color:var(--aqua-dark);
       margin-bottom:4px;
     }
     .howto-step p{
@@ -458,7 +590,7 @@
 
     /* ===== TOKUTEN (3大特典) ===== */
     .tokuten{
-      background:linear-gradient(170deg, var(--blue-dark) 0%, #0d3b7a 100%);
+      background:linear-gradient(170deg, var(--aqua-dark) 0%, #1a6b8a 100%);
       color:var(--white);
       text-align:center;
       padding:48px 16px;
@@ -469,13 +601,13 @@
     }
     .tokuten-title .sub{
       font-size:14px;
-      color:var(--blue-light);
+      color:var(--aqua-light);
       letter-spacing:2px;
     }
     .tokuten-title .main{
       font-size:40px;
       font-weight:900;
-      background:linear-gradient(180deg, #ffffff 20%, #c0d0e0 100%);
+      background:linear-gradient(180deg, #ffffff 20%, #b8e4f3 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
@@ -485,8 +617,8 @@
       margin:0 auto;
     }
     .tokuten-card{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.15);
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.2);
       border-radius:16px;
       padding:24px 20px;
       margin-bottom:16px;
@@ -494,7 +626,7 @@
     }
     .tokuten-card .tk-num{
       display:inline-block;
-      background:linear-gradient(135deg, var(--blue-mid), var(--blue-light));
+      background:linear-gradient(135deg, var(--aqua), var(--aqua-light));
       border-radius:20px;
       padding:4px 16px;
       font-family:'Montserrat',sans-serif;
@@ -530,22 +662,15 @@
       color:rgba(255,255,255,0.5);
       text-decoration:line-through;
     }
-    .tokuten-card .arrow-r{font-size:20px;color:var(--blue-light);}
+    .tokuten-card .arrow-r{font-size:20px;color:var(--aqua-light);}
     .tokuten-card .new-price{
       font-family:'Montserrat',sans-serif;
       font-size:36px;
       font-weight:900;
       color:var(--white);
     }
-    .tokuten-card .new-price .yen{
-      font-size:16px;
-      font-weight:700;
-    }
-    .tokuten-card .new-price .tax{
-      font-size:11px;
-      font-weight:400;
-      color:rgba(255,255,255,0.6);
-    }
+    .tokuten-card .new-price .yen{font-size:16px;font-weight:700;}
+    .tokuten-card .new-price .tax{font-size:11px;font-weight:400;color:rgba(255,255,255,0.6);}
 
     /* ===== FAQ ===== */
     .faq{
@@ -578,7 +703,7 @@
       justify-content:center;
       width:24px;height:24px;
       min-width:24px;
-      background:var(--blue);
+      background:var(--aqua);
       color:var(--white);
       border-radius:50%;
       font-family:'Montserrat',sans-serif;
@@ -611,7 +736,7 @@
       width:100px;
       min-width:100px;
       font-weight:700;
-      color:var(--blue-dark);
+      color:var(--aqua-dark);
     }
     .company-table dd{
       color:#666;
@@ -697,7 +822,6 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <!-- crown removed -->
   <div class="hero-badge"><span>ニキビ跡ケア美容液 売上</span></div>
   <div class="hero-sales">
     <span class="number">150,000</span>
@@ -739,6 +863,53 @@
   </div>
 </section>
 
+<!-- ===== 4つのアプローチ ===== -->
+<section class="features">
+  <div class="features-header">
+    <span class="label">実は…</span>
+    <h2>正しいケアで解決できるんです！<br>AQUA CLEARの<br><em>4つのアプローチ</em></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-bubble">
+      <span class="f-title">ニキビ跡を<br>ケア</span>
+      <span class="f-sub">Acne Care</span>
+    </div>
+    <div class="feature-bubble">
+      <span class="f-title">毛穴を<br>引き締める</span>
+      <span class="f-sub">Pore Tightening</span>
+    </div>
+    <div class="feature-bubble">
+      <span class="f-title">透明感を<br>与える</span>
+      <span class="f-sub">Brightening</span>
+    </div>
+    <div class="feature-bubble">
+      <span class="f-title">うるおいを<br>持続</span>
+      <span class="f-sub">Moisturizing</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== モデルイメージ ===== -->
+<section class="model-section">
+  <div class="model-image-wrap">
+    <img src="pime.jpg" alt="透明美肌イメージ">
+    <div class="model-badges">
+      <div class="model-badge">
+        <span class="mb-label">大注目成分</span>
+        <span class="mb-value">ビタミンC<br>誘導体</span>
+      </div>
+      <div class="model-badge">
+        <span class="mb-label">皮膚科医</span>
+        <span class="mb-value">監修<br>処方</span>
+      </div>
+    </div>
+    <div class="model-overlay-text">
+      <p class="mot-sub">ニキビ跡ケアしながら</p>
+      <p class="mot-main">透 明 美 肌</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== BEFORE / AFTER ===== -->
 <section class="beforeafter">
   <div class="section-title">
@@ -770,53 +941,76 @@
 
 <!-- ===== AMAZON RANKING ===== -->
 <section class="ranking">
-  <div class="ranking-emblem">
-    <svg class="ranking-laurel-svg" viewBox="0 0 200 120" width="200" height="120">
-      <!-- Left laurel branch -->
-      <path d="M45,100 C40,85 30,75 25,60 C20,50 22,40 30,35 C35,38 38,45 36,55 C34,65 38,75 45,100Z" fill="#b8962e"/>
-      <path d="M50,90 C48,78 40,68 35,55 C30,45 33,37 40,33 C44,36 46,43 44,52 C42,62 45,72 50,90Z" fill="#c9a84c"/>
-      <path d="M55,82 C54,72 48,63 44,52 C40,43 43,36 49,33 C53,36 54,42 52,50 C50,58 52,68 55,82Z" fill="#b8962e"/>
-      <path d="M60,75 C60,66 55,58 52,48 C49,40 52,34 57,32 C61,35 62,40 60,47 C58,55 59,64 60,75Z" fill="#c9a84c"/>
-      <!-- Right laurel branch (mirrored) -->
-      <path d="M155,100 C160,85 170,75 175,60 C180,50 178,40 170,35 C165,38 162,45 164,55 C166,65 162,75 155,100Z" fill="#b8962e"/>
-      <path d="M150,90 C152,78 160,68 165,55 C170,45 167,37 160,33 C156,36 154,43 156,52 C158,62 155,72 150,90Z" fill="#c9a84c"/>
-      <path d="M145,82 C146,72 152,63 156,52 C160,43 157,36 151,33 C147,36 146,42 148,50 C150,58 148,68 145,82Z" fill="#b8962e"/>
-      <path d="M140,75 C140,66 145,58 148,48 C151,40 148,34 143,32 C139,35 138,40 140,47 C142,55 141,64 140,75Z" fill="#c9a84c"/>
-      <!-- Center No.1 -->
-      <circle cx="100" cy="52" r="30" fill="url(#goldGrad)" stroke="#a07820" stroke-width="2"/>
-      <circle cx="100" cy="52" r="25" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-      <text x="100" y="60" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="24" font-weight="900" fill="#fff">1</text>
-      <defs>
-        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#d4af37"/>
-          <stop offset="100%" stop-color="#8b6914"/>
-        </linearGradient>
-      </defs>
-    </svg>
+  <div class="ranking-badges-row">
+    <!-- Badge 1 -->
+    <div class="rank-badge">
+      <svg class="rb-crown" width="32" height="20" viewBox="0 0 32 20">
+        <path d="M2,18 L6,6 L11,12 L16,2 L21,12 L26,6 L30,18Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/>
+        <circle cx="6" cy="6" r="2" fill="#e8d48b"/><circle cx="16" cy="2" r="2" fill="#e8d48b"/><circle cx="26" cy="6" r="2" fill="#e8d48b"/>
+      </svg>
+      <svg class="rb-laurel" width="80" height="60" viewBox="0 0 80 60">
+        <path d="M12,50 C10,40 6,32 4,24 C2,18 5,14 9,13 C12,15 13,20 11,26 C9,34 11,42 12,50Z" fill="#b8962e"/>
+        <path d="M16,44 C15,36 10,28 8,22 C6,16 9,12 13,11 C16,13 17,18 15,24 C13,32 15,38 16,44Z" fill="#c9a84c"/>
+        <path d="M20,38 C20,32 16,26 14,20 C12,15 15,12 18,11 C21,13 21,17 19,22 C17,28 19,34 20,38Z" fill="#b8962e"/>
+        <path d="M68,50 C70,40 74,32 76,24 C78,18 75,14 71,13 C68,15 67,20 69,26 C71,34 69,42 68,50Z" fill="#b8962e"/>
+        <path d="M64,44 C65,36 70,28 72,22 C74,16 71,12 67,11 C64,13 63,18 65,24 C67,32 65,38 64,44Z" fill="#c9a84c"/>
+        <path d="M60,38 C60,32 64,26 66,20 C68,15 65,12 62,11 C59,13 59,17 61,22 C63,28 61,34 60,38Z" fill="#b8962e"/>
+      </svg>
+      <p class="rb-cat">美容液部門</p>
+      <p class="rb-label">RANKING</p>
+      <span class="rb-no">No.1</span>
+      <svg class="rb-ribbon" width="60" height="12" viewBox="0 0 60 12">
+        <path d="M0,0 L60,0 L55,6 L60,12 L0,12 L5,6Z" fill="#c0392b"/>
+      </svg>
+    </div>
+    <!-- Badge 2 -->
+    <div class="rank-badge">
+      <svg class="rb-crown" width="32" height="20" viewBox="0 0 32 20">
+        <path d="M2,18 L6,6 L11,12 L16,2 L21,12 L26,6 L30,18Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/>
+        <circle cx="6" cy="6" r="2" fill="#e8d48b"/><circle cx="16" cy="2" r="2" fill="#e8d48b"/><circle cx="26" cy="6" r="2" fill="#e8d48b"/>
+      </svg>
+      <svg class="rb-laurel" width="80" height="60" viewBox="0 0 80 60">
+        <path d="M12,50 C10,40 6,32 4,24 C2,18 5,14 9,13 C12,15 13,20 11,26 C9,34 11,42 12,50Z" fill="#b8962e"/>
+        <path d="M16,44 C15,36 10,28 8,22 C6,16 9,12 13,11 C16,13 17,18 15,24 C13,32 15,38 16,44Z" fill="#c9a84c"/>
+        <path d="M20,38 C20,32 16,26 14,20 C12,15 15,12 18,11 C21,13 21,17 19,22 C17,28 19,34 20,38Z" fill="#b8962e"/>
+        <path d="M68,50 C70,40 74,32 76,24 C78,18 75,14 71,13 C68,15 67,20 69,26 C71,34 69,42 68,50Z" fill="#b8962e"/>
+        <path d="M64,44 C65,36 70,28 72,22 C74,16 71,12 67,11 C64,13 63,18 65,24 C67,32 65,38 64,44Z" fill="#c9a84c"/>
+        <path d="M60,38 C60,32 64,26 66,20 C68,15 65,12 62,11 C59,13 59,17 61,22 C63,28 61,34 60,38Z" fill="#b8962e"/>
+      </svg>
+      <p class="rb-cat">スキンケア部門</p>
+      <p class="rb-label">RANKING</p>
+      <span class="rb-no">No.1</span>
+      <svg class="rb-ribbon" width="60" height="12" viewBox="0 0 60 12">
+        <path d="M0,0 L60,0 L55,6 L60,12 L0,12 L5,6Z" fill="#2b7a9e"/>
+      </svg>
+    </div>
+    <!-- Badge 3 -->
+    <div class="rank-badge">
+      <svg class="rb-crown" width="32" height="20" viewBox="0 0 32 20">
+        <path d="M2,18 L6,6 L11,12 L16,2 L21,12 L26,6 L30,18Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/>
+        <circle cx="6" cy="6" r="2" fill="#e8d48b"/><circle cx="16" cy="2" r="2" fill="#e8d48b"/><circle cx="26" cy="6" r="2" fill="#e8d48b"/>
+      </svg>
+      <svg class="rb-laurel" width="80" height="60" viewBox="0 0 80 60">
+        <path d="M12,50 C10,40 6,32 4,24 C2,18 5,14 9,13 C12,15 13,20 11,26 C9,34 11,42 12,50Z" fill="#b8962e"/>
+        <path d="M16,44 C15,36 10,28 8,22 C6,16 9,12 13,11 C16,13 17,18 15,24 C13,32 15,38 16,44Z" fill="#c9a84c"/>
+        <path d="M20,38 C20,32 16,26 14,20 C12,15 15,12 18,11 C21,13 21,17 19,22 C17,28 19,34 20,38Z" fill="#b8962e"/>
+        <path d="M68,50 C70,40 74,32 76,24 C78,18 75,14 71,13 C68,15 67,20 69,26 C71,34 69,42 68,50Z" fill="#b8962e"/>
+        <path d="M64,44 C65,36 70,28 72,22 C74,16 71,12 67,11 C64,13 63,18 65,24 C67,32 65,38 64,44Z" fill="#c9a84c"/>
+        <path d="M60,38 C60,32 64,26 66,20 C68,15 65,12 62,11 C59,13 59,17 61,22 C63,28 61,34 60,38Z" fill="#b8962e"/>
+      </svg>
+      <p class="rb-cat">ニキビケア部門</p>
+      <p class="rb-label">RANKING</p>
+      <span class="rb-no">No.1</span>
+      <svg class="rb-ribbon" width="60" height="12" viewBox="0 0 60 12">
+        <path d="M0,0 L60,0 L55,6 L60,12 L0,12 L5,6Z" fill="#c9a84c"/>
+      </svg>
+    </div>
   </div>
   <p class="ranking-text">
     <span class="amazon">Amazon</span>ランキング<br>
-    <strong style="font-size:28px;">No.1</strong> 獲得！
+    <strong style="font-size:28px;">3冠</strong> 達成！
   </p>
   <p class="ranking-sub">※2025年○月 美容液カテゴリ デイリーランキング</p>
-
-  <div class="ranking-cards">
-    <div class="ranking-card">
-      <p class="rank-label">デイリー</p>
-      <p class="rank-num">1<span style="font-size:14px;">位</span></p>
-      <p class="rank-cat">美容液部門</p>
-    </div>
-    <div class="ranking-card">
-      <p class="rank-label">ウィークリー</p>
-      <p class="rank-num">1<span style="font-size:14px;">位</span></p>
-      <p class="rank-cat">スキンケア部門</p>
-    </div>
-    <div class="ranking-card">
-      <p class="rank-label">ベストセラー</p>
-      <p class="rank-num">1<span style="font-size:14px;">位</span></p>
-      <p class="rank-cat">ニキビケア部門</p>
-    </div>
-  </div>
 </section>
 
 <!-- ===== 成分 ===== -->
@@ -829,7 +1023,7 @@
   <div class="ing-cards">
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><polygon points="14,2 17,10 26,10 19,16 21,25 14,20 7,25 9,16 2,10 11,10" fill="#3a7bd5"/></svg>
+        <svg width="28" height="28" viewBox="0 0 28 28"><polygon points="14,2 17,10 26,10 19,16 21,25 14,20 7,25 9,16 2,10 11,10" fill="#5bb5d5"/></svg>
       </div>
       <div>
         <h3>高濃度ビタミンC誘導体</h3>
@@ -838,7 +1032,7 @@
     </div>
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 C14,4 8,10 8,16 C8,20 10.7,24 14,24 C17.3,24 20,20 20,16 C20,10 14,4 14,4Z" fill="#3a7bd5"/></svg>
+        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 C14,4 8,10 8,16 C8,20 10.7,24 14,24 C17.3,24 20,20 20,16 C20,10 14,4 14,4Z" fill="#5bb5d5"/></svg>
       </div>
       <div>
         <h3>ヒト幹細胞培養液</h3>
@@ -847,7 +1041,7 @@
     </div>
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="#3a7bd5" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="#3a7bd5"/></svg>
+        <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="#5bb5d5" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="#5bb5d5"/></svg>
       </div>
       <div>
         <h3>5種のヒアルロン酸</h3>
@@ -856,7 +1050,7 @@
     </div>
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 L14,24 M8,8 L14,14 M20,8 L14,14 M8,18 L14,14 M20,18 L14,14" stroke="#3a7bd5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 L14,24 M8,8 L14,14 M20,8 L14,14 M8,18 L14,14 M20,18 L14,14" stroke="#5bb5d5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
       </div>
       <div>
         <h3>ツボクサエキス（CICA）</h3>
@@ -962,7 +1156,7 @@
         <span class="q-icon">Q</span>
         <span>定期コースの解約方法は？</span>
       </div>
-      <div class="faq-a">次回お届け予定日の10日前までに、<br>お電話（0120-XXX-XXX／<br>平日10時〜18時）にて<br>ご連絡ください。<br>回数縛りはございません。</div>
+      <div class="faq-a">次回お届け予定日の10日前までに、<br>お電話（0120-XXX-XXX／平日10時〜18時）にて<br>ご連絡ください。<br>回数縛りはございません。</div>
     </div>
   </div>
 </section>
