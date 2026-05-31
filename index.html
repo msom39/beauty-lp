@@ -59,12 +59,13 @@
     /* 「シミ予防しながら」だけ上書き（透明美肌はそのまま） */
     .hero-text-overlay .catch-replace{
       position:absolute;
-      top:15.5%;
-      left:10%;
-      right:10%;
+      top:14.5%;
+      left:0;
+      right:0;
       text-align:center;
-      background:#f5f9fc;
-      padding:6px 0;
+      background:linear-gradient(to bottom, #eef4f8 0%, #f3f7fa 50%, rgba(243,247,250,0) 100%);
+      padding:8px 0 16px;
+      z-index:1;
     }
     .hero-text-overlay .catch-replace .sub{
       font-size:14px;
@@ -76,11 +77,12 @@
     .hero-text-overlay .brand-replace{
       position:absolute;
       top:0;
-      left:30%;
-      right:30%;
+      left:0;
+      right:0;
       background:#fff;
-      padding:4px 12px;
+      padding:6px 12px;
       text-align:center;
+      z-index:2;
     }
     .hero-text-overlay .brand-replace span{
       font-family:'Montserrat',sans-serif;
