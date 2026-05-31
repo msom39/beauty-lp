@@ -122,9 +122,9 @@
     /* SPF50+バブルをニキビケア文言に上書き */
     .hero-text-overlay .spf-replace{
       position:absolute;
-      bottom:28%;
-      right:4%;
-      width:28%;
+      bottom:27%;
+      right:2%;
+      width:32%;
       aspect-ratio:1;
       background:radial-gradient(circle at 35% 35%, rgba(200,238,250,1), rgba(150,218,242,0.99));
       border-radius:50%;
@@ -168,24 +168,134 @@
       color:var(--aqua-dark);
     }
 
-    /* ===== RANKING - 実画像をそのまま使用 ===== */
+    /* ===== RANKING - 楽天ランキング風 ===== */
     .ranking-section{
-      padding:30px 16px;
+      padding:36px 12px 40px;
       text-align:center;
-      background:var(--cream);
+      background:linear-gradient(180deg, var(--aqua-ultra) 0%, #fff 100%);
+      position:relative;
+      overflow:hidden;
     }
-    .ranking-section .ranking-badge{
-      max-width:180px;
-      margin:0 auto 12px;
+    .ranking-section::before{
+      content:'';
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      background:repeating-linear-gradient(90deg, rgba(180,215,235,0.08) 0px, rgba(180,215,235,0.03) 4px, transparent 4px, transparent 18px);
+      pointer-events:none;
     }
-    .ranking-section .ranking-text{
-      font-size:13px;
-      color:var(--text-mid);
-      line-height:1.6;
+    .ranking-title{
+      font-size:18px;
+      font-weight:900;
+      color:#b8860b;
+      margin-bottom:20px;
+      line-height:1.4;
+      position:relative;
     }
-    .ranking-section .ranking-text strong{
-      color:var(--gold);
-      font-size:15px;
+    .ranking-title .crown-icon{
+      display:block;
+      font-size:28px;
+      margin-bottom:4px;
+      filter:drop-shadow(0 1px 2px rgba(184,134,11,0.3));
+    }
+    .ranking-title span{
+      font-family:'Montserrat',sans-serif;
+      font-size:26px;
+      font-weight:900;
+      color:#d4a017;
+    }
+    .ranking-badges{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      max-width:380px;
+      margin:0 auto 20px;
+    }
+    .rank-badge{
+      background:rgba(255,255,255,0.5);
+      border-radius:12px;
+      padding:14px 6px 10px;
+      text-align:center;
+      position:relative;
+      backdrop-filter:blur(4px);
+    }
+    .rank-badge .badge-crown{
+      font-size:18px;
+      display:block;
+      margin-bottom:2px;
+    }
+    .rank-badge .badge-category{
+      font-size:10px;
+      color:#8b7355;
+      font-weight:700;
+      line-height:1.3;
+      margin-bottom:4px;
+    }
+    .rank-badge .badge-wreath{
+      position:relative;
+      width:80px;
+      height:80px;
+      margin:0 auto 4px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .rank-badge .badge-wreath::before,
+    .rank-badge .badge-wreath::after{
+      content:'';
+      position:absolute;
+      width:36px;
+      height:64px;
+      border:2.5px solid #c9a84c;
+      border-radius:50%;
+      top:8px;
+    }
+    .rank-badge .badge-wreath::before{
+      left:2px;
+      transform:rotate(-15deg);
+      border-right-color:transparent;
+    }
+    .rank-badge .badge-wreath::after{
+      right:2px;
+      transform:rotate(15deg);
+      border-left-color:transparent;
+    }
+    .rank-badge .badge-rank{
+      font-family:'Montserrat','Noto Serif JP',serif;
+      font-size:11px;
+      font-weight:700;
+      color:#8b7355;
+      line-height:1.1;
+      position:relative;
+      z-index:1;
+    }
+    .rank-badge .badge-rank .rank-num{
+      font-size:32px;
+      font-weight:900;
+      color:#c9a84c;
+      display:block;
+      line-height:1;
+    }
+    .rank-badge .badge-date{
+      font-size:8px;
+      color:#aaa;
+      margin-top:2px;
+    }
+    .rank-badge .badge-ribbon{
+      display:inline-block;
+      background:linear-gradient(135deg, #2b5ea7, #3a7bd5);
+      color:#fff;
+      font-family:'Montserrat',sans-serif;
+      font-size:9px;
+      font-weight:700;
+      padding:2px 14px;
+      border-radius:2px;
+      letter-spacing:2px;
+      margin-top:4px;
+    }
+    .ranking-product{
+      max-width:140px;
+      margin:0 auto;
+      mix-blend-mode:multiply;
     }
 
     /* ===== 悩みセクション ===== */
@@ -623,10 +733,51 @@
   </div>
 </section>
 
-<!-- ===== RANKING: 実画像をそのまま使用 ===== -->
+<!-- ===== RANKING: 楽天ランキング風 ===== -->
 <section class="ranking-section">
-  <img src="ranking-no1.jpg" alt="売上No.1" class="ranking-badge">
-  <p class="ranking-text">ニキビ跡ケア美容液 売上<strong> 150,000 本突破</strong><br>皮膚科医監修 × 独自処方で<br>頑固なニキビ跡にアプローチ</p>
+  <h2 class="ranking-title">
+    <span class="crown-icon">&#x1F451;</span>
+    楽天ランキング各ジャンルで<span>1位</span>獲得！
+  </h2>
+  <div class="ranking-badges">
+    <div class="rank-badge">
+      <span class="badge-crown">&#x1F451;</span>
+      <p class="badge-category">「ニキビケア」<br>部門</p>
+      <div class="badge-wreath">
+        <div class="badge-rank">第<span class="rank-num">1</span>位</div>
+      </div>
+      <p class="badge-date">2024.12.3他</p>
+      <span class="badge-ribbon">RAKUTEN</span>
+    </div>
+    <div class="rank-badge">
+      <span class="badge-crown">&#x1F451;</span>
+      <p class="badge-category">「ニキビ跡ケア」<br>部門</p>
+      <div class="badge-wreath">
+        <div class="badge-rank">第<span class="rank-num">1</span>位</div>
+      </div>
+      <p class="badge-date">2024.12.3他</p>
+      <span class="badge-ribbon">RAKUTEN</span>
+    </div>
+    <div class="rank-badge">
+      <span class="badge-crown">&#x1F451;</span>
+      <p class="badge-category">「美容液」<br>部門</p>
+      <div class="badge-wreath">
+        <div class="badge-rank">第<span class="rank-num">1</span>位</div>
+      </div>
+      <p class="badge-date">2024.12.3他</p>
+      <span class="badge-ribbon">RAKUTEN</span>
+    </div>
+    <div class="rank-badge">
+      <span class="badge-crown">&#x1F451;</span>
+      <p class="badge-category">「スキンケア<br>美容液」部門</p>
+      <div class="badge-wreath">
+        <div class="badge-rank">第<span class="rank-num">1</span>位</div>
+      </div>
+      <p class="badge-date">2024.12.3他</p>
+      <span class="badge-ribbon">RAKUTEN</span>
+    </div>
+  </div>
+  <img src="pime.jpg" alt="AQUA CLEAR SERUM" class="ranking-product">
 </section>
 
 <!-- ===== 悩み ===== -->
