@@ -9,7 +9,7 @@
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;font-size:16px;}
-    body{font-family:'Noto Sans JP',sans-serif;color:#333;line-height:1.8;background:#fff;overflow-x:hidden;}
+    body{font-family:'Noto Sans JP',sans-serif;color:#444;line-height:1.8;background:#fff;overflow-x:hidden;}
     a{text-decoration:none;color:inherit;}
     img{max-width:100%;height:auto;display:block;}
     ul{list-style:none;}
@@ -21,10 +21,11 @@
       --aqua-light:#b8e4f3;
       --aqua-pale:#e6f5fb;
       --aqua-ultra:#f0f9fd;
-      --silver:#c0c7d0;
-      --silver-light:#e8ecf0;
-      --silver-dark:#8a95a3;
+      --text-dark:#3a3a3a;
+      --text-mid:#555;
+      --text-light:#777;
       --gold:#c9a84c;
+      --gold-dark:#a07820;
       --gold-light:#e8d48b;
       --red:#c0392b;
       --orange:#e67e22;
@@ -34,111 +35,134 @@
 
     /* ===== HERO SECTION ===== */
     .hero{
-      background:linear-gradient(170deg, #d4eef8 0%, #e8f5fb 30%, #c9e8f5 60%, #b0dced 100%);
-      padding:40px 16px 30px;
-      text-align:center;
+      background:linear-gradient(180deg, #e8f4fa 0%, #d6ecf5 50%, #c4e3f0 100%);
       position:relative;
       overflow:hidden;
     }
-    .hero::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;right:0;bottom:0;
-      background:
-        radial-gradient(circle 80px at 20% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(circle 120px at 70% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(circle 60px at 50% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(circle 40px at 85% 20%, rgba(255,255,255,0.3) 0%, transparent 100%);
-      pointer-events:none;
+    .hero-top{
+      text-align:center;
+      padding:32px 16px 0;
+      position:relative;
+      z-index:2;
     }
     .hero-badge{
       display:inline-block;
-      background:rgba(255,255,255,0.6);
-      border:1px solid rgba(255,255,255,0.8);
+      background:rgba(255,255,255,0.7);
+      border:1px solid rgba(255,255,255,0.9);
       border-radius:8px;
-      padding:8px 24px;
-      margin-bottom:16px;
+      padding:6px 20px;
+      margin-bottom:12px;
       backdrop-filter:blur(4px);
     }
     .hero-badge span{
-      color:var(--aqua-dark);
-      font-size:13px;
+      color:var(--text-dark);
+      font-size:12px;
       font-weight:700;
       letter-spacing:1px;
     }
     .hero-sales{
-      margin-bottom:8px;
+      margin-bottom:4px;
     }
     .hero-sales .number{
       font-family:'Montserrat',sans-serif;
-      font-size:52px;
+      font-size:48px;
       font-weight:900;
-      background:linear-gradient(180deg, var(--aqua-dark) 30%, #1a6b8a 100%);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+      color:var(--text-dark);
       line-height:1.1;
       display:block;
     }
     .hero-sales .unit{
-      font-size:20px;
+      font-size:18px;
       font-weight:700;
-      color:var(--aqua-dark);
+      color:var(--text-dark);
     }
     .hero-subtitle{
-      color:#3a7a96;
+      color:var(--text-mid);
       font-size:13px;
-      line-height:1.7;
-      margin-bottom:20px;
+      line-height:1.6;
+      margin-bottom:12px;
     }
     .hero-subtitle strong{
-      color:var(--aqua-dark);
-    }
-    .hero-product-area{
-      position:relative;
-      margin:0 auto;
-      max-width:360px;
+      color:var(--text-dark);
     }
     .hero-catchcopy{
       position:relative;
       z-index:2;
     }
     .hero-catchcopy .line1{
-      font-size:14px;
-      color:#4a8faa;
+      font-size:13px;
+      color:var(--text-mid);
       letter-spacing:2px;
     }
     .hero-catchcopy .line2{
       font-family:'Noto Serif JP',serif;
       font-size:26px;
       font-weight:900;
-      color:var(--aqua-dark);
-      text-shadow:0 1px 4px rgba(255,255,255,0.6);
+      color:var(--text-dark);
       line-height:1.4;
-      margin:8px 0;
+      margin:6px 0;
     }
     .hero-catchcopy .line2 em{
       font-style:normal;
-      color:#1a6b8a;
+      color:var(--aqua-dark);
       font-size:30px;
     }
     .hero-catchcopy .line3{
-      font-size:13px;
-      color:#5a9ab5;
+      font-size:12px;
+      color:var(--text-light);
     }
 
-    /* Product bottle - water-style */
-    .hero-bottle{
-      width:200px;
-      margin:20px auto 0;
+    /* Hero visual: woman + product */
+    .hero-visual{
       position:relative;
-      filter:drop-shadow(0 8px 24px rgba(43,122,158,0.2));
+      max-width:500px;
+      margin:16px auto 0;
     }
-    .hero-bottle img{
+    .hero-model{
       width:100%;
-      height:auto;
       display:block;
-      border-radius:12px;
+    }
+    .hero-product-float{
+      position:absolute;
+      bottom:-20px;
+      right:-10px;
+      width:150px;
+      z-index:3;
+    }
+    .hero-product-float .bottle-wrap{
+      position:relative;
+    }
+    .hero-product-float img{
+      width:100%;
+      filter:drop-shadow(0 8px 20px rgba(43,122,158,0.25));
+      border-radius:8px;
+    }
+    /* Water ripple under bottle */
+    .hero-product-float .water-ring{
+      position:absolute;
+      bottom:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      width:140px;
+      height:30px;
+      background:radial-gradient(ellipse, rgba(91,181,213,0.3) 0%, rgba(91,181,213,0.1) 40%, transparent 70%);
+      border-radius:50%;
+      animation:ripple 3s ease-in-out infinite;
+    }
+    .hero-product-float .water-ring2{
+      position:absolute;
+      bottom:-18px;
+      left:50%;
+      transform:translateX(-50%);
+      width:170px;
+      height:20px;
+      background:radial-gradient(ellipse, rgba(91,181,213,0.15) 0%, transparent 60%);
+      border-radius:50%;
+      animation:ripple 3s ease-in-out 0.5s infinite;
+    }
+    @keyframes ripple{
+      0%,100%{transform:translateX(-50%) scale(1);opacity:0.7;}
+      50%{transform:translateX(-50%) scale(1.15);opacity:1;}
     }
 
     /* ===== SECTION COMMON ===== */
@@ -159,9 +183,9 @@
     }
     .section-title h2{
       font-family:'Noto Serif JP',serif;
-      font-size:24px;
+      font-size:22px;
       font-weight:900;
-      color:var(--aqua-dark);
+      color:var(--text-dark);
       line-height:1.4;
     }
     .section-title .line{
@@ -181,22 +205,23 @@
     .problems-list li{
       background:var(--white);
       border-radius:12px;
-      padding:16px 20px;
-      margin-bottom:12px;
-      font-size:15px;
+      padding:14px 20px;
+      margin-bottom:10px;
+      font-size:14px;
       font-weight:500;
-      box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      border-left:4px solid var(--aqua);
+      color:var(--text-dark);
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      border-left:4px solid var(--aqua-light);
     }
     .problems-arrow{
       text-align:center;
-      margin:24px 0;
-      font-size:32px;
+      margin:20px 0;
+      font-size:28px;
       color:var(--aqua);
     }
     .problems-solution{
       text-align:center;
-      background:linear-gradient(135deg, var(--aqua-dark), var(--aqua));
+      background:linear-gradient(135deg, var(--aqua-mid), var(--aqua-light));
       color:var(--white);
       border-radius:16px;
       padding:24px 20px;
@@ -205,284 +230,152 @@
     }
     .problems-solution .big{
       font-family:'Noto Serif JP',serif;
-      font-size:22px;
+      font-size:20px;
       font-weight:900;
       line-height:1.5;
     }
     .problems-solution .big em{
       font-style:normal;
-      color:var(--aqua-light);
-      font-size:28px;
+      font-size:26px;
     }
 
-    /* ===== 4つのアプローチ (bubble feature section) ===== */
+    /* ===== 4つのアプローチ ===== */
     .features{
-      background:linear-gradient(180deg, var(--aqua-pale) 0%, #d4eef8 100%);
+      background:linear-gradient(180deg, var(--aqua-pale) 0%, #daf0f9 100%);
       text-align:center;
     }
     .features-header{
-      margin-bottom:8px;
+      margin-bottom:24px;
     }
     .features-header .label{
       display:inline-block;
-      background:var(--aqua-dark);
+      background:var(--aqua);
       color:#fff;
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
-      padding:6px 20px;
-      border-radius:4px;
+      padding:5px 16px;
+      border-radius:20px;
       margin-bottom:12px;
     }
     .features-header h2{
       font-family:'Noto Serif JP',serif;
       font-size:20px;
       font-weight:900;
-      color:var(--aqua-dark);
+      color:var(--text-dark);
       line-height:1.5;
     }
     .features-header h2 em{
       font-style:normal;
-      color:#1a6b8a;
-      font-size:32px;
+      color:var(--aqua-dark);
+      font-size:28px;
       display:block;
     }
     .features-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:16px;
-      max-width:360px;
-      margin:24px auto 0;
-    }
-    .feature-bubble{
-      background:rgba(255,255,255,0.7);
-      border-radius:50%;
-      width:150px;height:150px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      max-width:380px;
       margin:0 auto;
-      box-shadow:0 4px 20px rgba(91,181,213,0.2), inset 0 2px 0 rgba(255,255,255,0.8);
-      border:2px solid rgba(255,255,255,0.9);
-      backdrop-filter:blur(4px);
     }
-    .feature-bubble .f-title{
+    .feature-card{
+      background:rgba(255,255,255,0.85);
+      border-radius:20px;
+      padding:24px 12px 20px;
+      box-shadow:0 4px 16px rgba(91,181,213,0.12);
+      border:1px solid rgba(255,255,255,0.9);
+      backdrop-filter:blur(8px);
+      text-align:center;
+    }
+    .feature-card .f-icon{
+      width:52px;height:52px;
+      margin:0 auto 10px;
+      background:linear-gradient(135deg, var(--aqua-pale), #c9ecf7);
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .feature-card .f-title{
       font-size:15px;
       font-weight:900;
-      color:var(--aqua-dark);
+      color:var(--text-dark);
       line-height:1.3;
+      margin-bottom:4px;
     }
-    .feature-bubble .f-sub{
+    .feature-card .f-sub{
       font-size:10px;
-      color:#5a9ab5;
-      margin-top:4px;
-    }
-
-    /* ===== BEFORE AFTER ===== */
-    .beforeafter{
-      background:var(--white);
-    }
-    .ba-container{
-      display:flex;
-      gap:12px;
-      max-width:420px;
-      margin:0 auto 16px;
-      align-items:stretch;
-    }
-    .ba-card{
-      flex:1;
-      border-radius:12px;
-      overflow:hidden;
-      box-shadow:0 4px 16px rgba(0,0,0,0.1);
-    }
-    .ba-card .label{
-      text-align:center;
-      padding:10px;
+      color:var(--text-light);
       font-family:'Montserrat',sans-serif;
-      font-weight:800;
-      font-size:14px;
-      letter-spacing:2px;
-      color:var(--white);
+      font-weight:600;
+      letter-spacing:1px;
     }
-    .ba-card.before .label{background:#6b7b8d;}
-    .ba-card.after .label{background:var(--aqua);}
-    .ba-card .photo{
-      height:200px;
-      position:relative;
-      overflow:hidden;
-    }
-    .ba-card .photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .ba-card .photo::after{
-      content:'※イメージ';
-      position:absolute;
-      bottom:8px;right:8px;
-      font-size:10px;
-      color:rgba(255,255,255,0.7);
-      background:rgba(0,0,0,0.3);
-      padding:2px 6px;
-      border-radius:4px;
-      z-index:1;
-    }
-    .ba-arrow{
-      position:absolute;
-      right:-20px;top:50%;
-      transform:translateY(-50%);
-      width:32px;height:32px;
-      background:var(--aqua);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      font-size:16px;
-      z-index:2;
-      box-shadow:0 2px 8px rgba(0,0,0,0.2);
-    }
-    .ba-note{
-      text-align:center;
-      font-size:12px;
-      color:#888;
-      margin-top:8px;
-    }
-    .ba-caption{
-      text-align:center;
-      margin-top:20px;
-      font-family:'Noto Serif JP',serif;
-      font-size:18px;
-      font-weight:900;
-      color:var(--aqua-dark);
-      line-height:1.6;
-    }
-    .ba-caption em{
-      font-style:normal;
-      color:var(--aqua);
-      font-size:22px;
-    }
-
-    /* ===== MODEL IMAGE SECTION ===== */
-    .model-section{
-      background:var(--white);
-      padding:0 0 48px;
-      text-align:center;
-    }
-    .model-image-wrap{
-      position:relative;
-      max-width:420px;
-      margin:0 auto;
-    }
-    .model-image-wrap img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-    .model-badges{
-      position:absolute;
-      right:12px;
-      top:50%;
-      transform:translateY(-50%);
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .model-badge{
-      background:rgba(91,181,213,0.15);
-      border:2px solid rgba(91,181,213,0.4);
-      border-radius:50%;
-      width:90px;height:90px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      backdrop-filter:blur(8px);
-    }
-    .model-badge .mb-label{
-      font-size:9px;
-      color:var(--aqua-dark);
-      font-weight:700;
-    }
-    .model-badge .mb-value{
-      font-size:13px;
-      font-weight:900;
-      color:var(--aqua-dark);
-      line-height:1.2;
-    }
-    .model-overlay-text{
-      position:absolute;
-      left:12px;
-      bottom:20px;
-      text-align:left;
-    }
-    .model-overlay-text .mot-sub{
+    .feature-card .f-desc{
       font-size:11px;
-      color:#fff;
-      text-shadow:0 1px 4px rgba(0,0,0,0.5);
-    }
-    .model-overlay-text .mot-main{
-      font-family:'Noto Serif JP',serif;
-      font-size:28px;
-      font-weight:900;
-      color:#fff;
-      text-shadow:0 2px 8px rgba(0,0,0,0.4);
-      letter-spacing:4px;
+      color:var(--text-mid);
+      line-height:1.5;
+      margin-top:6px;
     }
 
     /* ===== AMAZON RANKING ===== */
     .ranking{
-      background:linear-gradient(180deg, #faf6ed 0%, #f5f0e0 100%);
+      background:linear-gradient(180deg, #faf6ed 0%, #f5eedc 100%);
       text-align:center;
       padding:48px 16px;
     }
     .ranking-badges-row{
       display:flex;
-      gap:8px;
-      max-width:400px;
-      margin:0 auto 20px;
+      gap:6px;
+      max-width:380px;
+      margin:0 auto 24px;
       justify-content:center;
     }
     .rank-badge{
       flex:1;
       text-align:center;
-      padding:16px 8px 12px;
-    }
-    .rank-badge .rb-crown{
-      display:block;
-      margin:0 auto 4px;
-    }
-    .rank-badge .rb-laurel{
+      background:linear-gradient(180deg, #fefcf5 0%, #f8f0d8 100%);
+      border-radius:16px;
+      padding:16px 6px 14px;
+      border:2px solid #e8d48b;
+      box-shadow:0 2px 12px rgba(201,168,76,0.15);
       position:relative;
-      display:inline-block;
-      padding:0 8px;
+    }
+    .rank-badge .rb-crown-wrap{
+      margin-bottom:6px;
     }
     .rank-badge .rb-cat{
       font-size:10px;
       font-weight:700;
-      color:#8a7030;
+      color:#7a6420;
       letter-spacing:0.5px;
+      margin-bottom:2px;
     }
     .rank-badge .rb-label{
-      font-size:9px;
+      font-size:8px;
       color:#a08840;
       font-weight:600;
-      letter-spacing:1px;
+      letter-spacing:1.5px;
       text-transform:uppercase;
     }
     .rank-badge .rb-no{
       font-family:'Montserrat',sans-serif;
-      font-size:36px;
+      font-size:32px;
       font-weight:900;
       color:#8a6c14;
       line-height:1;
       display:block;
       font-style:italic;
+      margin:4px 0;
     }
     .rank-badge .rb-ribbon{
-      display:block;
-      margin:6px auto 0;
+      display:inline-block;
+      padding:2px 14px;
+      font-size:8px;
+      font-weight:700;
+      color:#fff;
+      border-radius:2px;
+      letter-spacing:1px;
     }
+    .rank-badge:nth-child(1) .rb-ribbon{background:#c0392b;}
+    .rank-badge:nth-child(2) .rb-ribbon{background:var(--aqua-dark);}
+    .rank-badge:nth-child(3) .rb-ribbon{background:var(--gold);}
 
     .ranking-text{
       font-family:'Noto Serif JP',serif;
@@ -498,8 +391,8 @@
       font-weight:800;
     }
     .ranking-sub{
-      font-size:13px;
-      color:#888;
+      font-size:12px;
+      color:#999;
     }
 
     /* ===== INGREDIENTS ===== */
@@ -512,30 +405,29 @@
     }
     .ing-card{
       display:flex;
-      gap:16px;
+      gap:14px;
       align-items:flex-start;
       background:var(--aqua-ultra);
-      border-radius:16px;
-      padding:20px;
-      margin-bottom:16px;
+      border-radius:14px;
+      padding:18px;
+      margin-bottom:12px;
     }
     .ing-card .ing-icon{
-      width:56px;height:56px;
-      min-width:56px;
+      width:48px;height:48px;
+      min-width:48px;
       border-radius:50%;
       display:flex;align-items:center;justify-content:center;
       background:linear-gradient(135deg, var(--aqua-pale), #d4eef8);
-      box-shadow:0 2px 8px rgba(91,181,213,0.15);
     }
     .ing-card h3{
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
-      color:var(--aqua-dark);
-      margin-bottom:4px;
+      color:var(--text-dark);
+      margin-bottom:2px;
     }
     .ing-card p{
-      font-size:13px;
-      color:#666;
+      font-size:12px;
+      color:var(--text-mid);
       line-height:1.6;
     }
 
@@ -549,128 +441,126 @@
     }
     .howto-step{
       display:flex;
-      gap:16px;
+      gap:14px;
       align-items:flex-start;
-      margin-bottom:28px;
+      margin-bottom:24px;
       position:relative;
     }
     .howto-step:not(:last-child)::after{
       content:'';
       position:absolute;
-      left:22px;top:52px;
+      left:20px;top:48px;
       width:2px;
-      height:calc(100% - 20px);
-      background:linear-gradient(180deg, var(--aqua), var(--aqua-light));
+      height:calc(100% - 16px);
+      background:linear-gradient(180deg, var(--aqua-light), var(--aqua-pale));
     }
     .howto-step .step-num{
-      width:44px;height:44px;
-      min-width:44px;
-      background:linear-gradient(135deg, var(--aqua-dark), var(--aqua));
+      width:40px;height:40px;
+      min-width:40px;
+      background:linear-gradient(135deg, var(--aqua), var(--aqua-mid));
       border-radius:50%;
       display:flex;align-items:center;justify-content:center;
       font-family:'Montserrat',sans-serif;
-      font-size:18px;
+      font-size:16px;
       font-weight:800;
       color:var(--white);
-      box-shadow:0 4px 12px rgba(43,122,158,0.3);
       position:relative;
       z-index:1;
     }
     .howto-step h3{
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
-      color:var(--aqua-dark);
-      margin-bottom:4px;
+      color:var(--text-dark);
+      margin-bottom:2px;
     }
     .howto-step p{
-      font-size:13px;
-      color:#666;
+      font-size:12px;
+      color:var(--text-mid);
       line-height:1.6;
     }
 
     /* ===== TOKUTEN (3大特典) ===== */
     .tokuten{
-      background:linear-gradient(170deg, var(--aqua-dark) 0%, #1a6b8a 100%);
-      color:var(--white);
+      background:linear-gradient(170deg, #d6ecf5 0%, #c4e3f0 50%, #b0d8ea 100%);
       text-align:center;
       padding:48px 16px;
     }
     .tokuten-title{
       font-family:'Noto Serif JP',serif;
-      margin-bottom:32px;
+      margin-bottom:28px;
     }
     .tokuten-title .sub{
-      font-size:14px;
-      color:var(--aqua-light);
+      font-size:13px;
+      color:var(--text-mid);
       letter-spacing:2px;
     }
     .tokuten-title .main{
-      font-size:40px;
+      font-size:36px;
       font-weight:900;
-      background:linear-gradient(180deg, #ffffff 20%, #b8e4f3 100%);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+      color:var(--text-dark);
     }
     .tokuten-cards{
       max-width:400px;
       margin:0 auto;
     }
     .tokuten-card{
-      background:rgba(255,255,255,0.1);
-      border:1px solid rgba(255,255,255,0.2);
+      background:rgba(255,255,255,0.8);
+      border:1px solid rgba(255,255,255,0.9);
       border-radius:16px;
-      padding:24px 20px;
-      margin-bottom:16px;
+      padding:22px 20px;
+      margin-bottom:14px;
       backdrop-filter:blur(8px);
+      box-shadow:0 2px 12px rgba(0,0,0,0.06);
     }
     .tokuten-card .tk-num{
       display:inline-block;
-      background:linear-gradient(135deg, var(--aqua), var(--aqua-light));
+      background:var(--aqua);
+      color:#fff;
       border-radius:20px;
-      padding:4px 16px;
+      padding:3px 14px;
       font-family:'Montserrat',sans-serif;
-      font-size:12px;
+      font-size:11px;
       font-weight:700;
       letter-spacing:1px;
-      margin-bottom:12px;
+      margin-bottom:10px;
     }
     .tokuten-card .tk-title{
       font-family:'Noto Serif JP',serif;
-      font-size:20px;
+      font-size:18px;
       font-weight:900;
+      color:var(--text-dark);
       margin-bottom:4px;
     }
     .tokuten-card .tk-title .red{
-      color:#ff6b6b;
-      font-size:28px;
+      color:var(--red);
+      font-size:24px;
     }
     .tokuten-card .tk-detail{
-      font-size:13px;
-      color:rgba(255,255,255,0.7);
+      font-size:12px;
+      color:var(--text-mid);
       line-height:1.6;
     }
     .tokuten-card .price-row{
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:16px;
-      margin-top:12px;
+      gap:12px;
+      margin-top:10px;
     }
     .tokuten-card .old-price{
-      font-size:16px;
-      color:rgba(255,255,255,0.5);
+      font-size:14px;
+      color:var(--text-light);
       text-decoration:line-through;
     }
-    .tokuten-card .arrow-r{font-size:20px;color:var(--aqua-light);}
+    .tokuten-card .arrow-r{font-size:18px;color:var(--aqua);}
     .tokuten-card .new-price{
       font-family:'Montserrat',sans-serif;
-      font-size:36px;
+      font-size:32px;
       font-weight:900;
-      color:var(--white);
+      color:var(--text-dark);
     }
-    .tokuten-card .new-price .yen{font-size:16px;font-weight:700;}
-    .tokuten-card .new-price .tax{font-size:11px;font-weight:400;color:rgba(255,255,255,0.6);}
+    .tokuten-card .new-price .yen{font-size:14px;font-weight:700;}
+    .tokuten-card .new-price .tax{font-size:10px;font-weight:400;color:var(--text-light);}
 
     /* ===== FAQ ===== */
     .faq{
@@ -683,37 +573,37 @@
     .faq-item{
       background:var(--white);
       border-radius:12px;
-      margin-bottom:12px;
+      margin-bottom:10px;
       overflow:hidden;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      box-shadow:0 2px 8px rgba(0,0,0,0.04);
     }
     .faq-q{
-      padding:16px 20px;
+      padding:14px 18px;
       font-weight:700;
-      font-size:14px;
+      font-size:13px;
+      color:var(--text-dark);
       display:flex;
       align-items:flex-start;
       gap:10px;
-      cursor:pointer;
-      border-bottom:1px solid var(--silver-light);
+      border-bottom:1px solid #f0f0f0;
     }
     .faq-q .q-icon{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:24px;height:24px;
-      min-width:24px;
+      width:22px;height:22px;
+      min-width:22px;
       background:var(--aqua);
       color:var(--white);
       border-radius:50%;
       font-family:'Montserrat',sans-serif;
-      font-size:12px;
+      font-size:11px;
       font-weight:800;
     }
     .faq-a{
-      padding:16px 20px 16px 54px;
-      font-size:13px;
-      color:#666;
+      padding:14px 18px 14px 50px;
+      font-size:12px;
+      color:var(--text-mid);
       line-height:1.7;
     }
 
@@ -725,21 +615,21 @@
     .company-table{
       max-width:420px;
       margin:0 auto;
-      font-size:13px;
+      font-size:12px;
     }
     .company-table dl{
       display:flex;
-      border-bottom:1px solid var(--silver-light);
-      padding:10px 0;
+      border-bottom:1px solid #f0f0f0;
+      padding:8px 0;
     }
     .company-table dt{
-      width:100px;
-      min-width:100px;
+      width:90px;
+      min-width:90px;
       font-weight:700;
-      color:var(--aqua-dark);
+      color:var(--text-dark);
     }
     .company-table dd{
-      color:#666;
+      color:var(--text-mid);
     }
 
     /* ===== FIXED CTA BAR ===== */
@@ -748,9 +638,9 @@
       bottom:0;left:0;right:0;
       z-index:1000;
       background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,1));
-      box-shadow:0 -4px 20px rgba(0,0,0,0.15);
-      padding:10px 16px;
-      padding-bottom:max(10px, env(safe-area-inset-bottom));
+      box-shadow:0 -4px 20px rgba(0,0,0,0.12);
+      padding:8px 16px;
+      padding-bottom:max(8px, env(safe-area-inset-bottom));
     }
     .cta-inner{
       max-width:420px;
@@ -758,14 +648,14 @@
       text-align:center;
     }
     .cta-top-text{
-      font-size:12px;
+      font-size:11px;
       font-weight:700;
       color:var(--red);
-      margin-bottom:6px;
+      margin-bottom:4px;
     }
     .cta-top-text span{
       font-family:'Montserrat',sans-serif;
-      font-size:18px;
+      font-size:16px;
       font-weight:900;
     }
     .cta-button{
@@ -775,12 +665,12 @@
       color:var(--white);
       border:none;
       border-radius:60px;
-      padding:14px 20px;
-      font-size:18px;
+      padding:12px 20px;
+      font-size:17px;
       font-weight:900;
       text-align:center;
       cursor:pointer;
-      box-shadow:0 4px 16px rgba(230,126,34,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+      box-shadow:0 4px 16px rgba(230,126,34,0.4);
       position:relative;
       overflow:hidden;
       transition:transform 0.2s;
@@ -791,26 +681,17 @@
       position:absolute;
       right:20px;top:50%;
       transform:translateY(-50%);
-      font-size:14px;
+      font-size:13px;
       opacity:0.8;
     }
     .cta-button .cta-small{
-      font-size:12px;
+      font-size:11px;
       font-weight:500;
       display:block;
       opacity:0.85;
-      margin-top:2px;
+      margin-top:1px;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media(min-width:768px){
-      .hero-sales .number{font-size:72px;}
-      .section-title h2{font-size:28px;}
-      .ba-card .photo{height:280px;}
-      .tokuten-title .main{font-size:48px;}
-    }
-
-    /* ===== ANIMATION ===== */
     @keyframes pulse{
       0%,100%{box-shadow:0 4px 16px rgba(230,126,34,0.4);}
       50%{box-shadow:0 4px 24px rgba(230,126,34,0.7);}
@@ -822,23 +703,30 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-badge"><span>ニキビ跡ケア美容液 売上</span></div>
-  <div class="hero-sales">
-    <span class="number">150,000</span>
-    <span class="unit">本突破</span>
-  </div>
-  <p class="hero-subtitle">
-    皮膚科医監修 × <strong>独自処方</strong>で<br>
-    頑固なニキビ跡にアプローチ
-  </p>
-  <div class="hero-product-area">
+  <div class="hero-top">
+    <div class="hero-badge"><span>ニキビ跡ケア美容液 売上</span></div>
+    <div class="hero-sales">
+      <span class="number">150,000</span>
+      <span class="unit">本突破</span>
+    </div>
+    <p class="hero-subtitle">
+      皮膚科医監修 × <strong>独自処方</strong>で<br>
+      頑固なニキビ跡にアプローチ
+    </p>
     <div class="hero-catchcopy">
       <p class="line1">— 薬用ニキビ跡ケア —</p>
       <p class="line2">これ<em>1本</em>で<br>透明肌へ</p>
       <p class="line3">シワ・ニキビ跡・毛穴・保湿</p>
     </div>
-    <div class="hero-bottle">
-      <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=320&q=80&auto=format" alt="AQUA CLEAR SERUM 商品イメージ">
+  </div>
+  <div class="hero-visual">
+    <img class="hero-model" src="pime.jpg" alt="透明美肌イメージ">
+    <div class="hero-product-float">
+      <div class="bottle-wrap">
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300&q=80&auto=format" alt="AQUA CLEAR SERUM">
+        <div class="water-ring"></div>
+        <div class="water-ring2"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -866,144 +754,74 @@
 <!-- ===== 4つのアプローチ ===== -->
 <section class="features">
   <div class="features-header">
-    <span class="label">実は…</span>
-    <h2>正しいケアで解決できるんです！<br>AQUA CLEARの<br><em>4つのアプローチ</em></h2>
+    <span class="label">実は…正しいケアで解決できるんです！</span>
+    <h2>AQUA CLEARの<br><em>4つのアプローチ</em></h2>
   </div>
   <div class="features-grid">
-    <div class="feature-bubble">
-      <span class="f-title">ニキビ跡を<br>ケア</span>
-      <span class="f-sub">Acne Care</span>
+    <div class="feature-card">
+      <div class="f-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="none" stroke="#5bb5d5" stroke-width="2"/><path d="M13 6 L13 13 L18 16" fill="none" stroke="#5bb5d5" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <p class="f-title">ニキビ跡を<br>ケア</p>
+      <p class="f-sub">ACNE CARE</p>
+      <p class="f-desc">色素沈着に<br>集中アプローチ</p>
     </div>
-    <div class="feature-bubble">
-      <span class="f-title">毛穴を<br>引き締める</span>
-      <span class="f-sub">Pore Tightening</span>
+    <div class="feature-card">
+      <div class="f-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 3 C13 3 7 9 7 15 C7 19 9.7 23 13 23 C16.3 23 19 19 19 15 C19 9 13 3 13 3Z" fill="none" stroke="#5bb5d5" stroke-width="2"/></svg>
+      </div>
+      <p class="f-title">毛穴を<br>引き締める</p>
+      <p class="f-sub">PORE CARE</p>
+      <p class="f-desc">開いた毛穴を<br>キュッと整える</p>
     </div>
-    <div class="feature-bubble">
-      <span class="f-title">透明感を<br>与える</span>
-      <span class="f-sub">Brightening</span>
+    <div class="feature-card">
+      <div class="f-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26"><polygon points="13,2 16,9 24,9 18,14 20,22 13,17 6,22 8,14 2,9 10,9" fill="none" stroke="#5bb5d5" stroke-width="1.5"/></svg>
+      </div>
+      <p class="f-title">透明感を<br>与える</p>
+      <p class="f-sub">BRIGHTENING</p>
+      <p class="f-desc">くすみのない<br>クリアな素肌へ</p>
     </div>
-    <div class="feature-bubble">
-      <span class="f-title">うるおいを<br>持続</span>
-      <span class="f-sub">Moisturizing</span>
+    <div class="feature-card">
+      <div class="f-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="8" fill="none" stroke="#5bb5d5" stroke-width="2"/><circle cx="13" cy="13" r="3" fill="#5bb5d5"/></svg>
+      </div>
+      <p class="f-title">うるおいを<br>持続</p>
+      <p class="f-sub">MOISTURIZING</p>
+      <p class="f-desc">5種のヒアルロン酸で<br>長時間保湿</p>
     </div>
   </div>
-</section>
-
-<!-- ===== モデルイメージ ===== -->
-<section class="model-section">
-  <div class="model-image-wrap">
-    <img src="pime.jpg" alt="透明美肌イメージ">
-    <div class="model-badges">
-      <div class="model-badge">
-        <span class="mb-label">大注目成分</span>
-        <span class="mb-value">ビタミンC<br>誘導体</span>
-      </div>
-      <div class="model-badge">
-        <span class="mb-label">皮膚科医</span>
-        <span class="mb-value">監修<br>処方</span>
-      </div>
-    </div>
-    <div class="model-overlay-text">
-      <p class="mot-sub">ニキビ跡ケアしながら</p>
-      <p class="mot-main">透 明 美 肌</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== BEFORE / AFTER ===== -->
-<section class="beforeafter">
-  <div class="section-title">
-    <span class="en">Before / After</span>
-    <h2>驚きの変化を<br>ご覧ください</h2>
-    <div class="line"></div>
-  </div>
-  <div class="ba-container">
-    <div class="ba-card before" style="position:relative;">
-      <div class="label">BEFORE</div>
-      <div class="photo">
-        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80&auto=format" alt="Before - 肌荒れの状態">
-      </div>
-      <div class="ba-arrow">→</div>
-    </div>
-    <div class="ba-card after">
-      <div class="label">AFTER</div>
-      <div class="photo">
-        <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=400&q=80&auto=format" alt="After - クリアな素肌">
-      </div>
-    </div>
-  </div>
-  <p class="ba-note">※個人の感想であり、効果には個人差があります</p>
-  <p class="ba-caption">
-    たった<em>30日</em>で<br>
-    ここまで変わる
-  </p>
 </section>
 
 <!-- ===== AMAZON RANKING ===== -->
 <section class="ranking">
   <div class="ranking-badges-row">
-    <!-- Badge 1 -->
     <div class="rank-badge">
-      <svg class="rb-crown" width="32" height="20" viewBox="0 0 32 20">
-        <path d="M2,18 L6,6 L11,12 L16,2 L21,12 L26,6 L30,18Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/>
-        <circle cx="6" cy="6" r="2" fill="#e8d48b"/><circle cx="16" cy="2" r="2" fill="#e8d48b"/><circle cx="26" cy="6" r="2" fill="#e8d48b"/>
-      </svg>
-      <svg class="rb-laurel" width="80" height="60" viewBox="0 0 80 60">
-        <path d="M12,50 C10,40 6,32 4,24 C2,18 5,14 9,13 C12,15 13,20 11,26 C9,34 11,42 12,50Z" fill="#b8962e"/>
-        <path d="M16,44 C15,36 10,28 8,22 C6,16 9,12 13,11 C16,13 17,18 15,24 C13,32 15,38 16,44Z" fill="#c9a84c"/>
-        <path d="M20,38 C20,32 16,26 14,20 C12,15 15,12 18,11 C21,13 21,17 19,22 C17,28 19,34 20,38Z" fill="#b8962e"/>
-        <path d="M68,50 C70,40 74,32 76,24 C78,18 75,14 71,13 C68,15 67,20 69,26 C71,34 69,42 68,50Z" fill="#b8962e"/>
-        <path d="M64,44 C65,36 70,28 72,22 C74,16 71,12 67,11 C64,13 63,18 65,24 C67,32 65,38 64,44Z" fill="#c9a84c"/>
-        <path d="M60,38 C60,32 64,26 66,20 C68,15 65,12 62,11 C59,13 59,17 61,22 C63,28 61,34 60,38Z" fill="#b8962e"/>
-      </svg>
+      <div class="rb-crown-wrap">
+        <svg width="28" height="18" viewBox="0 0 28 18"><path d="M2,16 L5,5 L10,10 L14,2 L18,10 L23,5 L26,16Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/><circle cx="5" cy="5" r="1.5" fill="#e8d48b"/><circle cx="14" cy="2" r="1.5" fill="#e8d48b"/><circle cx="23" cy="5" r="1.5" fill="#e8d48b"/></svg>
+      </div>
       <p class="rb-cat">美容液部門</p>
       <p class="rb-label">RANKING</p>
       <span class="rb-no">No.1</span>
-      <svg class="rb-ribbon" width="60" height="12" viewBox="0 0 60 12">
-        <path d="M0,0 L60,0 L55,6 L60,12 L0,12 L5,6Z" fill="#c0392b"/>
-      </svg>
+      <span class="rb-ribbon">GOLD</span>
     </div>
-    <!-- Badge 2 -->
     <div class="rank-badge">
-      <svg class="rb-crown" width="32" height="20" viewBox="0 0 32 20">
-        <path d="M2,18 L6,6 L11,12 L16,2 L21,12 L26,6 L30,18Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/>
-        <circle cx="6" cy="6" r="2" fill="#e8d48b"/><circle cx="16" cy="2" r="2" fill="#e8d48b"/><circle cx="26" cy="6" r="2" fill="#e8d48b"/>
-      </svg>
-      <svg class="rb-laurel" width="80" height="60" viewBox="0 0 80 60">
-        <path d="M12,50 C10,40 6,32 4,24 C2,18 5,14 9,13 C12,15 13,20 11,26 C9,34 11,42 12,50Z" fill="#b8962e"/>
-        <path d="M16,44 C15,36 10,28 8,22 C6,16 9,12 13,11 C16,13 17,18 15,24 C13,32 15,38 16,44Z" fill="#c9a84c"/>
-        <path d="M20,38 C20,32 16,26 14,20 C12,15 15,12 18,11 C21,13 21,17 19,22 C17,28 19,34 20,38Z" fill="#b8962e"/>
-        <path d="M68,50 C70,40 74,32 76,24 C78,18 75,14 71,13 C68,15 67,20 69,26 C71,34 69,42 68,50Z" fill="#b8962e"/>
-        <path d="M64,44 C65,36 70,28 72,22 C74,16 71,12 67,11 C64,13 63,18 65,24 C67,32 65,38 64,44Z" fill="#c9a84c"/>
-        <path d="M60,38 C60,32 64,26 66,20 C68,15 65,12 62,11 C59,13 59,17 61,22 C63,28 61,34 60,38Z" fill="#b8962e"/>
-      </svg>
+      <div class="rb-crown-wrap">
+        <svg width="28" height="18" viewBox="0 0 28 18"><path d="M2,16 L5,5 L10,10 L14,2 L18,10 L23,5 L26,16Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/><circle cx="5" cy="5" r="1.5" fill="#e8d48b"/><circle cx="14" cy="2" r="1.5" fill="#e8d48b"/><circle cx="23" cy="5" r="1.5" fill="#e8d48b"/></svg>
+      </div>
       <p class="rb-cat">スキンケア部門</p>
       <p class="rb-label">RANKING</p>
       <span class="rb-no">No.1</span>
-      <svg class="rb-ribbon" width="60" height="12" viewBox="0 0 60 12">
-        <path d="M0,0 L60,0 L55,6 L60,12 L0,12 L5,6Z" fill="#2b7a9e"/>
-      </svg>
+      <span class="rb-ribbon">GOLD</span>
     </div>
-    <!-- Badge 3 -->
     <div class="rank-badge">
-      <svg class="rb-crown" width="32" height="20" viewBox="0 0 32 20">
-        <path d="M2,18 L6,6 L11,12 L16,2 L21,12 L26,6 L30,18Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/>
-        <circle cx="6" cy="6" r="2" fill="#e8d48b"/><circle cx="16" cy="2" r="2" fill="#e8d48b"/><circle cx="26" cy="6" r="2" fill="#e8d48b"/>
-      </svg>
-      <svg class="rb-laurel" width="80" height="60" viewBox="0 0 80 60">
-        <path d="M12,50 C10,40 6,32 4,24 C2,18 5,14 9,13 C12,15 13,20 11,26 C9,34 11,42 12,50Z" fill="#b8962e"/>
-        <path d="M16,44 C15,36 10,28 8,22 C6,16 9,12 13,11 C16,13 17,18 15,24 C13,32 15,38 16,44Z" fill="#c9a84c"/>
-        <path d="M20,38 C20,32 16,26 14,20 C12,15 15,12 18,11 C21,13 21,17 19,22 C17,28 19,34 20,38Z" fill="#b8962e"/>
-        <path d="M68,50 C70,40 74,32 76,24 C78,18 75,14 71,13 C68,15 67,20 69,26 C71,34 69,42 68,50Z" fill="#b8962e"/>
-        <path d="M64,44 C65,36 70,28 72,22 C74,16 71,12 67,11 C64,13 63,18 65,24 C67,32 65,38 64,44Z" fill="#c9a84c"/>
-        <path d="M60,38 C60,32 64,26 66,20 C68,15 65,12 62,11 C59,13 59,17 61,22 C63,28 61,34 60,38Z" fill="#b8962e"/>
-      </svg>
+      <div class="rb-crown-wrap">
+        <svg width="28" height="18" viewBox="0 0 28 18"><path d="M2,16 L5,5 L10,10 L14,2 L18,10 L23,5 L26,16Z" fill="#c9a84c" stroke="#a07820" stroke-width="0.5"/><circle cx="5" cy="5" r="1.5" fill="#e8d48b"/><circle cx="14" cy="2" r="1.5" fill="#e8d48b"/><circle cx="23" cy="5" r="1.5" fill="#e8d48b"/></svg>
+      </div>
       <p class="rb-cat">ニキビケア部門</p>
       <p class="rb-label">RANKING</p>
       <span class="rb-no">No.1</span>
-      <svg class="rb-ribbon" width="60" height="12" viewBox="0 0 60 12">
-        <path d="M0,0 L60,0 L55,6 L60,12 L0,12 L5,6Z" fill="#c9a84c"/>
-      </svg>
+      <span class="rb-ribbon">GOLD</span>
     </div>
   </div>
   <p class="ranking-text">
@@ -1023,7 +841,7 @@
   <div class="ing-cards">
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><polygon points="14,2 17,10 26,10 19,16 21,25 14,20 7,25 9,16 2,10 11,10" fill="#5bb5d5"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,22 12,17 6,22 8,14 2,9 9,9" fill="#5bb5d5"/></svg>
       </div>
       <div>
         <h3>高濃度ビタミンC誘導体</h3>
@@ -1032,7 +850,7 @@
     </div>
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 C14,4 8,10 8,16 C8,20 10.7,24 14,24 C17.3,24 20,20 20,16 C20,10 14,4 14,4Z" fill="#5bb5d5"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12,3 C12,3 7,9 7,14 C7,18 9.2,21 12,21 C14.8,21 17,18 17,14 C17,9 12,3 12,3Z" fill="#5bb5d5"/></svg>
       </div>
       <div>
         <h3>ヒト幹細胞培養液</h3>
@@ -1041,7 +859,7 @@
     </div>
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="#5bb5d5" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="#5bb5d5"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#5bb5d5" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#5bb5d5"/></svg>
       </div>
       <div>
         <h3>5種のヒアルロン酸</h3>
@@ -1050,7 +868,7 @@
     </div>
     <div class="ing-card">
       <div class="ing-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 L14,24 M8,8 L14,14 M20,8 L14,14 M8,18 L14,14 M20,18 L14,14" stroke="#5bb5d5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12,3 L12,21 M7,7 L12,12 M17,7 L12,12 M7,16 L12,12 M17,16 L12,12" stroke="#5bb5d5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
       </div>
       <div>
         <h3>ツボクサエキス（CICA）</h3>
