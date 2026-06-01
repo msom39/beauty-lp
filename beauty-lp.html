@@ -110,21 +110,22 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPFテキスト隠し（バブルより大きく完全不透明で背景テキスト隠蔽） */
+    /* SPFテキスト隠し（バブルより大幅に大きく、上方テキストもカバー） */
     .hero-text-overlay .spf-cover{
       position:absolute;
-      bottom:19%;
-      right:-3%;
-      width:36%;
+      bottom:15%;
+      right:-7%;
+      width:44%;
       aspect-ratio:1;
       border-radius:50%;
       z-index:1;
-      background:radial-gradient(circle at 50% 50%,
+      background:radial-gradient(circle at 50% 48%,
         rgba(237,243,247,1) 0%,
-        rgba(237,243,247,1) 62%,
-        rgba(237,243,247,0.97) 70%,
-        rgba(237,243,247,0.85) 80%,
-        rgba(237,243,247,0.5) 90%,
+        rgba(237,243,247,1) 58%,
+        rgba(237,243,247,0.97) 65%,
+        rgba(237,243,247,0.9) 72%,
+        rgba(237,243,247,0.7) 82%,
+        rgba(237,243,247,0.3) 92%,
         transparent 100%);
       pointer-events:none;
     }
