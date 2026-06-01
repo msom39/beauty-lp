@@ -110,7 +110,7 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPFテキスト隠し（backdrop-blur方式でガラス感を保持） */
+    /* SPFテキスト隠し（元テキストを完全に覆う） */
     .hero-text-overlay .spf-cover{
       position:absolute;
       bottom:23.5%;
@@ -119,12 +119,14 @@
       aspect-ratio:1;
       border-radius:50%;
       z-index:1;
-      background:rgba(210,235,248,0.55);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
+      background:radial-gradient(circle at 50% 50%,
+        rgba(237,243,247,0.98) 0%,
+        rgba(237,243,247,0.95) 35%,
+        rgba(237,243,247,0.7) 55%,
+        transparent 72%);
       pointer-events:none;
     }
-    /* ニキビケア バブル（上のナイアシンアミドと同じ透明ガラス風） */
+    /* ニキビケア バブル（上のナイアシンアミドと同じガラス玉デザイン） */
     .hero-text-overlay .acne-bubble{
       position:absolute;
       bottom:24%;
@@ -133,18 +135,16 @@
       aspect-ratio:1;
       border-radius:50%;
       z-index:2;
-      background:radial-gradient(circle at 35% 25%,
-        rgba(255,255,255,0.55) 0%,
-        rgba(240,250,255,0.35) 15%,
-        rgba(210,240,252,0.22) 35%,
-        rgba(190,230,248,0.12) 55%,
-        rgba(180,225,245,0.06) 75%,
-        transparent 100%);
-      border:1.5px solid rgba(255,255,255,0.55);
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 15%, transparent 38%),
+        radial-gradient(circle at 70% 78%, rgba(180,225,245,0.18) 0%, transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(210,240,252,0.22) 0%, rgba(200,235,250,0.1) 55%, transparent 72%);
+      border:1.5px solid rgba(255,255,255,0.45);
       box-shadow:
-        inset 0 -6px 18px rgba(80,170,220,0.12),
-        inset 0 4px 12px rgba(255,255,255,0.5),
-        0 3px 25px rgba(80,170,220,0.15);
+        inset 0 -10px 25px rgba(60,160,210,0.1),
+        inset 5px 5px 18px rgba(255,255,255,0.3),
+        0 3px 25px rgba(80,180,220,0.13),
+        0 0 50px rgba(180,230,250,0.08);
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -172,29 +172,30 @@
       color:#4a9ab8;
       margin-top:3px;
     }
-    /* 商品エリア背景パッチ（元チューブを完全に隠す） */
+    /* 商品エリア背景パッチ（元チューブを完全に隠す・不透明度アップ） */
     .hero-text-overlay .product-bg-cover{
       position:absolute;
-      bottom:2%;
+      bottom:3%;
       left:0;
-      width:26%;
-      height:42%;
+      width:30%;
+      height:46%;
       z-index:1;
-      background:radial-gradient(ellipse at 50% 55%,
+      background:radial-gradient(ellipse at 45% 55%,
         rgba(237,243,247,1) 0%,
-        rgba(237,243,247,1) 50%,
-        rgba(237,243,247,0.9) 65%,
-        rgba(237,243,247,0.5) 82%,
+        rgba(237,243,247,1) 58%,
+        rgba(237,243,247,0.97) 70%,
+        rgba(237,243,247,0.85) 82%,
+        rgba(237,243,247,0.4) 92%,
         transparent 100%);
       pointer-events:none;
     }
-    /* 商品エリア（美容液ボトルのみ表示） */
+    /* 商品エリア（美容液ボトルのみ表示・下テキストに被らない） */
     .hero-text-overlay .product-cover{
       position:absolute;
-      bottom:4%;
-      left:1%;
-      width:22%;
-      height:38%;
+      bottom:6%;
+      left:2%;
+      width:20%;
+      height:33%;
       z-index:2;
       background:none;
       display:flex;
@@ -203,9 +204,9 @@
       pointer-events:none;
     }
     .hero-text-overlay .product-cover img{
-      width:90%;
+      width:100%;
       height:auto;
-      filter:drop-shadow(0 3px 10px rgba(0,0,0,0.18));
+      filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15));
       object-fit:contain;
     }
 
@@ -272,12 +273,12 @@
       object-fit:contain;
       display:block;
     }
-    /* 月桂樹内のテキスト（白背景パッチ） */
+    /* 月桂樹内のテキスト（白背景パッチ・完全不透明） */
     .rank-badge .wreath-wrap::after{
       content:'';
       position:absolute;
-      top:18%;left:22%;right:22%;bottom:18%;
-      background:rgba(255,255,255,0.92);
+      top:16%;left:20%;right:20%;bottom:16%;
+      background:rgba(255,255,255,1);
       border-radius:50%;
       z-index:1;
     }
@@ -340,7 +341,7 @@
       z-index:3;
     }
 
-    /* ===== 商品購入セクション（WHITOP EX風） ===== */
+    /* ===== 商品購入セクション（WHITOP EX風・高視認性） ===== */
     .purchase-section{
       padding:32px 16px;
       background:#fff;
@@ -349,120 +350,128 @@
     .purchase-card{
       max-width:420px;
       margin:0 auto;
-      border:1px solid #e0e0e0;
-      border-radius:8px;
+      border:2px solid #2b4a7a;
+      border-radius:10px;
       overflow:hidden;
       background:#fff;
+      box-shadow:0 4px 20px rgba(43,74,122,0.1);
     }
     .purchase-header{
-      background:linear-gradient(135deg, #f8fbfd, #eaf4fa);
-      padding:16px;
+      background:linear-gradient(135deg, #2b4a7a, #1a3a6a);
+      padding:18px 16px;
       text-align:center;
     }
     .purchase-header p{
       font-size:13px;
-      color:var(--text-mid);
+      color:rgba(255,255,255,0.85);
       margin-bottom:4px;
     }
     .purchase-header .purchase-name{
       font-family:'Montserrat',sans-serif;
-      font-size:22px;
+      font-size:24px;
       font-weight:800;
-      color:var(--aqua-dark);
-      letter-spacing:1px;
+      color:#fff;
+      letter-spacing:2px;
     }
     .purchase-header .purchase-type{
       font-size:11px;
-      color:#999;
+      color:rgba(255,255,255,0.7);
     }
     .purchase-header .purchase-desc{
       font-size:11px;
-      color:#777;
+      color:rgba(255,255,255,0.75);
       margin-top:4px;
     }
-    .purchase-body{padding:20px 16px;}
-    .purchase-layout{display:flex;align-items:stretch;gap:16px;margin-bottom:16px;}
+    .purchase-body{padding:24px 16px;}
+    .purchase-layout{display:flex;align-items:stretch;gap:18px;margin-bottom:20px;}
     .purchase-product-img{
-      flex:0 0 120px;
-      width:120px;
+      flex:0 0 130px;
+      width:130px;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(180deg,#f0f8fd 0%,#e6f3fa 100%);
+      background:linear-gradient(180deg,#f6fafd 0%,#eaf4fa 100%);
       border-radius:10px;
-      padding:12px 8px;
+      padding:14px 10px;
+      border:1px solid #e8f0f5;
     }
-    .purchase-product-img img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.12));}
-    .purchase-pricing{flex:1;}
+    .purchase-product-img img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));}
+    .purchase-pricing{flex:1;text-align:left;}
     .purchase-body .regular-price{
-      font-size:12px;
-      color:#999;
-      margin-bottom:4px;
+      font-size:13px;
+      color:#888;
+      margin-bottom:8px;
     }
     .purchase-body .regular-price span{
       display:inline-block;
-      border:1px solid #ccc;
-      padding:1px 6px;
+      border:1px solid #bbb;
+      padding:2px 8px;
       font-size:10px;
+      font-weight:700;
       margin-right:4px;
+      background:#f5f5f5;
     }
     .purchase-body .sale-row{
       display:flex;
       align-items:center;
-      justify-content:center;
       gap:8px;
-      margin-bottom:4px;
+      margin-bottom:6px;
+      flex-wrap:wrap;
     }
     .purchase-body .sale-label{
       background:linear-gradient(135deg, #e74c3c, #c0392b);
       color:#fff;
-      font-size:10px;
-      font-weight:700;
-      padding:3px 10px;
-      border-radius:3px;
+      font-size:13px;
+      font-weight:800;
+      padding:5px 14px;
+      border-radius:4px;
     }
     .purchase-body .sale-price{
       font-family:'Montserrat',sans-serif;
-      font-size:32px;
+      font-size:40px;
       font-weight:900;
       color:#e74c3c;
+      line-height:1;
     }
-    .purchase-body .sale-price .yen{font-size:14px;font-weight:700;}
-    .purchase-body .sale-price .tax{font-size:10px;color:#999;font-weight:400;}
+    .purchase-body .sale-price .yen{font-size:16px;font-weight:800;}
+    .purchase-body .sale-price .tax{font-size:11px;color:#999;font-weight:400;}
     .purchase-body .off-badge{
       background:#e74c3c;
       color:#fff;
-      font-size:11px;
+      font-size:12px;
       font-weight:900;
-      padding:4px 8px;
+      padding:6px 10px;
       border-radius:50%;
       line-height:1.2;
     }
     .purchase-body .shipping{
       color:#e74c3c;
-      font-size:13px;
-      font-weight:700;
-      margin:4px 0 12px;
+      font-size:15px;
+      font-weight:800;
+      margin:8px 0 16px;
+      letter-spacing:1px;
     }
     .purchase-body .second-price{
       background:#fef5f5;
-      border:1px solid #f5c6c6;
-      border-radius:6px;
-      padding:8px;
-      margin-bottom:16px;
+      border:2px solid #f0b0b0;
+      border-radius:8px;
+      padding:12px;
+      margin-bottom:18px;
+      text-align:center;
     }
     .purchase-body .second-price .sp-label{
       background:#e74c3c;
       color:#fff;
-      font-size:9px;
-      padding:2px 8px;
-      border-radius:3px;
+      font-size:11px;
+      font-weight:700;
+      padding:3px 12px;
+      border-radius:4px;
       display:inline-block;
-      margin-bottom:4px;
+      margin-bottom:6px;
     }
     .purchase-body .second-price p{
-      font-size:13px;
-      font-weight:700;
+      font-size:15px;
+      font-weight:800;
       color:#e74c3c;
     }
     .benefits-row{
