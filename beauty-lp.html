@@ -110,20 +110,21 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPFテキスト隠し（バブルの直下のみ・小さめ） */
+    /* SPFテキスト隠し（バブルの直下・完全不透明で背景テキスト完全隠蔽） */
     .hero-text-overlay .spf-cover{
       position:absolute;
-      bottom:23%;
-      right:4%;
-      width:36%;
+      bottom:22%;
+      right:3%;
+      width:38%;
       aspect-ratio:1;
       border-radius:50%;
       z-index:1;
       background:radial-gradient(circle at 50% 50%,
-        rgba(237,243,247,0.92) 0%,
-        rgba(237,243,247,0.85) 45%,
-        rgba(237,243,247,0.5) 65%,
-        transparent 80%);
+        rgba(237,243,247,1) 0%,
+        rgba(237,243,247,1) 50%,
+        rgba(237,243,247,0.95) 60%,
+        rgba(237,243,247,0.7) 70%,
+        transparent 82%);
       pointer-events:none;
     }
     /* ニキビケア バブル（上のナイアシンアミドと完全に同じアクア塗りガラス玉） */
@@ -172,9 +173,20 @@
       color:#4a9ab8;
       margin-top:3px;
     }
-    /* 商品エリア背景パッチ（非表示 - 女性にかぶるため削除） */
+    /* 商品エリア背景パッチ（テキスト隠し・ボトル裏のみ・女性にかからない） */
     .hero-text-overlay .product-bg-cover{
-      display:none;
+      position:absolute;
+      bottom:12%;
+      left:0;
+      width:22%;
+      height:38%;
+      z-index:1;
+      background:linear-gradient(to right,
+        rgba(237,243,247,1) 0%,
+        rgba(237,243,247,1) 60%,
+        rgba(237,243,247,0.7) 80%,
+        transparent 100%);
+      pointer-events:none;
     }
     /* 商品エリア（美容液ボトルのみ表示・下テキストに被らない） */
     .hero-text-overlay .product-cover{
