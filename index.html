@@ -110,20 +110,22 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPFテキスト隠し（元テキストを完全に覆う） */
+    /* SPFテキスト隠し（元テキストを完全に覆う・完全不透明） */
     .hero-text-overlay .spf-cover{
       position:absolute;
-      bottom:23.5%;
-      right:2.5%;
-      width:39%;
+      bottom:22%;
+      right:1%;
+      width:44%;
       aspect-ratio:1;
       border-radius:50%;
       z-index:1;
       background:radial-gradient(circle at 50% 50%,
-        rgba(237,243,247,0.98) 0%,
-        rgba(237,243,247,0.95) 35%,
-        rgba(237,243,247,0.7) 55%,
-        transparent 72%);
+        rgba(237,243,247,1) 0%,
+        rgba(237,243,247,1) 55%,
+        rgba(237,243,247,0.98) 65%,
+        rgba(237,243,247,0.9) 75%,
+        rgba(237,243,247,0.5) 85%,
+        transparent 95%);
       pointer-events:none;
     }
     /* ニキビケア バブル（上のナイアシンアミドと同じガラス玉デザイン） */
@@ -172,20 +174,20 @@
       color:#4a9ab8;
       margin-top:3px;
     }
-    /* 商品エリア背景パッチ（元チューブを完全に隠す・不透明度アップ） */
+    /* 商品エリア背景パッチ（元チューブ＋テキストを完全に隠す） */
     .hero-text-overlay .product-bg-cover{
       position:absolute;
       bottom:3%;
       left:0;
-      width:30%;
-      height:46%;
+      width:32%;
+      height:52%;
       z-index:1;
       background:radial-gradient(ellipse at 45% 55%,
         rgba(237,243,247,1) 0%,
-        rgba(237,243,247,1) 58%,
-        rgba(237,243,247,0.97) 70%,
-        rgba(237,243,247,0.85) 82%,
-        rgba(237,243,247,0.4) 92%,
+        rgba(237,243,247,1) 62%,
+        rgba(237,243,247,0.98) 72%,
+        rgba(237,243,247,0.9) 82%,
+        rgba(237,243,247,0.5) 92%,
         transparent 100%);
       pointer-events:none;
     }
