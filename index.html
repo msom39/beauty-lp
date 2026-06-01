@@ -110,43 +110,41 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPFテキスト隠し（元テキストを完全に覆う・完全不透明） */
+    /* SPFテキスト隠し（バブルの直下のみ・小さめ） */
     .hero-text-overlay .spf-cover{
       position:absolute;
-      bottom:22%;
-      right:1%;
-      width:44%;
+      bottom:23%;
+      right:4%;
+      width:36%;
       aspect-ratio:1;
       border-radius:50%;
       z-index:1;
       background:radial-gradient(circle at 50% 50%,
-        rgba(237,243,247,1) 0%,
-        rgba(237,243,247,1) 55%,
-        rgba(237,243,247,0.98) 65%,
-        rgba(237,243,247,0.9) 75%,
-        rgba(237,243,247,0.5) 85%,
-        transparent 95%);
+        rgba(237,243,247,0.92) 0%,
+        rgba(237,243,247,0.85) 45%,
+        rgba(237,243,247,0.5) 65%,
+        transparent 80%);
       pointer-events:none;
     }
-    /* ニキビケア バブル（上のナイアシンアミドと同じガラス玉デザイン） */
+    /* ニキビケア バブル（上のナイアシンアミドと完全に同じアクア塗りガラス玉） */
     .hero-text-overlay .acne-bubble{
       position:absolute;
       bottom:24%;
-      right:3%;
-      width:38%;
+      right:4%;
+      width:35%;
       aspect-ratio:1;
       border-radius:50%;
       z-index:2;
       background:
-        radial-gradient(circle at 28% 22%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 15%, transparent 38%),
-        radial-gradient(circle at 70% 78%, rgba(180,225,245,0.18) 0%, transparent 35%),
-        radial-gradient(circle at 50% 50%, rgba(210,240,252,0.22) 0%, rgba(200,235,250,0.1) 55%, transparent 72%);
-      border:1.5px solid rgba(255,255,255,0.45);
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.2) 25%, transparent 40%),
+        radial-gradient(circle at 72% 80%, rgba(120,200,235,0.2) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(165,220,242,0.7) 0%, rgba(175,228,248,0.55) 35%, rgba(190,235,250,0.4) 55%, rgba(210,242,252,0.25) 75%, transparent 100%);
+      border:1.8px solid rgba(190,230,250,0.55);
       box-shadow:
-        inset 0 -10px 25px rgba(60,160,210,0.1),
-        inset 5px 5px 18px rgba(255,255,255,0.3),
-        0 3px 25px rgba(80,180,220,0.13),
-        0 0 50px rgba(180,230,250,0.08);
+        inset 0 -12px 30px rgba(50,150,200,0.15),
+        inset 4px 4px 20px rgba(255,255,255,0.4),
+        0 4px 20px rgba(70,170,210,0.2),
+        0 0 40px rgba(160,220,245,0.12);
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -174,22 +172,9 @@
       color:#4a9ab8;
       margin-top:3px;
     }
-    /* 商品エリア背景パッチ（元チューブ＋テキストを完全に隠す） */
+    /* 商品エリア背景パッチ（非表示 - 女性にかぶるため削除） */
     .hero-text-overlay .product-bg-cover{
-      position:absolute;
-      bottom:3%;
-      left:0;
-      width:34%;
-      height:56%;
-      z-index:1;
-      background:radial-gradient(ellipse at 45% 58%,
-        rgba(237,243,247,1) 0%,
-        rgba(237,243,247,1) 60%,
-        rgba(237,243,247,0.98) 70%,
-        rgba(237,243,247,0.92) 80%,
-        rgba(237,243,247,0.5) 90%,
-        transparent 100%);
-      pointer-events:none;
+      display:none;
     }
     /* 商品エリア（美容液ボトルのみ表示・下テキストに被らない） */
     .hero-text-overlay .product-cover{
@@ -343,7 +328,7 @@
       z-index:3;
     }
 
-    /* ===== 商品購入セクション（WHITOP EX風・高視認性） ===== */
+    /* ===== 商品購入セクション（WHITOP EX風・アクア＋ゴールド） ===== */
     .purchase-section{
       padding:32px 16px;
       background:#fff;
@@ -352,37 +337,38 @@
     .purchase-card{
       max-width:420px;
       margin:0 auto;
-      border:2px solid #2b4a7a;
-      border-radius:10px;
+      border:2px solid var(--aqua-mid);
+      border-radius:12px;
       overflow:hidden;
       background:#fff;
-      box-shadow:0 4px 20px rgba(43,74,122,0.1);
+      box-shadow:0 4px 24px rgba(91,181,213,0.12);
     }
     .purchase-header{
-      background:linear-gradient(135deg, #2b4a7a, #1a3a6a);
-      padding:18px 16px;
+      background:linear-gradient(135deg, #4a9ec0, #2b7a9e);
+      padding:20px 16px;
       text-align:center;
     }
     .purchase-header p{
-      font-size:13px;
+      font-size:12px;
       color:rgba(255,255,255,0.85);
       margin-bottom:4px;
     }
     .purchase-header .purchase-name{
       font-family:'Montserrat',sans-serif;
-      font-size:24px;
+      font-size:22px;
       font-weight:800;
       color:#fff;
       letter-spacing:2px;
     }
     .purchase-header .purchase-type{
       font-size:11px;
-      color:rgba(255,255,255,0.7);
+      color:rgba(255,255,255,0.75);
     }
     .purchase-header .purchase-desc{
-      font-size:11px;
+      font-size:10px;
       color:rgba(255,255,255,0.75);
       margin-top:4px;
+      line-height:1.5;
     }
     .purchase-body{padding:24px 16px;}
     .purchase-layout{display:flex;align-items:stretch;gap:18px;margin-bottom:20px;}
@@ -395,14 +381,14 @@
       background:linear-gradient(180deg,#f6fafd 0%,#eaf4fa 100%);
       border-radius:10px;
       padding:14px 10px;
-      border:1px solid #e8f0f5;
+      border:1px solid #e0eef5;
     }
-    .purchase-product-img img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));}
+    .purchase-product-img img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));}
     .purchase-pricing{flex:1;text-align:left;}
     .purchase-body .regular-price{
       font-size:13px;
       color:#888;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
     .purchase-body .regular-price span{
       display:inline-block;
@@ -415,58 +401,59 @@
     }
     .purchase-body .sale-row{
       display:flex;
-      align-items:center;
+      align-items:baseline;
       gap:8px;
-      margin-bottom:6px;
+      margin-bottom:8px;
       flex-wrap:wrap;
     }
     .purchase-body .sale-label{
-      background:linear-gradient(135deg, #e74c3c, #c0392b);
+      background:linear-gradient(135deg, #e25c4f, #d94438);
       color:#fff;
-      font-size:13px;
+      font-size:12px;
       font-weight:800;
-      padding:5px 14px;
-      border-radius:4px;
+      padding:4px 12px;
+      border-radius:3px;
     }
     .purchase-body .sale-price{
       font-family:'Montserrat',sans-serif;
-      font-size:40px;
+      font-size:42px;
       font-weight:900;
-      color:#e74c3c;
+      color:#d94438;
       line-height:1;
     }
-    .purchase-body .sale-price .yen{font-size:16px;font-weight:800;}
-    .purchase-body .sale-price .tax{font-size:11px;color:#999;font-weight:400;}
+    .purchase-body .sale-price .yen{font-size:18px;font-weight:800;}
+    .purchase-body .sale-price .tax{font-size:11px;color:#999;font-weight:400;margin-left:2px;}
     .purchase-body .off-badge{
-      background:#e74c3c;
+      background:linear-gradient(135deg, var(--gold-light), var(--gold));
       color:#fff;
-      font-size:12px;
+      font-size:11px;
       font-weight:900;
       padding:6px 10px;
       border-radius:50%;
       line-height:1.2;
+      box-shadow:0 2px 6px rgba(201,168,76,0.3);
     }
     .purchase-body .shipping{
-      color:#e74c3c;
-      font-size:15px;
+      color:#d94438;
+      font-size:14px;
       font-weight:800;
-      margin:8px 0 16px;
+      margin:8px 0 18px;
       letter-spacing:1px;
     }
     .purchase-body .second-price{
-      background:#fef5f5;
-      border:2px solid #f0b0b0;
+      background:linear-gradient(135deg, #fef8f0, #fef5f0);
+      border:2px solid var(--gold-light);
       border-radius:8px;
-      padding:12px;
+      padding:14px;
       margin-bottom:18px;
       text-align:center;
     }
     .purchase-body .second-price .sp-label{
-      background:#e74c3c;
+      background:linear-gradient(135deg, #e25c4f, #d94438);
       color:#fff;
       font-size:11px;
       font-weight:700;
-      padding:3px 12px;
+      padding:3px 14px;
       border-radius:4px;
       display:inline-block;
       margin-bottom:6px;
@@ -474,7 +461,7 @@
     .purchase-body .second-price p{
       font-size:15px;
       font-weight:800;
-      color:#e74c3c;
+      color:#d94438;
     }
     .benefits-row{
       display:flex;
@@ -1059,7 +1046,7 @@
           <p class="benefit-main">回数縛り<br>なし</p>
         </div>
       </div>
-      <a href="#" class="purchase-cta">定期購入（初回1,980円）での購入はこちら</a>
+      <a href="#" class="purchase-cta">定期購入（初回1,980円）<br>での購入はこちら</a>
       <div class="purchase-notes">
         <p>【定期購入についての注意事項】</p>
         <p>・初回は1,980円(税込)、2回目以降は5,980円(税込)となります。（送料無料）</p>
@@ -1188,7 +1175,7 @@
       <span class="step-num">2</span>
       <div class="step-content">
         <h3>適量を手に取り、気になる部分に塗布</h3>
-        <p>2〜3プッシュを手のひらに出し、<br>ニキビ跡や毛穴が気になる箇所を中心に優しく塗り広げます。</p>
+        <p>2〜3プッシュを手のひらに出し、<br>ニキビ跡や毛穴が気になる箇所を<br>中心に優しく塗り広げます。</p>
       </div>
     </div>
     <div class="howto-step">
