@@ -110,7 +110,24 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* ニキビケア バブル（ガラス風） */
+    /* SPFテキスト隠しパッチ（ガラスバブルの下に配置） */
+    .hero-text-overlay .spf-cover{
+      position:absolute;
+      bottom:23.5%;
+      right:2.5%;
+      width:39%;
+      aspect-ratio:1;
+      border-radius:50%;
+      z-index:1;
+      background:radial-gradient(circle at 50% 50%,
+        rgba(237,243,247,0.98) 0%,
+        rgba(237,243,247,0.96) 55%,
+        rgba(237,243,247,0.85) 72%,
+        rgba(237,243,247,0.5) 85%,
+        transparent 100%);
+      pointer-events:none;
+    }
+    /* ニキビケア バブル（透明ガラス風 - 元画像のガラス球を活かす） */
     .hero-text-overlay .acne-bubble{
       position:absolute;
       bottom:24%;
@@ -119,12 +136,20 @@
       aspect-ratio:1;
       border-radius:50%;
       z-index:2;
-      background:radial-gradient(circle at 35% 35%, rgba(210,238,248,1) 0%, rgba(190,230,244,0.99) 30%, rgba(175,225,242,0.98) 55%, rgba(165,220,240,0.97) 75%, rgba(155,215,238,0.95) 90%, rgba(145,210,235,0.92) 100%);
-      border:1.5px solid rgba(255,255,255,0.7);
+      /* 透明ガラス効果 - 上のナイアシンアミドバブルと同じ見た目 */
+      background:radial-gradient(circle at 32% 28%,
+        rgba(255,255,255,0.45) 0%,
+        rgba(230,245,252,0.3) 15%,
+        rgba(210,238,248,0.2) 30%,
+        rgba(195,230,244,0.15) 50%,
+        rgba(180,222,240,0.1) 70%,
+        rgba(170,218,238,0.05) 85%,
+        transparent 100%);
+      border:1.5px solid rgba(255,255,255,0.45);
       box-shadow:
-        inset 0 -3px 8px rgba(100,180,220,0.15),
-        inset 0 2px 4px rgba(255,255,255,0.5),
-        0 2px 12px rgba(100,180,220,0.2);
+        inset 0 -4px 15px rgba(100,180,220,0.1),
+        inset 0 3px 10px rgba(255,255,255,0.4),
+        0 2px 20px rgba(100,180,220,0.12);
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -152,7 +177,7 @@
       color:#4a9ab8;
       margin-top:3px;
     }
-    /* 商品エリアカバー＋美容液ボトル */
+    /* 商品エリア（白背景なし・透明背景で美容液ボトルのみ表示） */
     .hero-text-overlay .product-cover{
       position:absolute;
       bottom:4%;
@@ -160,7 +185,7 @@
       width:22%;
       height:38%;
       z-index:2;
-      background:radial-gradient(ellipse at 50% 60%, rgba(237,243,247,0.97) 0%, rgba(237,243,247,0.95) 60%, rgba(237,243,247,0.8) 80%, transparent 100%);
+      background:none;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -225,24 +250,25 @@
       height:auto;
       display:block;
     }
-    /* テキストエリア全体を覆う背景パッチ */
+    /* テキストエリア背景パッチ（参考画像に合わせた配置） */
     .rank-badge::after{
       content:'';
       position:absolute;
-      top:8%;
-      left:16%;
-      right:16%;
-      bottom:8%;
-      background:rgba(255,255,255,0.97);
+      top:10%;
+      left:17%;
+      right:17%;
+      bottom:10%;
+      background:rgba(255,255,255,0.96);
       z-index:1;
       border-radius:2px;
     }
+    /* カテゴリ名（参考画像の"Text Here"位置） */
     .rank-badge .badge-text{
       position:absolute;
-      top:14%;
+      top:20%;
       left:50%;
       transform:translateX(-50%);
-      font-size:8px;
+      font-size:7.5px;
       font-weight:700;
       color:#5a4a2a;
       font-family:'Noto Sans JP',sans-serif;
@@ -251,43 +277,42 @@
       white-space:nowrap;
       z-index:2;
     }
-    .rank-badge .badge-rank{
+    /* "RANKING"テキスト */
+    .rank-badge .badge-ranking{
       position:absolute;
-      top:36%;
-      left:50%;
-      transform:translateX(-50%);
-      font-size:8px;
-      font-weight:700;
-      color:#5a4a2a;
-      font-family:'Noto Sans JP',sans-serif;
-      z-index:2;
-    }
-    .rank-badge .badge-num{
-      position:absolute;
-      top:44%;
+      top:42%;
       left:50%;
       transform:translateX(-50%);
       font-family:'Montserrat',sans-serif;
-      font-size:34px;
-      font-weight:900;
+      font-size:8px;
+      font-weight:800;
       color:#c9a84c;
+      letter-spacing:1.5px;
       z-index:2;
-      line-height:1;
     }
-    .rank-badge .badge-i{
+    /* "No." + 大きい数字 */
+    .rank-badge .badge-no{
       position:absolute;
-      top:74%;
+      top:50%;
       left:50%;
       transform:translateX(-50%);
-      font-size:9px;
+      font-family:'Montserrat',sans-serif;
+      font-size:14px;
       font-weight:700;
-      color:#5a4a2a;
-      font-family:'Noto Sans JP',sans-serif;
+      font-style:italic;
+      color:#b8960f;
       z-index:2;
+      line-height:1;
+      white-space:nowrap;
     }
+    .rank-badge .badge-no .num{
+      font-size:32px;
+      font-weight:900;
+    }
+    /* 日付 */
     .rank-badge .badge-date{
       position:absolute;
-      top:82%;
+      top:84%;
       left:50%;
       transform:translateX(-50%);
       font-size:5px;
@@ -901,6 +926,7 @@
       <div class="catch-replace">
         <p class="sub">ニキビ跡ケアしながら</p>
       </div>
+      <div class="spf-cover"></div>
       <div class="acne-bubble">
         <span class="bubble-sub">医薬部外品</span>
         <span class="bubble-main">ニキビ跡<br>集中ケア</span>
@@ -961,33 +987,29 @@
     <div class="rank-badge">
       <img src="ranking-no1.jpg" alt="ランキング1位">
       <span class="badge-text">「ニキビケア」<br>部門</span>
-      <span class="badge-rank">第</span>
-      <span class="badge-num">1</span>
-      <span class="badge-i">位</span>
+      <span class="badge-ranking">RANKING</span>
+      <span class="badge-no">No.<span class="num">1</span></span>
       <span class="badge-date">2024.12.3他</span>
     </div>
     <div class="rank-badge">
       <img src="ranking-no1.jpg" alt="ランキング1位">
       <span class="badge-text">「ニキビ跡ケア」<br>部門</span>
-      <span class="badge-rank">第</span>
-      <span class="badge-num">1</span>
-      <span class="badge-i">位</span>
+      <span class="badge-ranking">RANKING</span>
+      <span class="badge-no">No.<span class="num">1</span></span>
       <span class="badge-date">2024.12.3他</span>
     </div>
     <div class="rank-badge">
       <img src="ranking-no1.jpg" alt="ランキング1位">
       <span class="badge-text">「美容液」<br>部門</span>
-      <span class="badge-rank">第</span>
-      <span class="badge-num">1</span>
-      <span class="badge-i">位</span>
+      <span class="badge-ranking">RANKING</span>
+      <span class="badge-no">No.<span class="num">1</span></span>
       <span class="badge-date">2024.12.3他</span>
     </div>
     <div class="rank-badge">
       <img src="ranking-no1.jpg" alt="ランキング1位">
       <span class="badge-text">「スキンケア<br>美容液」部門</span>
-      <span class="badge-rank">第</span>
-      <span class="badge-num">1</span>
-      <span class="badge-i">位</span>
+      <span class="badge-ranking">RANKING</span>
+      <span class="badge-no">No.<span class="num">1</span></span>
       <span class="badge-date">2024.12.3他</span>
     </div>
   </div>
