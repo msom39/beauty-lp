@@ -119,7 +119,7 @@
       aspect-ratio:1;
       border-radius:50%;
       z-index:2;
-      background:radial-gradient(circle at 35% 35%, rgba(255,255,255,0.7) 0%, rgba(200,235,248,0.45) 40%, rgba(160,218,240,0.35) 70%, rgba(120,200,230,0.3) 100%);
+      background:radial-gradient(circle at 35% 35%, rgba(220,242,250,0.95) 0%, rgba(195,232,245,0.92) 35%, rgba(175,225,242,0.88) 60%, rgba(160,218,238,0.8) 80%, rgba(145,210,235,0.6) 100%);
       border:1.5px solid rgba(255,255,255,0.7);
       box-shadow:
         inset 0 -3px 8px rgba(100,180,220,0.15),
@@ -132,25 +132,25 @@
       pointer-events:none;
     }
     .hero-text-overlay .acne-bubble .bubble-sub{
-      font-size:6.5px;
-      font-weight:500;
-      color:#4a8ea8;
+      font-size:8px;
+      font-weight:600;
+      color:#3a7a94;
       letter-spacing:0.5px;
-      margin-bottom:2px;
+      margin-bottom:3px;
     }
     .hero-text-overlay .acne-bubble .bubble-main{
-      font-size:10px;
+      font-size:14px;
       font-weight:800;
-      color:#2b7a9e;
-      letter-spacing:1px;
+      color:#1a6080;
+      letter-spacing:1.5px;
       line-height:1.3;
       text-align:center;
     }
     .hero-text-overlay .acne-bubble .bubble-note{
-      font-size:5.5px;
-      font-weight:500;
-      color:#6aafca;
-      margin-top:2px;
+      font-size:7px;
+      font-weight:600;
+      color:#4a9ab8;
+      margin-top:3px;
     }
     /* 商品エリアカバー＋美容液ボトル */
     .hero-text-overlay .product-cover{
@@ -225,6 +225,18 @@
       height:auto;
       display:block;
     }
+    /* テキストエリア全体を覆う背景パッチ */
+    .rank-badge::after{
+      content:'';
+      position:absolute;
+      top:10%;
+      left:18%;
+      right:18%;
+      bottom:12%;
+      background:rgba(255,255,255,0.95);
+      z-index:1;
+      border-radius:2px;
+    }
     .rank-badge .badge-text{
       position:absolute;
       top:14%;
@@ -237,6 +249,7 @@
       line-height:1.3;
       text-align:center;
       white-space:nowrap;
+      z-index:2;
     }
     .rank-badge .badge-rank{
       position:absolute;
@@ -247,6 +260,7 @@
       font-weight:700;
       color:#5a4a2a;
       font-family:'Noto Sans JP',sans-serif;
+      z-index:2;
     }
     .rank-badge .badge-num{
       position:absolute;
@@ -257,6 +271,7 @@
       font-size:24px;
       font-weight:900;
       color:#c9a84c;
+      z-index:2;
     }
     .rank-badge .badge-i{
       position:absolute;
@@ -267,6 +282,7 @@
       font-weight:700;
       color:#5a4a2a;
       font-family:'Noto Sans JP',sans-serif;
+      z-index:2;
     }
     .rank-badge .badge-date{
       position:absolute;
@@ -277,6 +293,7 @@
       color:#aaa;
       font-family:'Montserrat',sans-serif;
       white-space:nowrap;
+      z-index:2;
     }
 
     /* ===== 商品購入セクション（WHITOP EX風） ===== */
