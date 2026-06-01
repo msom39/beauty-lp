@@ -110,43 +110,66 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPF50+バブルを隠す（背景色で覆う） */
-    .hero-text-overlay .spf-cover{
+    /* ニキビケア バブル（ガラス風） */
+    .hero-text-overlay .acne-bubble{
       position:absolute;
       bottom:26%;
       right:5%;
-      width:38%;
+      width:34%;
       aspect-ratio:1;
-      background:radial-gradient(circle at 50% 50%, rgba(245,248,250,1) 0%, rgba(242,247,250,1) 40%, rgba(235,244,248,0.95) 60%, rgba(225,240,246,0.7) 78%, transparent 100%);
       border-radius:50%;
       z-index:2;
+      background:radial-gradient(circle at 35% 35%, rgba(255,255,255,0.7) 0%, rgba(200,235,248,0.45) 40%, rgba(160,218,240,0.35) 70%, rgba(120,200,230,0.3) 100%);
+      border:1.5px solid rgba(255,255,255,0.7);
+      box-shadow:
+        inset 0 -3px 8px rgba(100,180,220,0.15),
+        inset 0 2px 4px rgba(255,255,255,0.5),
+        0 2px 12px rgba(100,180,220,0.2);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
     }
-    /* SHIRORUテキストをAQUA CLEARに書き換え（シームレス） */
-    .hero-text-overlay .product-label{
+    .hero-text-overlay .acne-bubble .bubble-sub{
+      font-size:6.5px;
+      font-weight:500;
+      color:#4a8ea8;
+      letter-spacing:0.5px;
+      margin-bottom:2px;
+    }
+    .hero-text-overlay .acne-bubble .bubble-main{
+      font-size:10px;
+      font-weight:800;
+      color:#2b7a9e;
+      letter-spacing:1px;
+      line-height:1.3;
+      text-align:center;
+    }
+    .hero-text-overlay .acne-bubble .bubble-note{
+      font-size:5.5px;
+      font-weight:500;
+      color:#6aafca;
+      margin-top:2px;
+    }
+    /* 商品エリアカバー＋美容液ボトル */
+    .hero-text-overlay .product-cover{
       position:absolute;
-      bottom:10%;
-      left:4%;
-      width:17%;
-      height:25%;
+      bottom:4%;
+      left:1%;
+      width:22%;
+      height:38%;
       z-index:2;
-      background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 8%, rgba(255,255,255,0.98) 15%, rgba(255,255,255,0.98) 85%, rgba(255,255,255,0.95) 92%, rgba(255,255,255,0) 100%);
-      border-radius:6px;
+      background:radial-gradient(ellipse at 50% 60%, rgba(237,243,247,0.97) 0%, rgba(237,243,247,0.95) 60%, rgba(237,243,247,0.8) 80%, transparent 100%);
       display:flex;
       align-items:center;
       justify-content:center;
+      pointer-events:none;
     }
-    .hero-text-overlay .product-label span{
-      font-family:'Montserrat',sans-serif;
-      font-size:7px;
-      font-weight:600;
-      color:rgba(43,122,158,0.75);
-      letter-spacing:0.3px;
-      line-height:1.2;
-      display:block;
-      text-align:center;
-      background:none;
-      padding:0;
-      border-radius:0;
+    .hero-text-overlay .product-cover .serum-svg{
+      width:65%;
+      height:auto;
+      filter:drop-shadow(0 2px 6px rgba(0,0,0,0.1));
     }
 
     /* ===== RANKING - 楽天ランキング風 ===== */
@@ -193,12 +216,68 @@
     .rank-badge{
       flex:1;
       min-width:0;
-      background:transparent;
-      padding:8px 2px 6px;
+      padding:0;
       text-align:center;
       position:relative;
     }
-    .rank-badge svg{width:100%;height:auto;}
+    .rank-badge img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .rank-badge .badge-text{
+      position:absolute;
+      top:14%;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:8px;
+      font-weight:700;
+      color:#5a4a2a;
+      font-family:'Noto Sans JP',sans-serif;
+      line-height:1.3;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .rank-badge .badge-rank{
+      position:absolute;
+      top:42%;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:8px;
+      font-weight:700;
+      color:#5a4a2a;
+      font-family:'Noto Sans JP',sans-serif;
+    }
+    .rank-badge .badge-num{
+      position:absolute;
+      top:48%;
+      left:50%;
+      transform:translateX(-50%);
+      font-family:'Montserrat',sans-serif;
+      font-size:24px;
+      font-weight:900;
+      color:#c9a84c;
+    }
+    .rank-badge .badge-i{
+      position:absolute;
+      top:70%;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:8px;
+      font-weight:700;
+      color:#5a4a2a;
+      font-family:'Noto Sans JP',sans-serif;
+    }
+    .rank-badge .badge-date{
+      position:absolute;
+      top:78%;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:4.5px;
+      color:#aaa;
+      font-family:'Montserrat',sans-serif;
+      white-space:nowrap;
+    }
 
     /* ===== 商品購入セクション（WHITOP EX風） ===== */
     .purchase-section{
@@ -241,9 +320,20 @@
       margin-top:4px;
     }
     .purchase-body{padding:20px 16px;}
-    .purchase-layout{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-    .purchase-product-img{flex:0 0 90px;}
-    .purchase-product-img svg{width:100%;height:auto;}
+    .purchase-layout{display:flex;align-items:center;gap:16px;margin-bottom:12px;}
+    .purchase-product-img{
+      flex:0 0 100px;
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      border:2px solid #e0e0e0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#f9fcfe;
+      overflow:hidden;
+    }
+    .purchase-product-img svg{width:60%;height:auto;}
     .purchase-pricing{flex:1;}
     .purchase-body .regular-price{
       font-size:12px;
@@ -793,8 +883,51 @@
       <div class="catch-replace">
         <p class="sub">ニキビ跡ケアしながら</p>
       </div>
-      <div class="spf-cover"></div>
-      <div class="product-label"><span>AQUA CLEAR<br>SERUM</span></div>
+      <div class="acne-bubble">
+        <span class="bubble-sub">医薬部外品</span>
+        <span class="bubble-main">ニキビ跡<br>集中ケア</span>
+        <span class="bubble-note">高濃度配合</span>
+      </div>
+      <div class="product-cover">
+        <svg class="serum-svg" viewBox="0 0 60 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="serum-body" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#d4a04a"/>
+              <stop offset="30%" stop-color="#f0d080"/>
+              <stop offset="60%" stop-color="#e8c060"/>
+              <stop offset="100%" stop-color="#c08830"/>
+            </linearGradient>
+            <linearGradient id="serum-cap" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#888"/>
+              <stop offset="50%" stop-color="#ccc"/>
+              <stop offset="100%" stop-color="#888"/>
+            </linearGradient>
+            <linearGradient id="dropper-tube" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#aaa"/>
+              <stop offset="50%" stop-color="#ddd"/>
+              <stop offset="100%" stop-color="#aaa"/>
+            </linearGradient>
+          </defs>
+          <!-- ドロッパーキャップ -->
+          <ellipse cx="30" cy="6" rx="8" ry="5" fill="#777"/>
+          <rect x="24" y="6" width="12" height="14" rx="3" fill="url(#serum-cap)"/>
+          <!-- ネック -->
+          <rect x="26" y="20" width="8" height="6" fill="url(#dropper-tube)"/>
+          <!-- ショルダー -->
+          <path d="M26,26 Q18,30 16,38 L44,38 Q42,30 34,26 Z" fill="url(#serum-body)" opacity="0.9"/>
+          <!-- ボトル本体 -->
+          <rect x="16" y="38" width="28" height="100" rx="6" fill="url(#serum-body)"/>
+          <!-- ラベルエリア -->
+          <rect x="19" y="50" width="22" height="60" rx="3" fill="rgba(255,255,255,0.3)"/>
+          <text x="30" y="68" text-anchor="middle" font-size="4.5" fill="#5a3a10" font-weight="800" font-family="Montserrat,sans-serif">AQUA CLEAR</text>
+          <text x="30" y="75" text-anchor="middle" font-size="4.5" fill="#5a3a10" font-weight="800" font-family="Montserrat,sans-serif">SERUM</text>
+          <text x="30" y="85" text-anchor="middle" font-size="3" fill="#7a5a20" font-family="'Noto Sans JP',sans-serif">薬用ニキビ跡ケア</text>
+          <text x="30" y="91" text-anchor="middle" font-size="3" fill="#7a5a20" font-family="'Noto Sans JP',sans-serif">美容液</text>
+          <text x="30" y="102" text-anchor="middle" font-size="2.5" fill="#999" font-family="'Noto Sans JP',sans-serif">30ml</text>
+          <!-- 底面影 -->
+          <ellipse cx="30" cy="140" rx="13" ry="3" fill="rgba(0,0,0,0.08)"/>
+        </svg>
+      </div>
       <div class="bottom-replace"><span><strong>AQUA CLEAR SERUM</strong>は「ナイアシンアミド」「ビタミンC誘導体」を高濃度配合した薬用ニキビ跡ケア美容液です。</span></div>
     </div>
   </div>
@@ -808,128 +941,36 @@
   </h2>
   <div class="ranking-badges">
     <div class="rank-badge">
-      <svg viewBox="0 0 100 125" xmlns="http://www.w3.org/2000/svg">
-        <text x="50" y="13" text-anchor="middle" font-size="15" fill="#daa520">&#x1F451;</text>
-        <text x="50" y="27" text-anchor="middle" font-size="7.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">「ニキビケア」</text>
-        <text x="50" y="37" text-anchor="middle" font-size="7.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">部門</text>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="27" cy="50" rx="3" ry="7" transform="rotate(-55,27,50)"/>
-          <ellipse cx="23" cy="58" rx="3" ry="7" transform="rotate(-45,23,58)"/>
-          <ellipse cx="21" cy="67" rx="3" ry="7" transform="rotate(-30,21,67)"/>
-          <ellipse cx="22" cy="76" rx="3" ry="6.5" transform="rotate(-15,22,76)"/>
-          <ellipse cx="26" cy="84" rx="3" ry="6" transform="rotate(0,26,84)"/>
-          <ellipse cx="33" cy="90" rx="3" ry="5.5" transform="rotate(15,33,90)"/>
-        </g>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="73" cy="50" rx="3" ry="7" transform="rotate(55,73,50)"/>
-          <ellipse cx="77" cy="58" rx="3" ry="7" transform="rotate(45,77,58)"/>
-          <ellipse cx="79" cy="67" rx="3" ry="7" transform="rotate(30,79,67)"/>
-          <ellipse cx="78" cy="76" rx="3" ry="6.5" transform="rotate(15,78,76)"/>
-          <ellipse cx="74" cy="84" rx="3" ry="6" transform="rotate(0,74,84)"/>
-          <ellipse cx="67" cy="90" rx="3" ry="5.5" transform="rotate(-15,67,90)"/>
-        </g>
-        <path d="M38,94 Q27,80 29,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <path d="M62,94 Q73,80 71,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <text x="50" y="62" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">第</text>
-        <text x="50" y="81" text-anchor="middle" font-size="26" fill="#c9a84c" font-weight="900" font-family="'Montserrat',sans-serif">1</text>
-        <text x="50" y="92" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">位</text>
-        <text x="50" y="102" text-anchor="middle" font-size="5" fill="#aaa" font-family="'Montserrat',sans-serif">2024.12.3他</text>
-        <rect x="18" y="106" width="64" height="13" rx="2" fill="#2b5ea7"/>
-        <text x="50" y="115.5" text-anchor="middle" font-size="7" fill="white" font-weight="700" letter-spacing="2" font-family="'Montserrat',sans-serif">RAKUTEN</text>
-      </svg>
+      <img src="ranking-no1.jpg" alt="ランキング1位">
+      <span class="badge-text">「ニキビケア」<br>部門</span>
+      <span class="badge-rank">第</span>
+      <span class="badge-num">1</span>
+      <span class="badge-i">位</span>
+      <span class="badge-date">2024.12.3他</span>
     </div>
     <div class="rank-badge">
-      <svg viewBox="0 0 100 125" xmlns="http://www.w3.org/2000/svg">
-        <text x="50" y="13" text-anchor="middle" font-size="15" fill="#daa520">&#x1F451;</text>
-        <text x="50" y="27" text-anchor="middle" font-size="7" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">「ニキビ跡ケア」</text>
-        <text x="50" y="37" text-anchor="middle" font-size="7.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">部門</text>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="27" cy="50" rx="3" ry="7" transform="rotate(-55,27,50)"/>
-          <ellipse cx="23" cy="58" rx="3" ry="7" transform="rotate(-45,23,58)"/>
-          <ellipse cx="21" cy="67" rx="3" ry="7" transform="rotate(-30,21,67)"/>
-          <ellipse cx="22" cy="76" rx="3" ry="6.5" transform="rotate(-15,22,76)"/>
-          <ellipse cx="26" cy="84" rx="3" ry="6" transform="rotate(0,26,84)"/>
-          <ellipse cx="33" cy="90" rx="3" ry="5.5" transform="rotate(15,33,90)"/>
-        </g>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="73" cy="50" rx="3" ry="7" transform="rotate(55,73,50)"/>
-          <ellipse cx="77" cy="58" rx="3" ry="7" transform="rotate(45,77,58)"/>
-          <ellipse cx="79" cy="67" rx="3" ry="7" transform="rotate(30,79,67)"/>
-          <ellipse cx="78" cy="76" rx="3" ry="6.5" transform="rotate(15,78,76)"/>
-          <ellipse cx="74" cy="84" rx="3" ry="6" transform="rotate(0,74,84)"/>
-          <ellipse cx="67" cy="90" rx="3" ry="5.5" transform="rotate(-15,67,90)"/>
-        </g>
-        <path d="M38,94 Q27,80 29,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <path d="M62,94 Q73,80 71,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <text x="50" y="62" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">第</text>
-        <text x="50" y="81" text-anchor="middle" font-size="26" fill="#c9a84c" font-weight="900" font-family="'Montserrat',sans-serif">1</text>
-        <text x="50" y="92" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">位</text>
-        <text x="50" y="102" text-anchor="middle" font-size="5" fill="#aaa" font-family="'Montserrat',sans-serif">2024.12.3他</text>
-        <rect x="18" y="106" width="64" height="13" rx="2" fill="#2b5ea7"/>
-        <text x="50" y="115.5" text-anchor="middle" font-size="7" fill="white" font-weight="700" letter-spacing="2" font-family="'Montserrat',sans-serif">RAKUTEN</text>
-      </svg>
+      <img src="ranking-no1.jpg" alt="ランキング1位">
+      <span class="badge-text">「ニキビ跡ケア」<br>部門</span>
+      <span class="badge-rank">第</span>
+      <span class="badge-num">1</span>
+      <span class="badge-i">位</span>
+      <span class="badge-date">2024.12.3他</span>
     </div>
     <div class="rank-badge">
-      <svg viewBox="0 0 100 125" xmlns="http://www.w3.org/2000/svg">
-        <text x="50" y="13" text-anchor="middle" font-size="15" fill="#daa520">&#x1F451;</text>
-        <text x="50" y="27" text-anchor="middle" font-size="7.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">「美容液」</text>
-        <text x="50" y="37" text-anchor="middle" font-size="7.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">部門</text>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="27" cy="50" rx="3" ry="7" transform="rotate(-55,27,50)"/>
-          <ellipse cx="23" cy="58" rx="3" ry="7" transform="rotate(-45,23,58)"/>
-          <ellipse cx="21" cy="67" rx="3" ry="7" transform="rotate(-30,21,67)"/>
-          <ellipse cx="22" cy="76" rx="3" ry="6.5" transform="rotate(-15,22,76)"/>
-          <ellipse cx="26" cy="84" rx="3" ry="6" transform="rotate(0,26,84)"/>
-          <ellipse cx="33" cy="90" rx="3" ry="5.5" transform="rotate(15,33,90)"/>
-        </g>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="73" cy="50" rx="3" ry="7" transform="rotate(55,73,50)"/>
-          <ellipse cx="77" cy="58" rx="3" ry="7" transform="rotate(45,77,58)"/>
-          <ellipse cx="79" cy="67" rx="3" ry="7" transform="rotate(30,79,67)"/>
-          <ellipse cx="78" cy="76" rx="3" ry="6.5" transform="rotate(15,78,76)"/>
-          <ellipse cx="74" cy="84" rx="3" ry="6" transform="rotate(0,74,84)"/>
-          <ellipse cx="67" cy="90" rx="3" ry="5.5" transform="rotate(-15,67,90)"/>
-        </g>
-        <path d="M38,94 Q27,80 29,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <path d="M62,94 Q73,80 71,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <text x="50" y="62" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">第</text>
-        <text x="50" y="81" text-anchor="middle" font-size="26" fill="#c9a84c" font-weight="900" font-family="'Montserrat',sans-serif">1</text>
-        <text x="50" y="92" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">位</text>
-        <text x="50" y="102" text-anchor="middle" font-size="5" fill="#aaa" font-family="'Montserrat',sans-serif">2024.12.3他</text>
-        <rect x="18" y="106" width="64" height="13" rx="2" fill="#2b5ea7"/>
-        <text x="50" y="115.5" text-anchor="middle" font-size="7" fill="white" font-weight="700" letter-spacing="2" font-family="'Montserrat',sans-serif">RAKUTEN</text>
-      </svg>
+      <img src="ranking-no1.jpg" alt="ランキング1位">
+      <span class="badge-text">「美容液」<br>部門</span>
+      <span class="badge-rank">第</span>
+      <span class="badge-num">1</span>
+      <span class="badge-i">位</span>
+      <span class="badge-date">2024.12.3他</span>
     </div>
     <div class="rank-badge">
-      <svg viewBox="0 0 100 125" xmlns="http://www.w3.org/2000/svg">
-        <text x="50" y="13" text-anchor="middle" font-size="15" fill="#daa520">&#x1F451;</text>
-        <text x="50" y="27" text-anchor="middle" font-size="6.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">「スキンケア美容液」</text>
-        <text x="50" y="37" text-anchor="middle" font-size="7.5" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">部門</text>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="27" cy="50" rx="3" ry="7" transform="rotate(-55,27,50)"/>
-          <ellipse cx="23" cy="58" rx="3" ry="7" transform="rotate(-45,23,58)"/>
-          <ellipse cx="21" cy="67" rx="3" ry="7" transform="rotate(-30,21,67)"/>
-          <ellipse cx="22" cy="76" rx="3" ry="6.5" transform="rotate(-15,22,76)"/>
-          <ellipse cx="26" cy="84" rx="3" ry="6" transform="rotate(0,26,84)"/>
-          <ellipse cx="33" cy="90" rx="3" ry="5.5" transform="rotate(15,33,90)"/>
-        </g>
-        <g fill="#c9a84c" stroke="#a07820" stroke-width="0.3">
-          <ellipse cx="73" cy="50" rx="3" ry="7" transform="rotate(55,73,50)"/>
-          <ellipse cx="77" cy="58" rx="3" ry="7" transform="rotate(45,77,58)"/>
-          <ellipse cx="79" cy="67" rx="3" ry="7" transform="rotate(30,79,67)"/>
-          <ellipse cx="78" cy="76" rx="3" ry="6.5" transform="rotate(15,78,76)"/>
-          <ellipse cx="74" cy="84" rx="3" ry="6" transform="rotate(0,74,84)"/>
-          <ellipse cx="67" cy="90" rx="3" ry="5.5" transform="rotate(-15,67,90)"/>
-        </g>
-        <path d="M38,94 Q27,80 29,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <path d="M62,94 Q73,80 71,46" stroke="#a07820" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <text x="50" y="62" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">第</text>
-        <text x="50" y="81" text-anchor="middle" font-size="26" fill="#c9a84c" font-weight="900" font-family="'Montserrat',sans-serif">1</text>
-        <text x="50" y="92" text-anchor="middle" font-size="9" fill="#6b5a3e" font-weight="700" font-family="'Noto Sans JP',sans-serif">位</text>
-        <text x="50" y="102" text-anchor="middle" font-size="5" fill="#aaa" font-family="'Montserrat',sans-serif">2024.12.3他</text>
-        <rect x="18" y="106" width="64" height="13" rx="2" fill="#2b5ea7"/>
-        <text x="50" y="115.5" text-anchor="middle" font-size="7" fill="white" font-weight="700" letter-spacing="2" font-family="'Montserrat',sans-serif">RAKUTEN</text>
-      </svg>
+      <img src="ranking-no1.jpg" alt="ランキング1位">
+      <span class="badge-text">「スキンケア<br>美容液」部門</span>
+      <span class="badge-rank">第</span>
+      <span class="badge-num">1</span>
+      <span class="badge-i">位</span>
+      <span class="badge-date">2024.12.3他</span>
     </div>
   </div>
 </section>
@@ -946,25 +987,32 @@
     <div class="purchase-body">
       <div class="purchase-layout">
         <div class="purchase-product-img">
-          <svg viewBox="0 0 80 180" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 60 150" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="btl" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#96cde0"/>
-                <stop offset="40%" stop-color="#c5e8f3"/>
-                <stop offset="100%" stop-color="#96cde0"/>
+              <linearGradient id="p-body" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#c08830"/>
+                <stop offset="30%" stop-color="#f0d080"/>
+                <stop offset="55%" stop-color="#e8c060"/>
+                <stop offset="100%" stop-color="#b07020"/>
+              </linearGradient>
+              <linearGradient id="p-cap" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#777"/>
+                <stop offset="50%" stop-color="#bbb"/>
+                <stop offset="100%" stop-color="#777"/>
               </linearGradient>
             </defs>
-            <rect x="36" y="2" width="8" height="18" rx="2" fill="#b0b0b0"/>
-            <rect x="28" y="18" width="24" height="8" rx="3" fill="#999"/>
-            <rect x="24" y="26" width="32" height="12" rx="4" fill="#7ecbe6"/>
-            <rect x="20" y="38" width="40" height="120" rx="10" fill="url(#btl)"/>
-            <rect x="25" y="55" width="30" height="75" rx="4" fill="rgba(255,255,255,0.35)"/>
-            <text x="40" y="78" text-anchor="middle" font-size="5.5" fill="#2b7a9e" font-weight="800" font-family="Montserrat,sans-serif">AQUA CLEAR</text>
-            <text x="40" y="86" text-anchor="middle" font-size="5.5" fill="#2b7a9e" font-weight="800" font-family="Montserrat,sans-serif">SERUM</text>
-            <text x="40" y="96" text-anchor="middle" font-size="3.5" fill="#5a9ab5" font-family="'Noto Sans JP',sans-serif">薬用ニキビ跡ケア</text>
-            <text x="40" y="102" text-anchor="middle" font-size="3.5" fill="#5a9ab5" font-family="'Noto Sans JP',sans-serif">美容液</text>
-            <text x="40" y="118" text-anchor="middle" font-size="3" fill="#999" font-family="'Noto Sans JP',sans-serif">30ml</text>
-            <ellipse cx="40" cy="158" rx="18" ry="4" fill="#89c7dd" opacity="0.5"/>
+            <ellipse cx="30" cy="5" rx="7" ry="4.5" fill="#666"/>
+            <rect x="24" y="5" width="12" height="12" rx="3" fill="url(#p-cap)"/>
+            <rect x="26" y="17" width="8" height="5" fill="#aaa"/>
+            <path d="M26,22 Q19,26 17,32 L43,32 Q41,26 34,22 Z" fill="url(#p-body)" opacity="0.9"/>
+            <rect x="17" y="32" width="26" height="92" rx="5" fill="url(#p-body)"/>
+            <rect x="20" y="42" width="20" height="55" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <text x="30" y="58" text-anchor="middle" font-size="4" fill="#5a3a10" font-weight="800" font-family="Montserrat,sans-serif">AQUA CLEAR</text>
+            <text x="30" y="64" text-anchor="middle" font-size="4" fill="#5a3a10" font-weight="800" font-family="Montserrat,sans-serif">SERUM</text>
+            <text x="30" y="74" text-anchor="middle" font-size="2.8" fill="#7a5a20" font-family="'Noto Sans JP',sans-serif">薬用ニキビ跡ケア</text>
+            <text x="30" y="79" text-anchor="middle" font-size="2.8" fill="#7a5a20" font-family="'Noto Sans JP',sans-serif">美容液</text>
+            <text x="30" y="90" text-anchor="middle" font-size="2.5" fill="#999">30ml</text>
+            <ellipse cx="30" cy="126" rx="12" ry="3" fill="rgba(0,0,0,0.06)"/>
           </svg>
         </div>
         <div class="purchase-pricing">
