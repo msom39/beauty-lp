@@ -110,9 +110,22 @@
     .hero-text-overlay .bottom-replace strong{
       color:var(--aqua-dark);
     }
-    /* SPFテキスト隠し（不要化：acne-bubble自体で隠蔽するため非表示） */
+    /* SPFテキスト隠し（バブル直下・バブルと同サイズで背景テキスト完全隠蔽） */
     .hero-text-overlay .spf-cover{
-      display:none;
+      position:absolute;
+      bottom:22%;
+      right:1%;
+      width:28%;
+      aspect-ratio:1;
+      border-radius:50%;
+      z-index:1;
+      background:radial-gradient(circle at 50% 50%,
+        rgba(237,243,247,1) 0%,
+        rgba(237,243,247,1) 45%,
+        rgba(237,243,247,0.95) 55%,
+        rgba(237,243,247,0.7) 68%,
+        transparent 82%);
+      pointer-events:none;
     }
     /* ニキビケア バブル（アクアガラス玉・小さめ・女性にかぶらない） */
     .hero-text-overlay .acne-bubble{
@@ -160,29 +173,17 @@
       color:#4a9ab8;
       margin-top:3px;
     }
-    /* 商品エリア背景パッチ（ボトル直下のみ・最小限・女性にかからない） */
+    /* 商品エリア背景パッチ（完全除去・霧エフェクトなし） */
     .hero-text-overlay .product-bg-cover{
-      position:absolute;
-      bottom:6%;
-      left:0;
-      width:20%;
-      height:38%;
-      z-index:1;
-      background:
-        linear-gradient(to right,
-          rgba(237,243,247,1) 0%,
-          rgba(237,243,247,1) 65%,
-          rgba(237,243,247,0.6) 85%,
-          transparent 100%);
-      pointer-events:none;
+      display:none;
     }
-    /* 商品エリア（美容液ボトルのみ表示・左端配置・女性と重ならない） */
+    /* 商品エリア（美容液ボトルのみ表示・左端配置・下テキストにかぶらない） */
     .hero-text-overlay .product-cover{
       position:absolute;
-      bottom:8%;
+      bottom:12%;
       left:1%;
-      width:16%;
-      height:30%;
+      width:15%;
+      height:28%;
       z-index:2;
       background:none;
       display:flex;
@@ -950,7 +951,7 @@
       <div class="product-cover">
         <img src="serum-product.png" alt="AQUA CLEAR SERUM">
       </div>
-      <div class="bottom-replace"><span><strong>AQUA CLEAR SERUM</strong>は「ナイアシンアミド」「ビタミンC誘導体」を高濃度配合した薬用ニキビ跡ケア美容液です。</span></div>
+      <div class="bottom-replace"><span><strong>AQUA CLEAR SERUM</strong>は「ナイアシンアミド」「ビタミンC誘導体」<br>を高濃度配合した薬用ニキビ跡ケア美容液です。</span></div>
     </div>
   </div>
 </section>
