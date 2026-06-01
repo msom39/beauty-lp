@@ -176,17 +176,24 @@
     /* 商品エリア背景パッチ（テキスト隠し・ボトル裏のみ・女性にかからない） */
     .hero-text-overlay .product-bg-cover{
       position:absolute;
-      bottom:10%;
+      bottom:8%;
       left:0;
-      width:32%;
-      height:42%;
+      width:34%;
+      height:52%;
       z-index:1;
-      background:linear-gradient(to right,
-        rgba(237,243,247,1) 0%,
-        rgba(237,243,247,1) 50%,
-        rgba(237,243,247,0.85) 65%,
-        rgba(237,243,247,0.4) 80%,
-        transparent 100%);
+      background:
+        linear-gradient(to right,
+          rgba(237,243,247,1) 0%,
+          rgba(237,243,247,1) 45%,
+          rgba(237,243,247,0.85) 60%,
+          rgba(237,243,247,0.4) 78%,
+          transparent 100%),
+        linear-gradient(to bottom,
+          transparent 0%,
+          rgba(237,243,247,0.5) 8%,
+          rgba(237,243,247,1) 15%,
+          rgba(237,243,247,1) 100%);
+      background-blend-mode:multiply;
       pointer-events:none;
     }
     /* 商品エリア（美容液ボトルのみ表示・下テキストに被らない） */
